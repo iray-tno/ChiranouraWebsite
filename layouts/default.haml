@@ -1,0 +1,32 @@
+!!! XML
+!!! 5
+%html{:xmlns =>"http://www.w3.org/1999/xhtml"}
+  %head
+    %meta{:charset =>"utf-8"}
+    %meta{:name =>"generator", :content =>"nanoc 3.1.7"}
+    %title
+      = "ちらのうら - #{@item[:title]}"
+    %link{:rel =>"stylesheet", :type =>"text/css", :href =>"/stylesheets/screen.css",
+    :media =>"screen"}
+  %body
+    #container
+      #header
+        %h2 Title
+
+      #main
+        - if @item[:kind] == 'article'
+          %div.article
+            %h2(class="#{@item[:category]}") #{link_to(@item[:title], @item.path)}
+            %h3(class="#{@item[:category]}") Created at: #{attribute_to_time(@item[:created_at]).to_iso8601_date}
+            = yield
+        - else
+          = yield
+
+      #side
+        - if @item[:category_meta] == nil
+          = render('_side_summary', {:category => @item[:category]})
+        - else
+          = render('_side_summary', {:category => @item[:category_meta]})
+
+      #footer
+        %p copyright

@@ -1,0 +1,115 @@
+@import compass/reset
+@import compass/typography/links/link-colors
+@import compass/css3/box-sizing
+@import susy
+
+/*
+  Welcome to Compass.
+  In this file you should write your main styles. (or centralize your imports)
+  Import this file using the following HTML or equivalent:
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+
+@include border-box-sizing
+
+$total-columns: 12
+/*
+  a 12-column grid
+
+$column-width: 4em
+/*
+  each column is 4em wide
+
+$gutter-width: 1em
+/*
+  1em gutters between columns
+
+$grid-padding: $gutter-width
+/*
+  grid-padding equal to gutters
+
+$border-color: #000000
+
+$categories: Development Tweets
+
+$Development-side-bgcolor: #ff4500
+$Development-title-color: #ff4500
+
+$Tweets-side-bgcolor: #00bfff
+$Tweets-title-color: #00bfff
+
+*
+  margin: 0
+  
+html
+  overflow-y: scroll
+
+body
+  background: #fff
+
+a
+  text-decoration: none
+
+a
+  +link-colors(#222, #111, #222, #111)
+
+#container
+  +container
+  background-color: #ffffff
+  @include container
+  border: 1px solid $border-color
+
+#header
+  @include span-columns(12,12)
+  margin: 1px 0px 1px 0px
+  border: 1px solid $border-color
+
+#main
+  @include span-columns(8 alpha, 12)
+
+#side
+  @include span-columns(4 omega, 12)
+  border: 1px solid $border-color
+  margin: 1px 0px 1px 0px
+  
+  h2
+    color: #000000
+    font-size: 1.5em
+    background-color: #eeeeee
+
+    &.Tweets
+      background-color: $Tweets-side-bgcolor
+
+    &.Development
+      background-color: $Development-side-bgcolor
+
+#top_category
+  @include span-columns(4, 4)
+  background-color: #ffffff
+
+#tags
+  @include span-columns(2 alpha, 4)
+
+
+#recent_posts
+  @include span-columns(2 omega, 4)
+
+
+#footer
+  @include span-columns(12,12)
+  margin: 1px 0px 1px 0px
+  border: 1px solid $border-color
+
+div.article
+  border: 1px solid $border-color
+  margin: 1px 0px 1px 0px
+  
+  h2
+    font-size: 1.5em
+    background-color: #eeeeee
+    &.Tweets
+      a
+        +link-colors($Tweets-side-bgcolor, #111, #111, $Tweets-title-color)
+
+  h3
+    font-size: 0.7em
+    background-color: #eeeeee

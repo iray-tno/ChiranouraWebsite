@@ -1,0 +1,11 @@
+
+カテゴリーのディレクトリをどうするか考える。
+/categories/$NAME/か
+/$NAME/か
+
+sass 配列　each　使い方
+http://hail2u.net/blog/coding/sass-lists.html
+http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#each-directive
+
+ia
+
