@@ -99,6 +99,7 @@ class TweetListener
       }
       item = Nanoc::Item.new(page_content,{
           :title => page_title,
+          :author => "iray_tno",
           :category => "SocialActivities",
           :tags => ["tweets_of_20#{date_match[1]}", "20#{date_match[1]}_#{date_match[2]}"]
         },

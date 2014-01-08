@@ -6,8 +6,7 @@
     %meta{:name =>"generator", :content =>"nanoc 3.1.7"}
     %title
       = "ちらのうら - #{@item[:title]}"
-    %link{:rel =>"stylesheet", :type =>"text/css", :href =>"/stylesheets/screen.css",
-    :media =>"screen"}
+    %link{:rel =>"stylesheet", :type =>"text/css", :href =>"/stylesheets/screen.css", :media =>"screen"}
   %body
     #container
       #header
@@ -23,6 +22,9 @@
             #disqus_thread
             :javascript
               var disqus_shortname = 'chiranoura';
+              var disqus_title = '#{@item[:title]}';
+              var disqus_identifier = '#{@item.identifier}';
+              var disqus_category_id = '#{get_cate_id(@item[:category])}';
               (function() {
                 var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
                 dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';

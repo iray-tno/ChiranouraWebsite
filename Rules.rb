@@ -48,7 +48,7 @@ preprocess do
         :title => "Posts in #{get_tag_name(tag)}",
         :tag_meta => "#{tag}"
       },
-      "/Tag/#{get_tag_link(tag)}",
+      "/tag/#{get_tag_link(tag)}",
       :binary => false
     )
     @items << item
@@ -65,7 +65,7 @@ preprocess do
         :title => "Posts in #{category}",
         :category_meta => "#{category}"
       },
-      "/Category/#{category}",
+      "/category/#{category.downcase}",
       :binary => false
     )
     @items << item
@@ -79,7 +79,7 @@ preprocess do
             :category_meta => "#{category}",
             :tag_meta => "#{tag}"
           },
-          "/Category/#{category}/Tag/#{get_tag_link(tag)}",
+          "/category/#{category.downcase}/tag/#{get_tag_link(tag)}",
           :binary => false
         )
         @items << item

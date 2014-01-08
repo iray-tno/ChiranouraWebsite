@@ -41,20 +41,20 @@ module Nanoc::Helpers
       @items.select { |i| ((i[:category] == category) && ((i[:tags] || []).include?(tag))) }
     end
 
-    def link_for_tag(tag, base_url="/", tag_url="Tag/")
+    def link_for_tag(tag, base_url="/", tag_url="tag/")
       %[<a href="#{h base_url}#{h tag_url}#{h get_tag_link(tag)}" rel="tag">#{h get_tag_name(tag)}</a>]
     end
 
-    def link_for_tag_with_category(tag, category, base_url="/", tag_url="Tag/", category_url="Category/")
+    def link_for_tag_with_category(tag, category, base_url="/", tag_url="tag/", category_url="category/")
       if category!=nil
-        %[<a href="#{h base_url}#{h category_url}#{h category}/#{h tag_url}#{h get_tag_link(tag)}" rel="tag">#{h get_tag_name(tag)}</a>]
+        %[<a href="#{h base_url}#{h category_url}#{h category.downcase}/#{h tag_url}#{h get_tag_link(tag)}" rel="tag">#{h get_tag_name(tag)}</a>]
       else
         link_for_tag(tag)
       end
     end
 
-    def link_for_category(category, base_url="/", category_url="Category/")
-      %[<a href="#{h base_url}#{h category_url}#{h category}" rel="category">#{h category}</a>]
+    def link_for_category(category, base_url="/", category_url="category/")
+      %[<a href="#{h base_url}#{h category_url}#{h category.downcase}" rel="category">#{h category}</a>]
     end
 
     def get_tag_name(tag)
@@ -115,6 +115,12 @@ module Nanoc::Helpers
         items.delete(except)
         return items
       end
+    end
+
+    def get_cate_id(category)
+      id_hash = {"General" => "2296926", "SocialActivities" => "2807708", "Science" => "2807705", "Game" => "2807709", "Language" => "2807706", "Art" => "2807707"}
+      id_hash.default = "2296926"
+      id_hash[category]
     end
   end
 end
