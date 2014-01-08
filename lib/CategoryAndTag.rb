@@ -6,7 +6,6 @@ module Nanoc::Helpers
     include Nanoc::Helpers::HTMLEscape
 
     
-    #itemのカテゴリーを表示する
     def category_for(item, params={})
       base_url  = params[:base_url]  || '/'
       none_text = params[:none_category] || 'Others'
@@ -42,15 +41,19 @@ module Nanoc::Helpers
       @items.select { |i| ((i[:category] == category) && ((i[:tags] || []).include?(tag))) }
     end
 
-    def link_for_tag(tag, base_url="/", tag_url="tags/")
+    def link_for_tag(tag, base_url="/", tag_url="Tag/")
       %[<a href="#{h base_url}#{h tag_url}#{h get_tag_link(tag)}" rel="tag">#{h get_tag_name(tag)}</a>]
     end
 
-    def link_for_tag_with_category(tag, category, base_url="/", tag_url="tags/", category_url="categories/")
-      %[<a href="#{h base_url}#{h category_url}#{h category}/#{h tag_url}#{h get_tag_link(tag)}" rel="tag">#{h get_tag_name(tag)}</a>]
+    def link_for_tag_with_category(tag, category, base_url="/", tag_url="Tag/", category_url="Category/")
+      if category!=nil
+        %[<a href="#{h base_url}#{h category_url}#{h category}/#{h tag_url}#{h get_tag_link(tag)}" rel="tag">#{h get_tag_name(tag)}</a>]
+      else
+        link_for_tag(tag)
+      end
     end
 
-    def link_for_category(category, base_url="/", category_url="categories/")
+    def link_for_category(category, base_url="/", category_url="Category/")
       %[<a href="#{h base_url}#{h category_url}#{h category}" rel="category">#{h category}</a>]
     end
 

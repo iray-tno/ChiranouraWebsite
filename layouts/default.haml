@@ -11,14 +11,30 @@
   %body
     #container
       #header
-        %h2 Title
+        %h1 ちらのうら
 
       #main
         - if @item[:kind] == 'article'
           %div.article
             %h2(class="#{@item[:category]}") #{link_to(@item[:title], @item.path)}
-            %h3(class="#{@item[:category]}") Created at: #{attribute_to_time(@item[:created_at]).to_iso8601_date}
+            %h3(class="#{@item[:category]}") Created in: #{attribute_to_time(@item[:created_at]).to_iso8601_date} Category: #{category_for(@item)} Tags: #{tags_for(@item)} Author: #{@item[:author]}
             = yield
+
+            #disqus_thread
+            :javascript
+              var disqus_shortname = 'chiranoura';
+              (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+              })();
+            %noscript
+              Please enable JavaScript to view the
+              %a{:href=>"http://disqus.com/?ref_noscript"} comments
+              powered by Disqus.
+            %a.dsq-brlink{:href=>"http://disqus.com"}
+              comments powered by 
+              %span.logo-disqus Disqus
         - else
           = yield
 

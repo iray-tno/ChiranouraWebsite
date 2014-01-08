@@ -2,13 +2,4 @@
 title: Home
 author: 
 ---
-- sorted_articles[0, 6].each do |article|
-  %div.article
-    %h2(class="#{article[:category]}") #{link_to(article[:title], article.path)}
-    %h3(class="#{article[:category]}") Created at: #{attribute_to_time(article[:created_at]).to_iso8601_date} Category: #{category_for(article)} Tags: #{tags_for(article)}
-    - if article_desc_match_data = article.compiled_content.match(/^.*?(?=<!-- headline -->)/m)
-      = article_desc_match_data.to_s
-      %p.readmore
-        = link_to("More &raquo;", article.path)
-    - else
-      = article.compiled_content
+= render('_meta_page')

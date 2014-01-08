@@ -20,7 +20,7 @@ sass_options = Compass.sass_engine_options
 #preprocess --------------------------------------------------------------------
 preprocess do
   puts "preprocess..."
-  #tweetまとめ生成
+  
   puts ">tweetまとめページの自動生成"
   source = File.read "tweets.xml" 
   listener = TweetListener.new
@@ -43,10 +43,12 @@ preprocess do
   all_tags = items.map { |p| p.attributes[:tags] }.flatten.compact.uniq
   puts ">/tag/ページの自動生成"
   all_tags.each { |tag|
-    item = Nanoc::Item.new("= render('_tag_page', :tag_meta => '#{tag}')",{
-        :title => "Posts in #{get_tag_name(tag)}"
+    item = Nanoc::Item.new("= render('_meta_page', :tag_meta => '#{tag}')",
+      {
+        :title => "Posts in #{get_tag_name(tag)}",
+        :tag_meta => "#{tag}"
       },
-      "/tags/#{get_tag_link(tag)}",
+      "/Tag/#{get_tag_link(tag)}",
       :binary => false
     )
     @items << item
@@ -58,12 +60,12 @@ preprocess do
   puts ">/category/**/tag/ページの自動生成"
   all_categories.each { |category|
     puts "  *#{category}"
-    item = Nanoc::Item.new("= render('_category_page', {:category_meta => '#{category}'})",
+    item = Nanoc::Item.new("= render('_meta_page', {:category_meta => '#{category}'})",
       {
         :title => "Posts in #{category}",
         :category_meta => "#{category}"
       },
-      "/categories/#{category}",
+      "/Category/#{category}",
       :binary => false
     )
     @items << item
@@ -71,13 +73,15 @@ preprocess do
 
     tags = items_with_category(category).map { |p| p.attributes[:tags] }.flatten.compact.uniq
       tags.each { |tag|
-        item = Nanoc::Item.new("= render('_tag_page_with_category',{:tag_meta => '#{tag}', :category_meta => '#{category}'})",
+        item = Nanoc::Item.new("= render('_meta_page',{:tag_meta => '#{tag}', :category_meta => '#{category}'})",
           {
             :title => "Posts in #{get_tag_name(tag)} of #{category}",
             :category_meta => "#{category}",
             :tag_meta => "#{tag}"
           },
-           "/categories/#{category}/tags/#{get_tag_link(tag)}", :binary => false)
+          "/Category/#{category}/Tag/#{get_tag_link(tag)}",
+          :binary => false
+        )
         @items << item
         puts "    -tag page #{tag}(#{items_with_tag(tag).size()}) :#{item.attributes}"
       }

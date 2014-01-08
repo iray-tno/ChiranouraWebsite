@@ -5,13 +5,13 @@ require 'rexml/parsers/streamparser'
 require 'rexml/parsers/baseparser' 
 require 'rexml/streamlistener' 
 
-#tweet‚ªV’…‡ƒ\[ƒgÏ‘O’ñ
+#tweetãŒæ–°ç€é †ã‚½ãƒ¼ãƒˆæ¸ˆå‰æ
 class TweetListener
   include REXML::StreamListener
 
   @@items = Array.new
 
-  @flag_tweets = false #ÅŒã‚Ìtweet‹L–‚ğ¶¬‚·‚é‚½‚ß‚É•K—v
+  @flag_tweets = false #æœ€å¾Œã®tweetè¨˜äº‹ã‚’ç”Ÿæˆã™ã‚‹ãŸã‚ã«å¿…è¦
   @flag_tweet = false
   @flag_id = false
   @flag_time = false
@@ -23,7 +23,7 @@ class TweetListener
   @buf_tweet_time = nil
   @buf_tweet_text = nil
 
-  #ƒ^ƒOŠJn‚Åflag‚ğtrue‚É‚·‚é
+  #ã‚¿ã‚°é–‹å§‹ã§flagã‚’trueã«ã™ã‚‹
   def tag_start(name, attrs)
     case name
       when 'id'
@@ -40,18 +40,18 @@ class TweetListener
     end
   end
 
-  #true‚Ìflag‚ğ‚à‚Âƒ^ƒO‚Åtext‚ğæ“¾
-  #flag_time‚ªtrue‚Ì‚Æ‚«@“ú•t‚ª•Ï‚í‚Á‚½‚çcreate_tweet_page()
+  #trueã®flagã‚’ã‚‚ã¤ã‚¿ã‚°ã§textã‚’å–å¾—
+  #flag_timeãŒtrueã®ã¨ãã€€æ—¥ä»˜ãŒå¤‰ã‚ã£ãŸã‚‰create_tweet_page()
   def text(text)
     if @flag_id == true
       @buf_tweet_id = text
     elsif @flag_time == true
-      text =~ /(\d\d\d\d\d\d) (\d\d\d\d\d\d)/#todo ³‹K•\Œ»
+      text =~ /(\d\d\d\d\d\d) (\d\d\d\d\d\d)/#todo æ­£è¦è¡¨ç¾
       if @buf_date == nil
-        #Å‰‚Ìtweet‚ğƒ[ƒh‚µ‚½
+        #æœ€åˆã®tweetã‚’ãƒ­ãƒ¼ãƒ‰ã—ãŸæ™‚
         @buf_date = $1
       elsif @buf_date != $1
-        #“ú•t‚ª•Ï‚í‚Á‚½
+        #æ—¥ä»˜ãŒå¤‰ã‚ã£ãŸæ™‚
         create_tweet_page(@buf_date)
         @@buf_tweets.clear
         @buf_date = $1
@@ -64,7 +64,7 @@ class TweetListener
     end
   end
 
-  #ƒ^ƒOI—¹‚Åflag‚ğfalse‚É‚·‚éBtweet‚Ìƒ^ƒOI—¹‚Åtweet‚ğƒoƒbƒtƒ@[‚É’Ç‰Á‚·‚éB
+  #ã‚¿ã‚°çµ‚äº†ã§flagã‚’falseã«ã™ã‚‹ã€‚tweetã®ã‚¿ã‚°çµ‚äº†ã§tweetã‚’ãƒãƒƒãƒ•ã‚¡ãƒ¼ã«è¿½åŠ ã™ã‚‹ã€‚
   def tag_end(name)
     case name
       when 'id'
@@ -85,7 +85,7 @@ class TweetListener
     end
   end 
 
-  #tweet‚Ü‚Æ‚ßƒy[ƒWì¬
+  #tweetã¾ã¨ã‚ãƒšãƒ¼ã‚¸ä½œæˆ
   def create_tweet_page(date)
     if(@@buf_tweets.size != 0)
       date_match = /(\d\d)(\d\d)(\d\d)/.match(date)
@@ -99,8 +99,8 @@ class TweetListener
       }
       item = Nanoc::Item.new(page_content,{
           :title => page_title,
-          :category => "Tweets",
-          :tags => ["tweets_20#{date_match[1]}"]
+          :category => "SocialActivities",
+          :tags => ["tweets_of_20#{date_match[1]}", "20#{date_match[1]}_#{date_match[2]}"]
         },
         page_identifier,
         :binary => false
@@ -109,7 +109,7 @@ class TweetListener
     end
   end
 
-  #replyœŠO
+  #replyÂé™¤å¤–
   def check_reply(text)
     if text[0] == '@'
       return true
@@ -118,7 +118,7 @@ class TweetListener
     end
   end
 
-  # encoding, standalone‚ÍAw’è‚ª‚È‚¯‚ê‚Înil 
+  # encoding, standaloneã¯ã€æŒ‡å®šãŒãªã‘ã‚Œã°nil 
   def xmldecl(version, encoding, standalone) 
     p "#{version}, #{encoding}, #{standalone}"
   end

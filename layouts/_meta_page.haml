@@ -1,0 +1,22 @@
+
+- if @tag_meta == nil
+  - if @category_meta == nil
+    - articles = sorted_articles[0, 6]
+  - else
+    - articles = items_with_category(@category_meta).sort_by{|i| i[:created_at]}.reverse[0, 6]
+- elsif @category_meta == nil
+  - articles = items_with_tag(@tag_meta).sort_by{|i| i[:created_at]}.reverse
+- else
+  - articles = items_with_category_and_tag(@category_meta, @tag_meta).sort_by{|i| i[:created_at]}.reverse
+
+
+- articles.each do |article|
+  %div.article
+    %h2(class="#{article[:category]}") #{link_to(article[:title], article.path)}
+    %h3(class="#{article[:category]}") Created in: #{attribute_to_time(article[:created_at]).to_iso8601_date} Category: #{category_for(article)} Tags: #{tags_for(article)} Author: #{article[:author]}
+    - if article_desc_match_data = article.compiled_content.match(/^.*?(?=<!-- headline -->)/m)
+      = article_desc_match_data.to_s
+      %p.readmore
+        = link_to("More &raquo;", article.path)
+    - else
+      = article.compiled_content

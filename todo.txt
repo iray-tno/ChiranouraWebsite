@@ -1,11 +1,12 @@
 
-カテゴリーのディレクトリをどうするか考える。
-/categories/$NAME/か
-/$NAME/か
+ﾆ谷ﾆ弾ﾆ担ﾆ椎ﾂー窶堙姑断ﾆ達ﾆ椎槌誰ﾆ暖ﾆ椎窶堙ｰ窶堙�窶堋､窶堋ｷ窶堙ｩ窶堋ｩﾂ考窶堋ｦ窶堙ｩﾂ。
+/categories/$NAME/窶堋ｩ
+/$NAME/窶堋ｩ
 
-sass 配列　each　使い方
+sass 窶掏窶氾ｱﾂ　eachﾂ　ﾅｽg窶堋｢窶｢ﾃｻ
 http://hail2u.net/blog/coding/sass-lists.html
 http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#each-directive
 
 ia
 
+tweet繧痴qlite縺ｧ繧ｹ繝医Ξ繝ｼ繧ｸ縺吶ｋ

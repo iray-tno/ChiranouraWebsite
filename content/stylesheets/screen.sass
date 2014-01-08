@@ -1,5 +1,6 @@
 @import compass/reset
-@import compass/typography/links/link-colors
+@import "compass/typography/links/link-colors"
+@import "compass/typography/links/hover-link"
 @import compass/css3/box-sizing
 @import susy
 
@@ -32,10 +33,10 @@ $border-color: #000000
 $categories: Development Tweets
 
 $Development-side-bgcolor: #ff4500
-$Development-title-color: #ff4500
+$Development-title-color: #ffffff
 
 $Tweets-side-bgcolor: #00bfff
-$Tweets-title-color: #00bfff
+$Tweets-title-color: #ffffff
 
 *
   margin: 0
@@ -47,10 +48,8 @@ body
   background: #fff
 
 a
+  +link-colors(#222, #111, #111, #222, #111)
   text-decoration: none
-
-a
-  +link-colors(#222, #111, #222, #111)
 
 #container
   +container
@@ -62,29 +61,62 @@ a
   @include span-columns(12,12)
   margin: 1px 0px 1px 0px
   border: 1px solid $border-color
+  h1
+    colot: #000
+    font-size: 2.0em
 
 #main
   @include span-columns(8 alpha, 12)
 
 #side
   @include span-columns(4 omega, 12)
+
+#top_category
+  @include span-columns(4, 4)
   border: 1px solid $border-color
   margin: 1px 0px 1px 0px
-  
+  background-color: #ffffff
+
   h2
     color: #000000
     font-size: 1.5em
     background-color: #eeeeee
-
+    a
+      display: block
+      +link-colors(#333, #fff, #fff, #333, #fff)
     &.Tweets
       background-color: $Tweets-side-bgcolor
 
     &.Development
       background-color: $Development-side-bgcolor
+  
+  h3
+    font-size: 1.2em
 
-#top_category
+#categories
   @include span-columns(4, 4)
+  border: 1px solid $border-color
+  margin: 1px 0px 1px 0px
   background-color: #ffffff
+  h1
+    colot: #000
+    font-size: 1.2em
+  h2
+    color: #000000
+    font-size: 1.5em
+    background-color: #eeeeee
+    a
+      display: block
+      +link-colors(#333, #fff, #fff, #333, #fff)
+    &.Tweets
+      background-color: $Tweets-side-bgcolor
+
+    &.Development
+      background-color: $Development-side-bgcolor
+  h3
+    font-size: 1.2em
+
+
 
 #tags
   @include span-columns(2 alpha, 4)
@@ -105,10 +137,11 @@ div.article
   
   h2
     font-size: 1.5em
-    background-color: #eeeeee
+    background-color: #bbb
     &.Tweets
       a
-        +link-colors($Tweets-side-bgcolor, #111, #111, $Tweets-title-color)
+        display: block
+        +link-colors(#333, $Tweets-side-bgcolor, $Tweets-side-bgcolor, #333, $Tweets-side-bgcolor)
 
   h3
     font-size: 0.7em

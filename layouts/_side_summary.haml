@@ -1,39 +1,32 @@
 - if @category == nil
-  - tags = count_by_tag(@items)
-  %h2 #{link_to('All', '/')}
-  %div#top_category
-    %div#tags
-      - if tags
-        %h3 Tags
-        %ul.tags
-          - tags.sort_by{|e| e[0]}.each do |k, v|
-            %li #{link_for_tag(k)} x #{v}
-      - else
-        %p (none)
-    %div#recent_posts
-      %h3 Recent Posts
-      %ul
-        - sorted_articles[0, 5].each do |article|
-          %li #{link_to(article[:title], article.path)}
-  - get_categories_except(nil).each do |category|
-    %h2(class="#{category}") #{link_for_category(category)}
+  - cate_name = nil
+  - link_for_cate = link_to('All', '/')
+  - tags = count_by_tag(@items).sort_by{|e| e[0]}
+  - recent_articles = sorted_articles[0,5]
 - else
-  - tags = count_by_tag_with_category(@category)
-  %h2(class="#{@category}") #{link_for_category(@category)}
-  %div#top_category
-    %div#tags
-      - if tags
-        %h3 Tags
-        %ul
-          - tags.sort_by{|e| e[0]}.each do |k, v|
-            %li #{link_for_tag_with_category(k ,@category)} x #{v}
-      - else
-        %p (none)
-    %div#recent_posts
-      %h3 Recent Posts
-      %ul
-        - items_with_category(@category).sort_by{|i| i[:created_at]}.reverse[0, 5].each do |article|
-          %li #{link_to(article[:title], article.path)}
+  - cate_name = @category
+  - link_for_cate = link_for_category(@category)
+  - tags = count_by_tag_with_category(@category).sort_by{|e| e[0]}
+  - recent_articles = items_with_category(@category).sort_by{|i| i[:created_at]}.reverse[0, 5]
+
+%div#top_category
+  %h2(class="#{cate_name}") #{link_for_cate}
+  %div#tags
+    - if tags
+      %h3 Tags
+      %ul.tags
+        - tags.sort_by{|e| e[0]}.each do |tag, num|
+          %li #{link_for_tag_with_category(tag, cate_name)} x #{num}
+    - else
+      %p (none)
+  %div#recent_posts
+    %h3 Recent Posts
+    %ul.recent_posts
+      - recent_articles.each do |article|
+        %li #{link_to(article[:title], article.path)}
+
+%div#categories
+  %h1 Categories
   %h2 #{link_to('All', '/')}
-  - get_categories_except(@category).each do |category|
+  - get_categories_except(nil).each do |category|
     %h2(class="#{category}") #{link_for_category(category)}
