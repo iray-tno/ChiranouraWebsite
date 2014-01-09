@@ -9,6 +9,11 @@
   - tags = count_by_tag_with_category(@category).sort_by{|e| e[0]}
   - recent_articles = items_with_category(@category).sort_by{|i| i[:created_at]}.reverse[0, 5]
 
+%div#ad
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <!-- 最初 -->
+  <ins class="adsbygoogle" style="display:inline-block;width:234px;height:60px" data-ad-client="ca-pub-8247743603913410" data-ad-slot="6061651880"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 %div#top_category
   %h2(class="#{cate_name}") #{link_for_cate}
   %div#tags

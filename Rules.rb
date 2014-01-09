@@ -48,7 +48,7 @@ preprocess do
         :title => "Posts in #{get_tag_name(tag)}",
         :tag_meta => "#{tag}"
       },
-      "/tag/#{get_tag_link(tag)}",
+      "/tag/#{get_tag_link(tag.downcase)}",
       :binary => false
     )
     @items << item
@@ -60,7 +60,7 @@ preprocess do
   puts ">/category/**/tag/ページの自動生成"
   all_categories.each { |category|
     puts "  *#{category}"
-    item = Nanoc::Item.new("= render('_meta_page', {:category_meta => '#{category}'})",
+    item = Nanoc::Item.new("= render('_meta_page', :category_meta => '#{category}')",
       {
         :title => "Posts in #{category}",
         :category_meta => "#{category}"
@@ -73,13 +73,13 @@ preprocess do
 
     tags = items_with_category(category).map { |p| p.attributes[:tags] }.flatten.compact.uniq
       tags.each { |tag|
-        item = Nanoc::Item.new("= render('_meta_page',{:tag_meta => '#{tag}', :category_meta => '#{category}'})",
+        item = Nanoc::Item.new("= render('_meta_page', :tag_meta => '#{tag}', :category_meta => '#{category}')",
           {
             :title => "Posts in #{get_tag_name(tag)} of #{category}",
             :category_meta => "#{category}",
             :tag_meta => "#{tag}"
           },
-          "/category/#{category.downcase}/tag/#{get_tag_link(tag)}",
+          "/category/#{category.downcase}/tag/#{get_tag_link(tag.downcase)}",
           :binary => false
         )
         @items << item

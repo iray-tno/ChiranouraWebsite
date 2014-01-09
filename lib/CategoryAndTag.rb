@@ -5,30 +5,6 @@ module Nanoc::Helpers
     require 'nanoc/helpers/html_escape'
     include Nanoc::Helpers::HTMLEscape
 
-    
-    def category_for(item, params={})
-      base_url  = params[:base_url]  || '/'
-      none_text = params[:none_category] || 'Others'
-
-      if item[:category].nil? or item[:category].empty?
-        link_for_category(none_text, base_url)
-      else
-        link_for_category(item[:category], base_url)
-      end
-    end
-
-    def tags_for(item, params={})
-      base_url  = params[:base_url]  || '/'
-      none_text = params[:none_text] || '(none)'
-      separator = params[:separator] || ', '
-
-      if item[:tags].nil? or item[:tags].empty?
-        none_text
-      else
-        item[:tags].map { |tag| link_for_tag(tag, base_url) }.join(separator)
-      end
-    end
-
     def items_with_tag(tag)
       @items.select { |i| (i[:tags] || []).include?(tag) }
     end
@@ -41,20 +17,32 @@ module Nanoc::Helpers
       @items.select { |i| ((i[:category] == category) && ((i[:tags] || []).include?(tag))) }
     end
 
-    def link_for_tag(tag, base_url="/", tag_url="tag/")
-      %[<a href="#{h base_url}#{h tag_url}#{h get_tag_link(tag)}" rel="tag">#{h get_tag_name(tag)}</a>]
-    end
+    def link_for_tag(tag, params={})
+      category     = params[:category]  || ''
+      base_url     = params[:base_url]  || '/'
+      tag_url      = params[:tag_url]   || 'tag/'
+      category_url = params[:category_url] || 'category/'
+      link_text      = params[:link_text]    || ''
+      if link_text.empty?
+        link_text = get_tag_name(tag)
+      end
 
-    def link_for_tag_with_category(tag, category, base_url="/", tag_url="tag/", category_url="category/")
-      if category!=nil
-        %[<a href="#{h base_url}#{h category_url}#{h category.downcase}/#{h tag_url}#{h get_tag_link(tag)}" rel="tag">#{h get_tag_name(tag)}</a>]
+      if category.empty?
+        %[<a href="#{h base_url+tag_url+get_tag_link(tag)}" rel="tag">#{h link_text}</a>]
       else
-        link_for_tag(tag)
+        %[<a href="#{h base_url}#{h category_url}#{h category.downcase}/#{h tag_url}#{h get_tag_link(tag)}" rel="tag">#{h link_text}</a>]
       end
     end
 
-    def link_for_category(category, base_url="/", category_url="category/")
-      %[<a href="#{h base_url}#{h category_url}#{h category.downcase}" rel="category">#{h category}</a>]
+    def link_for_tag_with_category(tag,category, params={})
+      params[:category] = category
+      link_for_tag(tag, params )
+    end
+
+    def link_for_category(category, params={})
+      base_url     = params[:base_url]  || '/'
+      category_url = params[:category_url] || 'category/'
+      %[<a href="#{h base_url}#{h category_url}#{h category.downcase}" rel="tag">#{h category}</a>]
     end
 
     def get_tag_name(tag)
@@ -70,11 +58,11 @@ module Nanoc::Helpers
       str = nil
       if /.+\(.+\)/ =~ tag
         tag =~ /(.+)\((.+)\)/
-        str = $2
+        str = $2.downcase
       else
-        str = tag
+        str = tag.downcase
       end
-      if !(/^[a-zA-Z0-9_-]+$/ =~ str)
+      if !(/^[a-z0-9_-]+$/ =~ str)
         raise "get_tag_link format error #{str}"
       end
       return str

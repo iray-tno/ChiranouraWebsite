@@ -7,6 +7,15 @@
     %title
       = "ちらのうら - #{@item[:title]}"
     %link{:rel =>"stylesheet", :type =>"text/css", :href =>"/stylesheets/screen.css", :media =>"screen"}
+    :javascript
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-44690113-1', 'nobody.jp');
+      ga('send', 'pageview');
+      
   %body
     #container
       #header
@@ -14,29 +23,8 @@
 
       #main
         - if @item[:kind] == 'article'
-          %div.article
-            %h2(class="#{@item[:category]}") #{link_to(@item[:title], @item.path)}
-            %h3(class="#{@item[:category]}") Created in: #{attribute_to_time(@item[:created_at]).to_iso8601_date} Category: #{category_for(@item)} Tags: #{tags_for(@item)} Author: #{@item[:author]}
+          - render('_article', :item => @item) do
             = yield
-
-            #disqus_thread
-            :javascript
-              var disqus_shortname = 'chiranoura';
-              var disqus_title = '#{@item[:title]}';
-              var disqus_identifier = '#{@item.identifier}';
-              var disqus_category_id = '#{get_cate_id(@item[:category])}';
-              (function() {
-                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-              })();
-            %noscript
-              Please enable JavaScript to view the
-              %a{:href=>"http://disqus.com/?ref_noscript"} comments
-              powered by Disqus.
-            %a.dsq-brlink{:href=>"http://disqus.com"}
-              comments powered by 
-              %span.logo-disqus Disqus
         - else
           = yield
 
