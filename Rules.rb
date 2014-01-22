@@ -99,7 +99,9 @@ compile '*' do
   else
     case item[:extension]
       when 'md'
-        filter :redcarpet, :options => {:fenced_code_blocks => true}
+        #filter :jp_markdown_filter
+        filter :redcarpet, :options => {:fenced_code_blocks => true},
+                           :renderer => MyRedcarpetRenderer
         layout 'default'
       when 'haml'
         filter :haml
