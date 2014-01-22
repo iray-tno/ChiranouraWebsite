@@ -21,7 +21,7 @@ class MyRedcarpetRenderer < Redcarpet::Render::XHTML
 
   def block_code(code, language)
     if language then
-      CodeRay.scan(code, language).div
+      CodeRay.scan(code, language).div(:line_numbers => :table)
     else
       "\n<pre><code>#{code}</code></pre>\n"
     end
