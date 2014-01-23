@@ -100,8 +100,8 @@ compile '*' do
     case item[:extension]
       when 'md'
         #filter :jp_markdown_filter
-        filter :redcarpet, :options => {:fenced_code_blocks => true},
-                           :renderer => MyRedcarpetRenderer
+        filter :redcarpet, :options => {:fenced_code_blocks => true, :autolink => true},
+                           :renderer => ArticleRenderer
         layout 'default'
       when 'haml'
         filter :haml

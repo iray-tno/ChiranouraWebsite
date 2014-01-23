@@ -11,10 +11,9 @@ Encoding.default_external = 'UTF-8'
 
 require "redcarpet"
 require "cgi"
-require "redcarpet"
 require "coderay"
 
-class MyRedcarpetRenderer < Redcarpet::Render::XHTML
+class ArticleRenderer < Redcarpet::Render::XHTML
   def link(link, title, alt_text)
     "<a href=\"#{CGI::escapeHTML(link)}\" target=\"_blank\">#{alt_text}</a>"
   end
