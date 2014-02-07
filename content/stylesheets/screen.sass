@@ -1,8 +1,9 @@
-@import compass/reset
+@import "compass/reset"
 @import "compass/typography/links/link-colors"
 @import "compass/typography/links/hover-link"
-@import compass/css3/box-sizing
-@import susy
+@import "compass/css3/box-sizing"
+@import "compass/utilities/tables/borders"
+@import "susy"
 
 /*
   Welcome to Compass.
@@ -151,3 +152,18 @@ div.article
   h3
     font-size: 0.7em
     background-color: #eeeeee
+
+.CodeRay
+  width: 100%
+  font-family: Consolas, 'Courier New', Courier, Monaco, monospace
+  font-size: 0.83em
+  @include outer-table-borders(1px, #fff)
+  @include inner-table-borders(1px, #fff)
+
+  td.line-numbers
+    width: 1.5em
+    text-align: right
+    background-color: #c3e2e2
+
+  td.code
+    background-color: #f1f1f1

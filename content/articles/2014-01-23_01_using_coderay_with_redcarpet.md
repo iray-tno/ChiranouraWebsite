@@ -7,11 +7,15 @@ tags: ["Computer","Ruby","nanoc","Redcarpet","CodeRay"]
 
 ---
 
-このブログは記事をMarkdownで書いてnanocでRedcarpetを通して静的なHTMLを生成しています。
+このブログでは記事をMarkdownで書いて、Redcarpetとnanocで静的なHTMLを生成しています。
 
-Redcarpetでは、レンダラを継承して独自に定義することで拡張が可能です。
+Redcarpetは、レンダラを独自に定義することで拡張が可能です。
 
-そこで、CodeRayを追加してMarkdown内のコードブロックにシンタックスハイライトを適用してみます。
+そこで、CodeRay使ってMarkdown内のコードブロックにシンタックスハイライトを適用してみます。
+
+* nanoc(http://nanoc.ws/)
+* Redcarpet(https://github.com/vmg/redcarpet)
+* CodeRay(http://coderay.rubychan.de/)
 
 <!-- headline -->
 
@@ -21,38 +25,12 @@ CodeRayはgemでインストールします。
 $ gem install coderay
 ```
 
-nanocにRedcarpetのレンダラを追加するには、lib/default.rbにレンダラを定義して、Rulesファイル内のフィルタに以下のようにオプションを追加します。
+nanoc上でRedcarpetのレンダラを追加するには、libディレクトリのrubyファイルで、Redcarpet::Render::XHTMLを継承して定義し、Rulesファイル内のfilterにrendererオプションで指定します。
 
-```ruby
-#Rules
-#compile -----------------------------------------------------------------------
-compile '/stylesheet/' do
-  # don’t filter or layout
-end
+今回は、lib/default.rbにレンダラを定義しました。:line_numbersオプションを定義することで行数が表示されます。
+他にも様々なオプションがあります。
 
-compile '*' do
-  if item.binary?
-    # don't filter binary items
-  else
-    case item[:extension]
-      when 'md'
-        filter :redcarpet, :options => {:fenced_code_blocks => true, :autolink -> true},
-                           :renderer => ArticleRenderer
-        layout 'default'
-      when 'haml'
-        filter :haml
-        layout 'default'
-      when 'sass'
-        filter :sass, sass_options.merge(:syntax => item[:extension].to_sym)
-      else
-        filter :haml
-        layout 'default'
-    end
-  end
-end
-```
-
-レンダラの定義は以下のようになりました。:line_numbers => :tableとすると、行数がテーブルで表示されるようになります。
+http://coderay.rubychan.de/doc/CodeRay/Encoders/HTML.html
 
 
 ```ruby
@@ -71,21 +49,57 @@ class ArticlesRenderer < Redcarpet::Render::XHTML
 end
 ```
 
-以下は出力の例です。後はCSSで整形してきれいに表示されるようにしましょう。
+Rulesファイルは以下のようになりました。
+
+```ruby
+#Rules
+#compile ----------------------------------------------------------------------
+compile '/stylesheet/' do
+  # don’t filter or layout
+end
+
+compile '*' do
+  if item.binary?
+    # don't filter binary items
+  else
+    case item[:extension]
+      when 'md'
+        filter :redcarpet, :options  => { :fenced_code_blocks => true,
+                                          :autolink -> true },
+                           :renderer => ArticleRenderer
+        layout 'default'
+      when 'haml'
+        filter :haml
+        layout 'default'
+      when 'sass'
+        filter :sass, sass_options.merge(:syntax => item[:extension].to_sym)
+      else
+        filter :haml
+        layout 'default'
+    end
+  end
+end
+```
+
+以下のようにmarkdown内でコードブロックを記述すると
 
 ~~~plain
-#markdown
-```ruby
-puts 'hello, world'
-```
+　<!-- markdown -->
+　```ruby
+　puts 'hello, world'
+　```
 ~~~
 
-```html
+以下のようにhtmlが出力されます。
+
+```html  
 <table class="CodeRay"><tr>
   <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-</pre></td>
-  <td class="code"><pre>puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">hello, world</span><span style="color:#710">'</span></span>
-</pre></td>
+  </pre></td>
+  <td class="code"><pre>puts <span style="background-color:hsla(0,100%,50%,0.05)">
+    <span style="color:#710">'</span><span style="color:#D20">hello, world</span>
+    <span style="color:#710">'</span></span>
+  </pre></td>
 </tr></table>
 ```
 

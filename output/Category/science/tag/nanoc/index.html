@@ -7,6 +7,10 @@
 ちらのうら - Posts in nanoc of Science
 </title>
 <link href='/stylesheets/screen.css' media='screen' rel='stylesheet' type='text/css'>
+<script type='text/x-mathjax-config'>
+MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script src='https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML' type='text/javascript'></script>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -24,13 +28,40 @@
 </div>
 <div id='main'>
 <div class='article'>
+<h2 class='Science'><a href="/articles/2014-02-07_01_using_mathjax_with_redcarpet/">MathJaxで数式描画</a></h2>
+<h3 class='Science'>Created in: 2014-02-07  Author: iray_tno Category: <a href="/category/science" rel="tag">Science</a> Tags: <a href="/category/science/tag/computer" rel="tag">Computer</a><a href="/tag/computer" rel="tag">_a</a>, <a href="/category/science/tag/ruby" rel="tag">Ruby</a><a href="/tag/ruby" rel="tag">_a</a>, <a href="/category/science/tag/nanoc" rel="tag">nanoc</a><a href="/tag/nanoc" rel="tag">_a</a>, <a href="/category/science/tag/mathjax" rel="tag">MathJax</a><a href="/tag/mathjax" rel="tag">_a</a>, <a href="/category/science/tag/redcarpet" rel="tag">Redcarpet</a><a href="/tag/redcarpet" rel="tag">_a</a></h3>
+<p>MathJaxを使ってtex形式で書いた数式を表示できるようにしました。</p>
+
+<p>通常はhtmlに数行追加するだけで使えるようになります。</p>
+
+<p>ただ、markdownでも数式を書けるようにするためには、レンダラの定義が必要だったのでメモしておきます。</p>
+
+<ul>
+<li>nanoc(<a href="http://nanoc.ws/" target="_blank">http://nanoc.ws/</a>)</li>
+<li>Redcarpet(<a href="https://github.com/vmg/redcarpet" target="_blank">https://github.com/vmg/redcarpet</a>)</li>
+<li>MathJax(<a href="http://www.mathjax.org/" target="_blank">http://www.mathjax.org/</a>)</li>
+</ul>
+
+
+<p class='readmore'>
+<a href="/articles/2014-02-07_01_using_mathjax_with_redcarpet/">More &raquo;</a>
+</p>
+</div>
+
+<div class='article'>
 <h2 class='Science'><a href="/articles/2014-01-23_01_using_coderay_with_redcarpet/">RedcarpetのレンダラにCodeRayによるシンタックスハイライトを追加</a></h2>
 <h3 class='Science'>Created in: 2014-01-23  Author: iray_tno Category: <a href="/category/science" rel="tag">Science</a> Tags: <a href="/category/science/tag/computer" rel="tag">Computer</a><a href="/tag/computer" rel="tag">_a</a>, <a href="/category/science/tag/ruby" rel="tag">Ruby</a><a href="/tag/ruby" rel="tag">_a</a>, <a href="/category/science/tag/nanoc" rel="tag">nanoc</a><a href="/tag/nanoc" rel="tag">_a</a>, <a href="/category/science/tag/redcarpet" rel="tag">Redcarpet</a><a href="/tag/redcarpet" rel="tag">_a</a>, <a href="/category/science/tag/coderay" rel="tag">CodeRay</a><a href="/tag/coderay" rel="tag">_a</a></h3>
-<p>このブログは記事をMarkdownで書いてnanocでRedcarpetを通して静的なHTMLを生成しています。</p>
+<p>このブログでは記事をMarkdownで書いて、Redcarpetとnanocで静的なHTMLを生成しています。</p>
 
-<p>Redcarpetでは、レンダラを継承して独自に定義することで拡張が可能です。</p>
+<p>Redcarpetは、レンダラを独自に定義することで拡張が可能です。</p>
 
-<p>そこで、CodeRayを追加してMarkdown内のコードブロックにシンタックスハイライトを適用してみます。</p>
+<p>そこで、CodeRay使ってMarkdown内のコードブロックにシンタックスハイライトを適用してみます。</p>
+
+<ul>
+<li>nanoc(<a href="http://nanoc.ws/" target="_blank">http://nanoc.ws/</a>)</li>
+<li>Redcarpet(<a href="https://github.com/vmg/redcarpet" target="_blank">https://github.com/vmg/redcarpet</a>)</li>
+<li>CodeRay(<a href="http://coderay.rubychan.de/" target="_blank">http://coderay.rubychan.de/</a>)</li>
+</ul>
 
 
 <p class='readmore'>
@@ -64,16 +95,18 @@
 <h3>Tags</h3>
 <ul class='tags'>
 <li><a href="/category/science/tag/coderay" rel="tag">CodeRay</a> x 1</li>
-<li><a href="/category/science/tag/computer" rel="tag">Computer</a> x 2</li>
+<li><a href="/category/science/tag/computer" rel="tag">Computer</a> x 3</li>
 <li><a href="/category/science/tag/description" rel="tag">Description</a> x 1</li>
-<li><a href="/category/science/tag/redcarpet" rel="tag">Redcarpet</a> x 1</li>
-<li><a href="/category/science/tag/ruby" rel="tag">Ruby</a> x 2</li>
-<li><a href="/category/science/tag/nanoc" rel="tag">nanoc</a> x 2</li>
+<li><a href="/category/science/tag/mathjax" rel="tag">MathJax</a> x 1</li>
+<li><a href="/category/science/tag/redcarpet" rel="tag">Redcarpet</a> x 2</li>
+<li><a href="/category/science/tag/ruby" rel="tag">Ruby</a> x 3</li>
+<li><a href="/category/science/tag/nanoc" rel="tag">nanoc</a> x 3</li>
 </ul>
 </div>
 <div id='recent_posts'>
 <h3>Recent Posts</h3>
 <ul class='recent_posts'>
+<li><a href="/articles/2014-02-07_01_using_mathjax_with_redcarpet/">MathJaxで数式描画</a></li>
 <li><a href="/articles/2014-01-23_01_using_coderay_with_redcarpet/">RedcarpetのレンダラにCodeRayによるシンタックスハイライトを追加</a></li>
 <li><a href="/articles/2014-01-09_03_desc_of_sci/">Description of Science</a></li>
 <li><a href="/articles/2012-10-22_01_nanoc_ijiri/">nanocいじり 始めました。</a></li>
