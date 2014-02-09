@@ -72,11 +72,20 @@ a
 #side
   @include span-columns(4 omega, 12)
 
-#ad
+#side_upper_ads
   @include span-columns(4, 4)
   border: 1px solid $border-color
   margin: 1px 0px 1px 0px
   background-color: #ffffff
+  text-align: center
+
+#side_lower_ads
+  @include span-columns(4, 4)
+  border: 1px solid $border-color
+  margin: 1px 0px 1px 0px
+  background-color: #ffffff
+  text-align: center
+
 #top_category
   @include span-columns(4, 4)
   border: 1px solid $border-color
@@ -153,6 +162,16 @@ div.article
     font-size: 0.7em
     background-color: #eeeeee
 
+  blockquote
+    border-left: solid 5px #ddd
+    background: #eee
+    padding: 5px
+
+  p
+    line-height: 1.4
+
+
+
 .CodeRay
   width: 100%
   font-family: Consolas, 'Courier New', Courier, Monaco, monospace
@@ -161,7 +180,7 @@ div.article
   @include inner-table-borders(1px, #fff)
 
   td.line-numbers
-    width: 1.5em
+    width: 1.7em
     text-align: right
     background-color: #c3e2e2
 

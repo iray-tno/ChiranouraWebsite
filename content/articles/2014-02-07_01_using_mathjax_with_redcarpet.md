@@ -7,6 +7,8 @@ tags: ["Computer","Ruby","nanoc","MathJax","Redcarpet"]
 
 ---
 
+#### はじめに
+
 MathJaxを使ってtex形式で書いた数式を表示できるようにしました。
 
 通常はhtmlに数行追加するだけで使えるようになります。
@@ -27,9 +29,9 @@ MathJaxを使ってtex形式で書いた数式を表示できるようにしま�
 このブログではテンプレートにhamlを用いているので、default.hamlを以下のようにしました。(レイアウトの問題でurlの途中で改行しています。)
 
 ```haml
- <!-- default.haml -->
 !!! XML
 !!! 5
+<!-- default.haml -->
 %html{:xmlns =>"http://www.w3.org/1999/xhtml"}
   %head
     %script{:type => "text/x-mathjax-config"}
@@ -49,14 +51,6 @@ require "cgi"
 require "coderay"
 
 class ArticleRenderer < Redcarpet::Render::XHTML
-  #def link(link, title, alt_text)
-  #  "<a href=\"#{CGI::escapeHTML(link)}\" target=\"_blank\">#{alt_text}</a>"
-  #end
-
-  def autolink(link, link_type)
-    "<a href=\"#{CGI::escapeHTML(link)}\" target=\"_blank\">#{link}</a>"
-  end
-
   def block_code(code, language)
     if language=="mathjax"
       "<script type=\"math/tex; mode=display\">\n#{code}\n</script>"

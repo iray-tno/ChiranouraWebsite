@@ -4,16 +4,16 @@
 %div.article
   %h2(class="#{@item[:category]}") #{link_to(@item[:title], @item.path)}
   %h3(class="#{@item[:category]}") Created in: #{attribute_to_time(@item[:created_at]).to_iso8601_date}  Author: #{@item[:author]} Category: #{link_for_cate} Tags: #{links_for_tag}
-  
-  - if @meta_page == true
-    - if article_desc_match_data = @item.compiled_content.match(/^.*?(?=<!-- headline -->)/m)
-      = article_desc_match_data.to_s
-      %p.readmore
-        = link_to("More &raquo;", @item.path)
-    - else
-      = @item.compiled_content
-      %p.comment
-        = link_to("Comment &raquo;", @item.path)
+  %div.inner
+    - if @meta_page == true
+      - if article_desc_match_data = @item.compiled_content.match(/^.*?(?=<!-- headline -->)/m)
+        = article_desc_match_data.to_s
+        %p.readmore
+          = link_to("More &raquo;", @item.path)
+      - else
+        = @item.compiled_content
+        %p.comment
+          = link_to("Comment &raquo;", @item.path)
   - else
     = yield
     #disqus_thread
