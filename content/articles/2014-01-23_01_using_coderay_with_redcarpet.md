@@ -7,6 +7,8 @@ tags: ["Computer","Ruby","nanoc","Redcarpet","CodeRay"]
 
 ---
 
+#### はじめに
+
 このブログでは記事をMarkdownで書いて、Redcarpetとnanocで静的なHTMLを生成しています。
 
 Redcarpetは、レンダラを独自に定義することで拡張が可能です。
@@ -18,6 +20,8 @@ Redcarpetは、レンダラを独自に定義することで拡張が可能で�
 * CodeRay(http://coderay.rubychan.de/)
 
 <!-- headline -->
+
+#### インストール
 
 CodeRayはgemでインストールします。
 
@@ -81,6 +85,8 @@ compile '*' do
 end
 ```
 
+#### テスト
+
 以下のようにmarkdown内でコードブロックを記述すると
 
 ~~~plain
@@ -103,7 +109,7 @@ end
 </tr></table>
 ```
 
-参考
+#### 参考
 
 * nanoc導入メモ 4/5 「Markdown独自拡張」編
 

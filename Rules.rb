@@ -93,6 +93,10 @@ compile '/stylesheet/' do
   # don’t filter or layout
 end
 
+compile '/sitemap/' do
+  filter :erb
+end
+
 compile '*' do
   if item.binary?
     # don't filter binary items
@@ -118,6 +122,10 @@ end
 #route -------------------------------------------------------------------------
 route '/stylesheet/' do
   '/style.css'
+end
+
+route '/sitemap/' do
+  '/sitemap.xml'
 end
 
 route '*' do

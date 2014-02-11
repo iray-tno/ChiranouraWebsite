@@ -9,25 +9,26 @@
   Welcome to Compass.
   In this file you should write your main styles. (or centralize your imports)
   Import this file using the following HTML or equivalent:
-  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />*/
+
 
 @include border-box-sizing
 
 $total-columns: 12
 /*
-  a 12-column grid
+  a 12-column grid */
 
 $column-width: 4em
 /*
-  each column is 4em wide
+  each column is 4em wide */
 
 $gutter-width: 1em
 /*
-  1em gutters between columns
+  1em gutters between columns */
 
 $grid-padding: $gutter-width
 /*
-  grid-padding equal to gutters
+  grid-padding equal to gutters */
 
 $border-color: #000000
 
@@ -108,6 +109,14 @@ a
   h3
     font-size: 1.2em
 
+  ul
+    margin-left: 1.1em
+    list-style-type: square
+
+  ol
+    margin-left: 1.1em
+    list-style-type: upper-alpha
+
 #categories
   @include span-columns(4, 4)
   border: 1px solid $border-color
@@ -146,12 +155,13 @@ a
   margin: 1px 0px 1px 0px
   border: 1px solid $border-color
 
-div.article
+.article
   border: 1px solid $border-color
   margin: 1px 0px 1px 0px
-  
+
   h2
     font-size: 1.5em
+    line-height: 1.1
     background-color: #bbb
     &.Tweets
       a
@@ -160,29 +170,88 @@ div.article
 
   h3
     font-size: 0.7em
+    line-height: 1.1
     background-color: #eeeeee
+  
+  .inner
+    margin: 5px 5px 5px 5px
 
-  blockquote
-    border-left: solid 5px #ddd
-    background: #eee
-    padding: 5px
+    blockquote
+      border-left: solid 5px #ddd
+      background: #eee
+      padding: 5px
+      z-index: 1
+      position: relative
 
-  p
-    line-height: 1.4
+      &:before
+        font-size: 6em
+        content: "“"
+        z-index: -1
+        position: absolute
+        left: 0
+        top: 0
+        color: #ddd
 
+      &:after
+        font-size: 6em
+        content: "”"
+        z-index: -1
+        position: absolute
+        right: 0
+        bottom: -0.66em
+        color: #ddd
+    p
+      margin-left: 1em
+      line-height: 1.4
+    
+  
+    ul
+      margin-left: 2.3em
+      line-height: 1.4
+      list-style-type: square
 
+    ol
+      margin-left: 2.3em
+      line-height: 1.4
+      list-style-type: lower-alpha
 
-.CodeRay
-  width: 100%
-  font-family: Consolas, 'Courier New', Courier, Monaco, monospace
-  font-size: 0.83em
-  @include outer-table-borders(1px, #fff)
-  @include inner-table-borders(1px, #fff)
+    h4
+      margin-top: 0.4em
+      margin-bottom: 0.2em
+      font-size: 1.5em
+      border-left: solid 7px #ddd
+      border-bottom: dashed 1px #ddd
+      line-height: 1.1
 
-  td.line-numbers
-    width: 1.7em
-    text-align: right
-    background-color: #c3e2e2
+    h5
+      margin-top: 0.4em
+      margin-bottom: 0.2em
+      margin-left: 0.3em
+      font-size: 1.2em
+      border-bottom: double 3px #ddd
+      line-height: 1.1
+    h6
+      margin-top: 0.4em
+      margin-bottom: 0.2em
+      margin-left: 0.6em
+      font-size: 1em
+      border-bottom: dashed 1px #ddd
+      line-height: 1.1
+      &:before
+        color: #ddd
+        content: "+"
 
-  td.code
-    background-color: #f1f1f1
+    .CodeRay
+      width: 100%
+      font-family: Consolas, 'Courier New', Courier, Monaco, monospace
+      font-size: 0.83em
+      @include outer-table-borders(1px, #fff)
+      @include inner-table-borders(1px, #fff)
+
+      td.line-numbers
+        width: 1.7em
+        text-align: right
+        background-color: #c3e2e2
+
+      td.code
+        background-color: #f1f1f1

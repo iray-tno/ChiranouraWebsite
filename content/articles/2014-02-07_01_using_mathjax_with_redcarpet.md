@@ -21,6 +21,8 @@ MathJaxを使ってtex形式で書いた数式を表示できるようにしま�
 
 <!-- headline -->
 
+#### インストール
+
 まずはテンプレートにMathJaxの設定を追加します。現在IE8対策は必要ないようです。
 
 > In MathJax v2.0, IE8 and IE9 run faster in their IE8 and IE9 standards mode than in IE7 emulation mode.
@@ -100,22 +102,24 @@ end
 
 これで使えるようになりました。
 
-例①
+#### テスト
 
-markdown内での記述
+##### 例①
+
+###### markdown内での記述
 
 ```plain
 ニュートンの運動方程式は、`$F = ma$`です。
 ピタゴラスの定理は、`\(a^2 = b^2 + c^2\)`です。
 ```
 
-出力
+###### 出力
 
 ニュートンの運動方程式は、`$F = ma$`です。ピタゴラスの定理は、`\(a^2 = b^2 + c^2\)`です。
 
-例②
+##### 例②
 
-markdown内での記述
+###### markdown内での記述
 
 ~~~plain
 ミカエリスメンテンの式
@@ -125,7 +129,7 @@ markdown内での記述
 　```
 ~~~
 
-出力
+###### 出力
 
 ミカエリスメンテンの式
 
@@ -133,7 +137,7 @@ markdown内での記述
 v = \rm\frac{V_{max}[S]}{K_m + [S]}
 ```
 
-参考
+#### 参考
 
 * MathJaxの使い方
   http://genkuroki.web.fc2.com/

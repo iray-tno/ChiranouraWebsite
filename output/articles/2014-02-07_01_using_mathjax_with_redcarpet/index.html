@@ -30,7 +30,8 @@ MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
 <div class='article'>
 <h2 class='Science'><a href="/articles/2014-02-07_01_using_mathjax_with_redcarpet/">MathJaxで数式描画</a></h2>
 <h3 class='Science'>Created in: 2014-02-07  Author: iray_tno Category: <a href="/category/science" rel="tag">Science</a> Tags: <a href="/category/science/tag/computer" rel="tag">Computer</a><a href="/tag/computer" rel="tag">_a</a>, <a href="/category/science/tag/ruby" rel="tag">Ruby</a><a href="/tag/ruby" rel="tag">_a</a>, <a href="/category/science/tag/nanoc" rel="tag">nanoc</a><a href="/tag/nanoc" rel="tag">_a</a>, <a href="/category/science/tag/mathjax" rel="tag">MathJax</a><a href="/tag/mathjax" rel="tag">_a</a>, <a href="/category/science/tag/redcarpet" rel="tag">Redcarpet</a><a href="/tag/redcarpet" rel="tag">_a</a></h3>
-<h3>はじめに</h3>
+<div class='inner'>
+<h4>はじめに</h4>
 
 <p>MathJaxを使ってtex形式で書いた数式を表示できるようにしました。</p>
 
@@ -45,6 +46,8 @@ MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
 </ul>
 
 <!-- headline -->
+
+<h4>インストール</h4>
 
 <p>まずはテンプレートにMathJaxの設定を追加します。現在IE8対策は必要ないようです。</p>
 
@@ -187,9 +190,11 @@ compile <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:
 
 <p>これで使えるようになりました。</p>
 
-<p>例①</p>
+<h4>テスト</h4>
 
-<p>markdown内での記述</p>
+<h5>例①</h5>
+
+<h6>markdown内での記述</h6>
 <table class="CodeRay"><tr>
   <td class="line-numbers"><pre>1
 2
@@ -199,13 +204,13 @@ compile <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:
 </pre></td>
 </tr></table>
 
-<p>出力</p>
+<h6>出力</h6>
 
 <p>ニュートンの運動方程式は、<script type="math/tex">F = ma</script>です。ピタゴラスの定理は、<script type="math/tex">a^2 = b^2 + c^2</script>です。</p>
 
-<p>例②</p>
+<h5>例②</h5>
 
-<p>markdown内での記述</p>
+<h6>markdown内での記述</h6>
 <table class="CodeRay"><tr>
   <td class="line-numbers"><pre>1
 2
@@ -221,14 +226,14 @@ compile <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:
 </pre></td>
 </tr></table>
 
-<p>出力</p>
+<h6>出力</h6>
 
 <p>ミカエリスメンテンの式</p>
 <script type="math/tex; mode=display">
 v = \rm\frac{V_{max}[S]}{K_m + [S]}
 
 </script>
-<p>参考</p>
+<h4>参考</h4>
 
 <ul>
 <li><p>MathJaxの使い方
@@ -259,6 +264,7 @@ powered by Disqus.
 comments powered by
 <span class='logo-disqus'>Disqus</span>
 </a>
+</div>
 </div>
 </div>
 <div id='side'>

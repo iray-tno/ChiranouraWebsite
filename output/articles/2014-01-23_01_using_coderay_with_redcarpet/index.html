@@ -30,6 +30,9 @@ MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
 <div class='article'>
 <h2 class='Science'><a href="/articles/2014-01-23_01_using_coderay_with_redcarpet/">RedcarpetのレンダラにCodeRayによるシンタックスハイライトを追加</a></h2>
 <h3 class='Science'>Created in: 2014-01-23  Author: iray_tno Category: <a href="/category/science" rel="tag">Science</a> Tags: <a href="/category/science/tag/computer" rel="tag">Computer</a><a href="/tag/computer" rel="tag">_a</a>, <a href="/category/science/tag/ruby" rel="tag">Ruby</a><a href="/tag/ruby" rel="tag">_a</a>, <a href="/category/science/tag/nanoc" rel="tag">nanoc</a><a href="/tag/nanoc" rel="tag">_a</a>, <a href="/category/science/tag/redcarpet" rel="tag">Redcarpet</a><a href="/tag/redcarpet" rel="tag">_a</a>, <a href="/category/science/tag/coderay" rel="tag">CodeRay</a><a href="/tag/coderay" rel="tag">_a</a></h3>
+<div class='inner'>
+<h4>はじめに</h4>
+
 <p>このブログでは記事をMarkdownで書いて、Redcarpetとnanocで静的なHTMLを生成しています。</p>
 
 <p>Redcarpetは、レンダラを独自に定義することで拡張が可能です。</p>
@@ -43,6 +46,8 @@ MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
 </ul>
 
 <!-- headline -->
+
+<h4>インストール</h4>
 
 <p>CodeRayはgemでインストールします。</p>
 <table class="CodeRay"><tr>
@@ -149,6 +154,8 @@ compile <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:
 </pre></td>
 </tr></table>
 
+<h4>テスト</h4>
+
 <p>以下のようにmarkdown内でコードブロックを記述すると</p>
 <table class="CodeRay"><tr>
   <td class="line-numbers"><pre>1
@@ -185,7 +192,7 @@ compile <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:
 </pre></td>
 </tr></table>
 
-<p>参考</p>
+<h4>参考</h4>
 
 <ul>
 <li><p>nanoc導入メモ 4/5 「Markdown独自拡張」編</p>
@@ -218,6 +225,7 @@ powered by Disqus.
 comments powered by
 <span class='logo-disqus'>Disqus</span>
 </a>
+</div>
 </div>
 </div>
 <div id='side'>
