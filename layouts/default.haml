@@ -22,7 +22,9 @@
   %body
     #container
       #header
-        %h1 ちらのうら
+        %h1
+          %a(href="/")
+            = "ちらのうら - chiranoura.nobody.jp"
 
       #main
         - if @item[:kind] == 'article'

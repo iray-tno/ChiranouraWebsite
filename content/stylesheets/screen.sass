@@ -30,15 +30,16 @@ $grid-padding: $gutter-width
 /*
   grid-padding equal to gutters */
 
-$border-color: #000000
+$border-color: #000
 
 $categories: Development Tweets
 
-$Development-side-bgcolor: #ff4500
-$Development-title-color: #ffffff
+$Science-color: #7bb
+$Art-color: #b77
+$Game-color: #7b7
+$Language-color: #bb7
+$SocialActivities-color: #77b
 
-$Tweets-side-bgcolor: #00bfff
-$Tweets-title-color: #ffffff
 
 *
   margin: 0
@@ -50,12 +51,12 @@ body
   background: #fff
 
 a
-  +link-colors(#222, #111, #111, #222, #111)
+  +link-colors(#333, #fff, #fff, #333, #fff)
   text-decoration: none
 
 #container
   +container
-  background-color: #ffffff
+  background-color: #fff
   @include container
   border: 1px solid $border-color
 
@@ -63,195 +64,218 @@ a
   @include span-columns(12,12)
   margin: 1px 0px 1px 0px
   border: 1px solid $border-color
+  height: 5em
+  background-image: url("/img/header.png")
+  background-repeat: no-repeat
+  background-size: contain
+  position: relative
   h1
-    colot: #000
-    font-size: 2.0em
+    color: #000
+    font-size: 2.2em
+    position: absolute
+    bottom: 0
+  a
+    +link-colors(#333, #bbb, #bbb, #333, #bbb)
 
 #main
   @include span-columns(8 alpha, 12)
 
+  .article
+    border: 1px solid $border-color
+    margin: 1px 0px 1px 0px
+
+    h2
+      font-size: 1.5em
+      line-height: 1.1
+      background-color: #bbb
+
+    h3
+      font-size: 0.7em
+      line-height: 1.1
+      background-color: #eeeeee
+    
+    .inner
+      margin: 5px 5px 5px 5px
+      a
+        +link-colors(#333, #bbb, #bbb, #333, #bbb)
+        text-decoration: underline
+      blockquote
+        border-left: solid 5px #ddd
+        background: #eee
+        padding: 5px
+        z-index: 1
+        position: relative
+
+        &:before
+          font-size: 6em
+          content: "“"
+          z-index: -1
+          position: absolute
+          left: 0
+          top: 0
+          color: #ddd
+
+        &:after
+          font-size: 6em
+          content: "”"
+          z-index: -1
+          position: absolute
+          right: 0
+          bottom: -0.66em
+          color: #ddd
+      p
+        margin-left: 1em
+        line-height: 1.4
+      
+      ul, ol
+        margin-left: 2.3em
+        line-height: 1.4
+      ul
+        list-style-type: square
+
+      ol
+        list-style-type: lower-alpha
+
+      h4, h5, h6
+        line-height: 1.1
+        margin-top: 0.4em
+        margin-bottom: 0.2em  
+
+      h4
+        font-size: 1.5em
+        border-left: solid 7px #ddd
+        border-bottom: dashed 1px #ddd
+      h5
+        margin-left: 0.3em
+        font-size: 1.2em
+        border-bottom: double 3px #ddd
+      h6
+        margin-left: 0.6em
+        font-size: 1em
+        border-bottom: dashed 1px #ddd
+        &:before
+          color: #ddd
+          content: "+"
+        
+
+      .CodeRay
+        width: 100%
+        font-family: Consolas, 'Courier New', Courier, Monaco, monospace
+        font-size: 0.83em
+        @include outer-table-borders(1px, #fff)
+        @include inner-table-borders(1px, #fff)  
+
+        td.line-numbers
+          width: 1.7em
+          text-align: right
+          background-color: #c3e2e2  
+
+        td.code
+          background-color: #f1f1f1  
+
 #side
   @include span-columns(4 omega, 12)
 
-#side_upper_ads
-  @include span-columns(4, 4)
-  border: 1px solid $border-color
-  margin: 1px 0px 1px 0px
-  background-color: #ffffff
-  text-align: center
+  #side_upper_ads
+    @include span-columns(4, 4)
+    border: 1px solid $border-color
+    margin: 1px 0px 1px 0px
+    background-color: #fff
+    text-align: center
 
-#side_lower_ads
-  @include span-columns(4, 4)
-  border: 1px solid $border-color
-  margin: 1px 0px 1px 0px
-  background-color: #ffffff
-  text-align: center
+  #side_lower_ads
+    @include span-columns(4, 4)
+    border: 1px solid $border-color
+    margin: 1px 0px 1px 0px
+    background-color: #fff
+    text-align: center
 
-#top_category
-  @include span-columns(4, 4)
-  border: 1px solid $border-color
-  margin: 1px 0px 1px 0px
-  background-color: #ffffff
+  #top_category
+    @include span-columns(4, 4)
+    border: 1px solid $border-color
+    margin: 1px 0px 1px 0px
+    background-color: #fff
 
-  h2
-    color: #000000
-    font-size: 1.5em
-    background-color: #eeeeee
-    a
-      display: block
-      +link-colors(#333, #fff, #fff, #333, #fff)
-    &.Tweets
-      background-color: $Tweets-side-bgcolor
+    h2
+      color: #000
+      font-size: 1.5em
+      line-height: 1.1
+      background-color: #bbb
+      a
+        display: block
+        +link-colors(#333, #fff, #fff, #333, #fff)
+    
+    h3
+      font-size: 1.2em
 
-    &.Development
-      background-color: $Development-side-bgcolor
-  
-  h3
-    font-size: 1.2em
+    ul
+      margin-left: 1.1em
+      list-style-type: square
 
-  ul
-    margin-left: 1.1em
-    list-style-type: square
+    ol
+      margin-left: 1.1em
+      list-style-type: upper-alpha
+    #tags
+      @include span-columns(2 alpha, 4)
 
-  ol
-    margin-left: 1.1em
-    list-style-type: upper-alpha
+    #recent_posts
+      @include span-columns(2 omega, 4)
 
-#categories
-  @include span-columns(4, 4)
-  border: 1px solid $border-color
-  margin: 1px 0px 1px 0px
-  background-color: #ffffff
-  h1
-    colot: #000
-    font-size: 1.2em
-  h2
-    color: #000000
-    font-size: 1.5em
-    background-color: #eeeeee
-    a
-      display: block
-      +link-colors(#333, #fff, #fff, #333, #fff)
-    &.Tweets
-      background-color: $Tweets-side-bgcolor
-
-    &.Development
-      background-color: $Development-side-bgcolor
-  h3
-    font-size: 1.2em
-
-
-
-#tags
-  @include span-columns(2 alpha, 4)
-
-
-#recent_posts
-  @include span-columns(2 omega, 4)
-
+  #categories
+    @include span-columns(4, 4)
+    border: 1px solid $border-color
+    margin: 1px 0px 1px 0px
+    background-color: #fff
+    h1
+      color: #000
+      font-size: 1.5em
+    h2
+      border-top: 1px solid #fff
+      color: #000
+      font-size: 1.5em
+      line-height: 1.1
+      background-color: #bbb
+      a
+        display: block
+        +link-colors(#333, #fff, #fff, #333, #fff)  
 
 #footer
   @include span-columns(12,12)
   margin: 1px 0px 1px 0px
   border: 1px solid $border-color
 
-.article
-  border: 1px solid $border-color
-  margin: 1px 0px 1px 0px
+=category($name,$color1)
+  #main
+    .article.#{$name}
+      h2
+        background-color: $color1
 
-  h2
-    font-size: 1.5em
-    line-height: 1.1
-    background-color: #bbb
-    &.Tweets
-      a
-        display: block
-        +link-colors(#333, $Tweets-side-bgcolor, $Tweets-side-bgcolor, #333, $Tweets-side-bgcolor)
+      h3
+        background-color: #eeeeee
+      .inner
+        h4
+          border-left: solid 7px $color1
+          border-bottom: dashed 1px $color1
+        h5
+          border-bottom: double 3px $color1
+        h6
+          border-bottom: dashed 1px $color1
+          &:before
+            color: $color1
+  #side
+    #top_category
+      h2.#{$name}
+        background-color: $color1 
+    #categories
+      h2.#{$name}
+        background-color: $color1 
 
-  h3
-    font-size: 0.7em
-    line-height: 1.1
-    background-color: #eeeeee
-  
-  .inner
-    margin: 5px 5px 5px 5px
 
-    blockquote
-      border-left: solid 5px #ddd
-      background: #eee
-      padding: 5px
-      z-index: 1
-      position: relative
+@include category("Science",$Science-color)
+@include category("Art",$Art-color)
+@include category("Game",$Game-color)
+@include category("Language",$Language-color)
+@include category("SocialActivities",$SocialActivities-color)
 
-      &:before
-        font-size: 6em
-        content: "“"
-        z-index: -1
-        position: absolute
-        left: 0
-        top: 0
-        color: #ddd
 
-      &:after
-        font-size: 6em
-        content: "”"
-        z-index: -1
-        position: absolute
-        right: 0
-        bottom: -0.66em
-        color: #ddd
-    p
-      margin-left: 1em
-      line-height: 1.4
-    
-  
-    ul
-      margin-left: 2.3em
-      line-height: 1.4
-      list-style-type: square
 
-    ol
-      margin-left: 2.3em
-      line-height: 1.4
-      list-style-type: lower-alpha
-
-    h4
-      margin-top: 0.4em
-      margin-bottom: 0.2em
-      font-size: 1.5em
-      border-left: solid 7px #ddd
-      border-bottom: dashed 1px #ddd
-      line-height: 1.1
-
-    h5
-      margin-top: 0.4em
-      margin-bottom: 0.2em
-      margin-left: 0.3em
-      font-size: 1.2em
-      border-bottom: double 3px #ddd
-      line-height: 1.1
-    h6
-      margin-top: 0.4em
-      margin-bottom: 0.2em
-      margin-left: 0.6em
-      font-size: 1em
-      border-bottom: dashed 1px #ddd
-      line-height: 1.1
-      &:before
-        color: #ddd
-        content: "+"
-
-    .CodeRay
-      width: 100%
-      font-family: Consolas, 'Courier New', Courier, Monaco, monospace
-      font-size: 0.83em
-      @include outer-table-borders(1px, #fff)
-      @include inner-table-borders(1px, #fff)
-
-      td.line-numbers
-        width: 1.7em
-        text-align: right
-        background-color: #c3e2e2
-
-      td.code
-        background-color: #f1f1f1

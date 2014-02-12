@@ -15,9 +15,9 @@ Redcarpetは、レンダラを独自に定義することで拡張が可能で�
 
 そこで、CodeRay使ってMarkdown内のコードブロックにシンタックスハイライトを適用してみます。
 
-* nanoc(http://nanoc.ws/)
+* nanoc(http://nanoc.ws)
 * Redcarpet(https://github.com/vmg/redcarpet)
-* CodeRay(http://coderay.rubychan.de/)
+* CodeRay(http://coderay.rubychan.de)
 
 <!-- headline -->
 

@@ -15,9 +15,9 @@ MathJaxを使ってtex形式で書いた数式を表示できるようにしま�
 
 ただ、markdownでも数式を書けるようにするためには、レンダラの定義が必要だったのでメモしておきます。
 
-* nanoc(http://nanoc.ws/)
+* nanoc(http://nanoc.ws)
 * Redcarpet(https://github.com/vmg/redcarpet)
-* MathJax(http://www.mathjax.org/)
+* MathJax(http://www.mathjax.org)
 
 <!-- headline -->
 
