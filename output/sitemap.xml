@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>http://chiranoura.nobody.jp/</loc>
-    <lastmod>2014-01-08</lastmod>
+    <lastmod>2014-01-10</lastmod>
   </url>
   <url>
     <loc>http://chiranoura.nobody.jp/articles/2011-04-01_00_tweets/</loc>
@@ -1057,31 +1057,35 @@
   </url>
   <url>
     <loc>http://chiranoura.nobody.jp/articles/2014-01-09_01_desc_of_lang/</loc>
-    <lastmod>2014-01-09</lastmod>
+    <lastmod>2014-01-10</lastmod>
   </url>
   <url>
     <loc>http://chiranoura.nobody.jp/articles/2014-01-09_02_desc_of_art/</loc>
-    <lastmod>2014-01-09</lastmod>
+    <lastmod>2014-01-10</lastmod>
   </url>
   <url>
     <loc>http://chiranoura.nobody.jp/articles/2014-01-09_03_desc_of_sci/</loc>
-    <lastmod>2014-01-09</lastmod>
+    <lastmod>2014-01-10</lastmod>
   </url>
   <url>
     <loc>http://chiranoura.nobody.jp/articles/2014-01-09_04_desc_of_socact/</loc>
-    <lastmod>2014-01-09</lastmod>
+    <lastmod>2014-01-10</lastmod>
   </url>
   <url>
     <loc>http://chiranoura.nobody.jp/articles/2014-01-09_05_desc_of_game/</loc>
-    <lastmod>2014-01-09</lastmod>
+    <lastmod>2014-01-10</lastmod>
   </url>
   <url>
     <loc>http://chiranoura.nobody.jp/articles/2014-01-23_01_using_coderay_with_redcarpet/</loc>
-    <lastmod>2014-02-12</lastmod>
+    <lastmod>2014-03-06</lastmod>
   </url>
   <url>
     <loc>http://chiranoura.nobody.jp/articles/2014-02-07_01_using_mathjax_with_redcarpet/</loc>
-    <lastmod>2014-02-12</lastmod>
+    <lastmod>2014-03-10</lastmod>
+  </url>
+  <url>
+    <loc>http://chiranoura.nobody.jp/articles/2014-03-04_01_how_to_install_pip_and_setuptools/</loc>
+    <lastmod>2014-03-10</lastmod>
   </url>
   <url>
     <loc>http://chiranoura.nobody.jp/category/art/</loc>
@@ -1111,6 +1115,9 @@
     <loc>http://chiranoura.nobody.jp/category/science/tag/computer/</loc>
   </url>
   <url>
+    <loc>http://chiranoura.nobody.jp/category/science/tag/cygwin/</loc>
+  </url>
+  <url>
     <loc>http://chiranoura.nobody.jp/category/science/tag/description/</loc>
   </url>
   <url>
@@ -1120,10 +1127,19 @@
     <loc>http://chiranoura.nobody.jp/category/science/tag/nanoc/</loc>
   </url>
   <url>
+    <loc>http://chiranoura.nobody.jp/category/science/tag/pip/</loc>
+  </url>
+  <url>
+    <loc>http://chiranoura.nobody.jp/category/science/tag/python/</loc>
+  </url>
+  <url>
     <loc>http://chiranoura.nobody.jp/category/science/tag/redcarpet/</loc>
   </url>
   <url>
     <loc>http://chiranoura.nobody.jp/category/science/tag/ruby/</loc>
+  </url>
+  <url>
+    <loc>http://chiranoura.nobody.jp/category/science/tag/setuptools/</loc>
   </url>
   <url>
     <loc>http://chiranoura.nobody.jp/category/socialactivities/</loc>
@@ -1232,7 +1248,7 @@
   </url>
   <url>
     <loc>http://chiranoura.nobody.jp/stylesheets/screen.css</loc>
-    <lastmod>2014-02-12</lastmod>
+    <lastmod>2014-03-06</lastmod>
   </url>
   <url>
     <loc>http://chiranoura.nobody.jp/tag/2011-04/</loc>
@@ -1328,6 +1344,9 @@
     <loc>http://chiranoura.nobody.jp/tag/computer/</loc>
   </url>
   <url>
+    <loc>http://chiranoura.nobody.jp/tag/cygwin/</loc>
+  </url>
+  <url>
     <loc>http://chiranoura.nobody.jp/tag/description/</loc>
   </url>
   <url>
@@ -1337,10 +1356,19 @@
     <loc>http://chiranoura.nobody.jp/tag/nanoc/</loc>
   </url>
   <url>
+    <loc>http://chiranoura.nobody.jp/tag/pip/</loc>
+  </url>
+  <url>
+    <loc>http://chiranoura.nobody.jp/tag/python/</loc>
+  </url>
+  <url>
     <loc>http://chiranoura.nobody.jp/tag/redcarpet/</loc>
   </url>
   <url>
     <loc>http://chiranoura.nobody.jp/tag/ruby/</loc>
+  </url>
+  <url>
+    <loc>http://chiranoura.nobody.jp/tag/setuptools/</loc>
   </url>
   <url>
     <loc>http://chiranoura.nobody.jp/tag/tweets_of_2011/</loc>
