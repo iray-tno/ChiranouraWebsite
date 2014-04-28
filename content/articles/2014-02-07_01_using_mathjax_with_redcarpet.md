@@ -3,7 +3,7 @@
 title: "MathJaxで数式描画"
 author: iray_tno
 category: Science
-tags: ["Computer","Ruby","nanoc","MathJax","Redcarpet"]
+tags: ["Computer","Ruby","Nanoc","MathJax","Redcarpet"]
 
 ---
 

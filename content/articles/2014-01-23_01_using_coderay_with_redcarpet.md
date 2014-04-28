@@ -3,7 +3,7 @@
 title: "RedcarpetのレンダラにCodeRayによるシンタックスハイライトを追加"
 author: iray_tno
 category: Science
-tags: ["Computer","Ruby","nanoc","Redcarpet","CodeRay"]
+tags: ["Computer","Ruby","Nanoc","Redcarpet","CodeRay"]
 
 ---
 
