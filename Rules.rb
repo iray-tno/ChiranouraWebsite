@@ -43,6 +43,7 @@ preprocess do
   all_tags = items.map { |p| p.attributes[:tags] }.flatten.compact.uniq
   puts ">/tag/ページの自動生成"
   all_tags.each { |tag|
+    print "  -tag page #{tag}(#{items_with_tag(tag).size()})"
     item = Nanoc::Item.new("= render('_meta_page', :tag_meta => '#{tag}')",
       {
         :title => "Posts in #{get_tag_name(tag)}",
@@ -52,7 +53,7 @@ preprocess do
       :binary => false
     )
     @items << item
-    puts "  -tag page #{tag}(#{items_with_tag(tag).size()}) :#{item.attributes}"
+    print " :#{item.attributes}\n"
   }
 
   #categoryページとそれ以下のtagページの自動生成

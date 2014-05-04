@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>http://chiranoura.nobody.jp/</loc>
-    <lastmod>2014-01-10</lastmod>
+    <lastmod>2014-01-08</lastmod>
   </url>
   <url>
     <loc>http://chiranoura.nobody.jp/articles/2011-04-01_00_tweets/</loc>
@@ -474,7 +474,7 @@
   </url>
   <url>
     <loc>http://chiranoura.nobody.jp/articles/2012-10-22_01_nanoc_ijiri/</loc>
-    <lastmod>2014-01-24</lastmod>
+    <lastmod>2014-04-21</lastmod>
   </url>
   <url>
     <loc>http://chiranoura.nobody.jp/articles/2012-10-27_00_tweets/</loc>
@@ -1057,35 +1057,114 @@
   </url>
   <url>
     <loc>http://chiranoura.nobody.jp/articles/2014-01-09_01_desc_of_lang/</loc>
-    <lastmod>2014-01-10</lastmod>
+    <lastmod>2014-04-17</lastmod>
   </url>
   <url>
     <loc>http://chiranoura.nobody.jp/articles/2014-01-09_02_desc_of_art/</loc>
-    <lastmod>2014-01-10</lastmod>
+    <lastmod>2014-04-17</lastmod>
   </url>
   <url>
     <loc>http://chiranoura.nobody.jp/articles/2014-01-09_03_desc_of_sci/</loc>
-    <lastmod>2014-01-10</lastmod>
+    <lastmod>2014-04-17</lastmod>
   </url>
   <url>
     <loc>http://chiranoura.nobody.jp/articles/2014-01-09_04_desc_of_socact/</loc>
-    <lastmod>2014-01-10</lastmod>
+    <lastmod>2014-04-17</lastmod>
   </url>
   <url>
     <loc>http://chiranoura.nobody.jp/articles/2014-01-09_05_desc_of_game/</loc>
-    <lastmod>2014-01-10</lastmod>
+    <lastmod>2014-04-17</lastmod>
+  </url>
+  <url>
+    <loc>http://chiranoura.nobody.jp/articles/2014-01-18_00_tweets/</loc>
   </url>
   <url>
     <loc>http://chiranoura.nobody.jp/articles/2014-01-23_01_using_coderay_with_redcarpet/</loc>
-    <lastmod>2014-03-06</lastmod>
+    <lastmod>2014-04-21</lastmod>
   </url>
   <url>
     <loc>http://chiranoura.nobody.jp/articles/2014-02-07_01_using_mathjax_with_redcarpet/</loc>
-    <lastmod>2014-03-10</lastmod>
+    <lastmod>2014-05-04</lastmod>
+  </url>
+  <url>
+    <loc>http://chiranoura.nobody.jp/articles/2014-02-11_00_tweets/</loc>
+  </url>
+  <url>
+    <loc>http://chiranoura.nobody.jp/articles/2014-02-25_00_tweets/</loc>
   </url>
   <url>
     <loc>http://chiranoura.nobody.jp/articles/2014-03-04_01_how_to_install_pip_and_setuptools/</loc>
-    <lastmod>2014-03-10</lastmod>
+    <lastmod>2014-04-17</lastmod>
+  </url>
+  <url>
+    <loc>http://chiranoura.nobody.jp/articles/2014-03-14_00_tweets/</loc>
+  </url>
+  <url>
+    <loc>http://chiranoura.nobody.jp/articles/2014-03-16_00_tweets/</loc>
+  </url>
+  <url>
+    <loc>http://chiranoura.nobody.jp/articles/2014-03-20_00_tweets/</loc>
+  </url>
+  <url>
+    <loc>http://chiranoura.nobody.jp/articles/2014-03-20_01_how_to_install_matplotlib_on_cygwin/</loc>
+    <lastmod>2014-05-04</lastmod>
+  </url>
+  <url>
+    <loc>http://chiranoura.nobody.jp/articles/2014-03-26_00_tweets/</loc>
+  </url>
+  <url>
+    <loc>http://chiranoura.nobody.jp/articles/2014-03-27_00_tweets/</loc>
+  </url>
+  <url>
+    <loc>http://chiranoura.nobody.jp/articles/2014-03-28_00_tweets/</loc>
+  </url>
+  <url>
+    <loc>http://chiranoura.nobody.jp/articles/2014-04-03_00_tweets/</loc>
+  </url>
+  <url>
+    <loc>http://chiranoura.nobody.jp/articles/2014-04-04_00_tweets/</loc>
+  </url>
+  <url>
+    <loc>http://chiranoura.nobody.jp/articles/2014-04-07_00_tweets/</loc>
+  </url>
+  <url>
+    <loc>http://chiranoura.nobody.jp/articles/2014-04-08_00_tweets/</loc>
+  </url>
+  <url>
+    <loc>http://chiranoura.nobody.jp/articles/2014-04-13_00_tweets/</loc>
+  </url>
+  <url>
+    <loc>http://chiranoura.nobody.jp/articles/2014-04-16_00_tweets/</loc>
+  </url>
+  <url>
+    <loc>http://chiranoura.nobody.jp/articles/2014-04-20_00_tweets/</loc>
+  </url>
+  <url>
+    <loc>http://chiranoura.nobody.jp/articles/2014-04-21_00_tweets/</loc>
+  </url>
+  <url>
+    <loc>http://chiranoura.nobody.jp/articles/2014-04-23_00_tweets/</loc>
+  </url>
+  <url>
+    <loc>http://chiranoura.nobody.jp/articles/2014-04-24_00_tweets/</loc>
+  </url>
+  <url>
+    <loc>http://chiranoura.nobody.jp/articles/2014-04-25_00_tweets/</loc>
+  </url>
+  <url>
+    <loc>http://chiranoura.nobody.jp/articles/2014-04-26_00_tweets/</loc>
+  </url>
+  <url>
+    <loc>http://chiranoura.nobody.jp/articles/2014-04-27_00_tweets/</loc>
+  </url>
+  <url>
+    <loc>http://chiranoura.nobody.jp/articles/2014-04-28_00_tweets/</loc>
+  </url>
+  <url>
+    <loc>http://chiranoura.nobody.jp/articles/2014-04-30_00_tweets/</loc>
+  </url>
+  <url>
+    <loc>http://chiranoura.nobody.jp/articles/2014-05-04_00_tweets/</loc>
   </url>
   <url>
     <loc>http://chiranoura.nobody.jp/category/art/</loc>
@@ -1122,6 +1201,9 @@
   </url>
   <url>
     <loc>http://chiranoura.nobody.jp/category/science/tag/mathjax/</loc>
+  </url>
+  <url>
+    <loc>http://chiranoura.nobody.jp/category/science/tag/matplotlib/</loc>
   </url>
   <url>
     <loc>http://chiranoura.nobody.jp/category/science/tag/nanoc/</loc>
@@ -1232,6 +1314,18 @@
     <loc>http://chiranoura.nobody.jp/category/socialactivities/tag/2014-01/</loc>
   </url>
   <url>
+    <loc>http://chiranoura.nobody.jp/category/socialactivities/tag/2014-02/</loc>
+  </url>
+  <url>
+    <loc>http://chiranoura.nobody.jp/category/socialactivities/tag/2014-03/</loc>
+  </url>
+  <url>
+    <loc>http://chiranoura.nobody.jp/category/socialactivities/tag/2014-04/</loc>
+  </url>
+  <url>
+    <loc>http://chiranoura.nobody.jp/category/socialactivities/tag/2014-05/</loc>
+  </url>
+  <url>
     <loc>http://chiranoura.nobody.jp/category/socialactivities/tag/description/</loc>
   </url>
   <url>
@@ -1248,7 +1342,7 @@
   </url>
   <url>
     <loc>http://chiranoura.nobody.jp/stylesheets/screen.css</loc>
-    <lastmod>2014-03-06</lastmod>
+    <lastmod>2014-04-17</lastmod>
   </url>
   <url>
     <loc>http://chiranoura.nobody.jp/tag/2011-04/</loc>
@@ -1338,6 +1432,18 @@
     <loc>http://chiranoura.nobody.jp/tag/2014-01/</loc>
   </url>
   <url>
+    <loc>http://chiranoura.nobody.jp/tag/2014-02/</loc>
+  </url>
+  <url>
+    <loc>http://chiranoura.nobody.jp/tag/2014-03/</loc>
+  </url>
+  <url>
+    <loc>http://chiranoura.nobody.jp/tag/2014-04/</loc>
+  </url>
+  <url>
+    <loc>http://chiranoura.nobody.jp/tag/2014-05/</loc>
+  </url>
+  <url>
     <loc>http://chiranoura.nobody.jp/tag/coderay/</loc>
   </url>
   <url>
@@ -1351,6 +1457,9 @@
   </url>
   <url>
     <loc>http://chiranoura.nobody.jp/tag/mathjax/</loc>
+  </url>
+  <url>
+    <loc>http://chiranoura.nobody.jp/tag/matplotlib/</loc>
   </url>
   <url>
     <loc>http://chiranoura.nobody.jp/tag/nanoc/</loc>

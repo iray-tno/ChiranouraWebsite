@@ -18,6 +18,8 @@ MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
   
   ga('create', 'UA-44690113-1', 'nobody.jp');
+  ga('require', 'linkid', 'linkid.js');
+  ga('require', 'displayfeatures');
   ga('send', 'pageview');
 </script>
 </head>
@@ -31,6 +33,28 @@ MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
 </h1>
 </div>
 <div id='main'>
+<div class='article Science'>
+<h2><a href="/articles/2014-03-20_01_how_to_install_matplotlib_on_cygwin/">Cygwin上でMatplotlibをインストールする。</a></h2>
+<h3>Created in: 2014-03-20  Author: iray_tno Category: <a href="/category/science" rel="tag">Science</a> Tags: <a href="/category/science/tag/computer" rel="tag">Computer</a><a href="/tag/computer" rel="tag">_a</a>, <a href="/category/science/tag/python" rel="tag">Python</a><a href="/tag/python" rel="tag">_a</a>, <a href="/category/science/tag/cygwin" rel="tag">Cygwin</a><a href="/tag/cygwin" rel="tag">_a</a>, <a href="/category/science/tag/matplotlib" rel="tag">Matplotlib</a><a href="/tag/matplotlib" rel="tag">_a</a>, <a href="/category/science/tag/redcarpet" rel="tag">Redcarpet</a><a href="/tag/redcarpet" rel="tag">_a</a></h3>
+<div class='inner'>
+<h4>はじめに</h4>
+
+<p>前回pipをインストールしたのはMatplotlibを使うためでした。
+しかし、<code>pip install matplotlib</code>とするとビルド時にエラーを吐いて止まりました。</p>
+
+<p>調べてみると、これはCygwin固有のバグのようで、既に報告されており次のバージョンでは直ると思います。</p>
+
+<p>修正方法もわかっていたので、練習も兼ねてpatchを作成し動くようにしました。</p>
+
+<p>以下に手順をまとめます。windows8+cyginw64とwindows7+cygwin64で動くのを確認済です。</p>
+
+
+<p class='readmore'>
+<a href="/articles/2014-03-20_01_how_to_install_matplotlib_on_cygwin/">More &raquo;</a>
+</p>
+</div>
+</div>
+
 <div class='article Science'>
 <h2><a href="/articles/2014-03-04_01_how_to_install_pip_and_setuptools/">Cygwin上でpipとsetuptoolsをインストールする方法</a></h2>
 <h3>Created in: 2014-03-04  Author: iray_tno Category: <a href="/category/science" rel="tag">Science</a> Tags: <a href="/category/science/tag/computer" rel="tag">Computer</a><a href="/tag/computer" rel="tag">_a</a>, <a href="/category/science/tag/python" rel="tag">Python</a><a href="/tag/python" rel="tag">_a</a>, <a href="/category/science/tag/pip" rel="tag">pip</a><a href="/tag/pip" rel="tag">_a</a>, <a href="/category/science/tag/setuptools" rel="tag">setuptools</a><a href="/tag/setuptools" rel="tag">_a</a>, <a href="/category/science/tag/cygwin" rel="tag">Cygwin</a><a href="/tag/cygwin" rel="tag">_a</a></h3>
@@ -52,7 +76,7 @@ MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
 
 <div class='article Science'>
 <h2><a href="/articles/2014-02-07_01_using_mathjax_with_redcarpet/">MathJaxで数式描画</a></h2>
-<h3>Created in: 2014-02-07  Author: iray_tno Category: <a href="/category/science" rel="tag">Science</a> Tags: <a href="/category/science/tag/computer" rel="tag">Computer</a><a href="/tag/computer" rel="tag">_a</a>, <a href="/category/science/tag/ruby" rel="tag">Ruby</a><a href="/tag/ruby" rel="tag">_a</a>, <a href="/category/science/tag/nanoc" rel="tag">nanoc</a><a href="/tag/nanoc" rel="tag">_a</a>, <a href="/category/science/tag/mathjax" rel="tag">MathJax</a><a href="/tag/mathjax" rel="tag">_a</a>, <a href="/category/science/tag/redcarpet" rel="tag">Redcarpet</a><a href="/tag/redcarpet" rel="tag">_a</a></h3>
+<h3>Created in: 2014-02-07  Author: iray_tno Category: <a href="/category/science" rel="tag">Science</a> Tags: <a href="/category/science/tag/computer" rel="tag">Computer</a><a href="/tag/computer" rel="tag">_a</a>, <a href="/category/science/tag/ruby" rel="tag">Ruby</a><a href="/tag/ruby" rel="tag">_a</a>, <a href="/category/science/tag/nanoc" rel="tag">Nanoc</a><a href="/tag/nanoc" rel="tag">_a</a>, <a href="/category/science/tag/mathjax" rel="tag">MathJax</a><a href="/tag/mathjax" rel="tag">_a</a>, <a href="/category/science/tag/redcarpet" rel="tag">Redcarpet</a><a href="/tag/redcarpet" rel="tag">_a</a></h3>
 <div class='inner'>
 <h4>はじめに</h4>
 
@@ -77,7 +101,7 @@ MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
 
 <div class='article Science'>
 <h2><a href="/articles/2014-01-23_01_using_coderay_with_redcarpet/">RedcarpetのレンダラにCodeRayによるシンタックスハイライトを追加</a></h2>
-<h3>Created in: 2014-01-23  Author: iray_tno Category: <a href="/category/science" rel="tag">Science</a> Tags: <a href="/category/science/tag/computer" rel="tag">Computer</a><a href="/tag/computer" rel="tag">_a</a>, <a href="/category/science/tag/ruby" rel="tag">Ruby</a><a href="/tag/ruby" rel="tag">_a</a>, <a href="/category/science/tag/nanoc" rel="tag">nanoc</a><a href="/tag/nanoc" rel="tag">_a</a>, <a href="/category/science/tag/redcarpet" rel="tag">Redcarpet</a><a href="/tag/redcarpet" rel="tag">_a</a>, <a href="/category/science/tag/coderay" rel="tag">CodeRay</a><a href="/tag/coderay" rel="tag">_a</a></h3>
+<h3>Created in: 2014-01-23  Author: iray_tno Category: <a href="/category/science" rel="tag">Science</a> Tags: <a href="/category/science/tag/computer" rel="tag">Computer</a><a href="/tag/computer" rel="tag">_a</a>, <a href="/category/science/tag/ruby" rel="tag">Ruby</a><a href="/tag/ruby" rel="tag">_a</a>, <a href="/category/science/tag/nanoc" rel="tag">Nanoc</a><a href="/tag/nanoc" rel="tag">_a</a>, <a href="/category/science/tag/redcarpet" rel="tag">Redcarpet</a><a href="/tag/redcarpet" rel="tag">_a</a>, <a href="/category/science/tag/coderay" rel="tag">CodeRay</a><a href="/tag/coderay" rel="tag">_a</a></h3>
 <div class='inner'>
 <h4>はじめに</h4>
 
@@ -102,7 +126,7 @@ MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
 
 <div class='article Science'>
 <h2><a href="/articles/2012-10-22_01_nanoc_ijiri/">nanocいじり 始めました。</a></h2>
-<h3>Created in: 2012-10-22  Author: iray_tno Category: <a href="/category/science" rel="tag">Science</a> Tags: <a href="/category/science/tag/computer" rel="tag">Computer</a><a href="/tag/computer" rel="tag">_a</a>, <a href="/category/science/tag/nanoc" rel="tag">nanoc</a><a href="/tag/nanoc" rel="tag">_a</a>, <a href="/category/science/tag/ruby" rel="tag">Ruby</a><a href="/tag/ruby" rel="tag">_a</a></h3>
+<h3>Created in: 2012-10-22  Author: iray_tno Category: <a href="/category/science" rel="tag">Science</a> Tags: <a href="/category/science/tag/computer" rel="tag">Computer</a><a href="/tag/computer" rel="tag">_a</a>, <a href="/category/science/tag/nanoc" rel="tag">Nanoc</a><a href="/tag/nanoc" rel="tag">_a</a>, <a href="/category/science/tag/ruby" rel="tag">Ruby</a><a href="/tag/ruby" rel="tag">_a</a></h3>
 <div class='inner'>
 <p>nanocという静的HTMLを吐き出すCMSを使ってブログを作ることにしました。</p>
 
@@ -127,14 +151,15 @@ MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
 <h3>Tags</h3>
 <ul class='tags'>
 <li><a href="/category/science/tag/coderay" rel="tag">CodeRay</a> x 1</li>
-<li><a href="/category/science/tag/computer" rel="tag">Computer</a> x 4</li>
-<li><a href="/category/science/tag/cygwin" rel="tag">Cygwin</a> x 1</li>
+<li><a href="/category/science/tag/computer" rel="tag">Computer</a> x 5</li>
+<li><a href="/category/science/tag/cygwin" rel="tag">Cygwin</a> x 2</li>
 <li><a href="/category/science/tag/description" rel="tag">Description</a> x 1</li>
 <li><a href="/category/science/tag/mathjax" rel="tag">MathJax</a> x 1</li>
-<li><a href="/category/science/tag/python" rel="tag">Python</a> x 1</li>
-<li><a href="/category/science/tag/redcarpet" rel="tag">Redcarpet</a> x 2</li>
+<li><a href="/category/science/tag/matplotlib" rel="tag">Matplotlib</a> x 1</li>
+<li><a href="/category/science/tag/nanoc" rel="tag">Nanoc</a> x 3</li>
+<li><a href="/category/science/tag/python" rel="tag">Python</a> x 2</li>
+<li><a href="/category/science/tag/redcarpet" rel="tag">Redcarpet</a> x 3</li>
 <li><a href="/category/science/tag/ruby" rel="tag">Ruby</a> x 3</li>
-<li><a href="/category/science/tag/nanoc" rel="tag">nanoc</a> x 3</li>
 <li><a href="/category/science/tag/pip" rel="tag">pip</a> x 1</li>
 <li><a href="/category/science/tag/setuptools" rel="tag">setuptools</a> x 1</li>
 </ul>
@@ -142,11 +167,11 @@ MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
 <div id='recent_posts'>
 <h3>Recent Posts</h3>
 <ul class='recent_posts'>
+<li><a href="/articles/2014-03-20_01_how_to_install_matplotlib_on_cygwin/">Cygwin上でMatplotlibをインストールする。</a></li>
 <li><a href="/articles/2014-03-04_01_how_to_install_pip_and_setuptools/">Cygwin上でpipとsetuptoolsをインストールする方法</a></li>
 <li><a href="/articles/2014-02-07_01_using_mathjax_with_redcarpet/">MathJaxで数式描画</a></li>
 <li><a href="/articles/2014-01-23_01_using_coderay_with_redcarpet/">RedcarpetのレンダラにCodeRayによるシンタックスハイライトを追加</a></li>
 <li><a href="/articles/2014-01-09_03_desc_of_sci/">Description of Science</a></li>
-<li><a href="/articles/2012-10-22_01_nanoc_ijiri/">nanocいじり 始めました。</a></li>
 </ul>
 </div>
 </div>

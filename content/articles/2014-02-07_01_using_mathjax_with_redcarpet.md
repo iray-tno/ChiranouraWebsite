@@ -28,7 +28,7 @@ MathJaxを使ってtex形式で書いた数式を表示できるようにしま�
 > In MathJax v2.0, IE8 and IE9 run faster in their IE8 and IE9 standards mode than in IE7 emulation mode.
 (http://www.mathjax.org/resources/browser-compatibility/)
 
-このブログではテンプレートにhamlを用いているので、default.hamlを以下のようにしました。(レイアウトの問題でurlの途中で改行しています。)
+このブログではテンプレートにhamlを用いているので、default.hamlを以下のようにしました。
 
 ```haml
 !!! XML
@@ -38,8 +38,8 @@ MathJaxを使ってtex形式で書いた数式を表示できるようにしま�
   %head
     %script{:type => "text/x-mathjax-config"}
       MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
-    %script{:type => "text/javascript", :src => "https://c328740.ssl.cf1.rackcd
-n.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"}
+    %script{:type => "text/javascript", :src => "https://c328740.ssl.cf1.ra"+ |
+      "ckcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"}     |
 
   %body
 ```
