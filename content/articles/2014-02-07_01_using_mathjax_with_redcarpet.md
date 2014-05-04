@@ -4,7 +4,8 @@ title: "MathJaxで数式描画"
 author: iray_tno
 category: Science
 tags: ["Computer","Ruby","Nanoc","MathJax","Redcarpet"]
-
+changefreq: yearly
+priority: 1.0
 ---
 
 #### はじめに

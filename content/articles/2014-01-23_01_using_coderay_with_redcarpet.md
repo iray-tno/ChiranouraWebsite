@@ -4,7 +4,8 @@ title: "RedcarpetのレンダラにCodeRayによるシンタックスハイラ�
 author: iray_tno
 category: Science
 tags: ["Computer","Ruby","Nanoc","Redcarpet","CodeRay"]
-
+changefreq: yearly
+priority: 1.0
 ---
 
 #### はじめに

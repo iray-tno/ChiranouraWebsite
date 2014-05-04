@@ -110,8 +110,10 @@ class TweetListener
           :title => page_title,
           :author => "iray_tno",
           :category => "SocialActivities",
-          :tags => ["tweets_of_20#{d_match[1]}", "20#{d_match[1]}-#{d_match[2]}"],
-          :extension => 'md'
+          :tags => ["tweet","20#{d_match[1]}", "20#{d_match[1]}-#{d_match[2]}"],
+          :extension => 'md',
+          :changefreq => 'never',
+          :priority => "0.1"
         },
         page_identifier,
         :binary => false

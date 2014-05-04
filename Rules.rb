@@ -41,30 +41,31 @@ preprocess do
 
   #tagページの自動生成
   all_tags = items.map { |p| p.attributes[:tags] }.flatten.compact.uniq
-  puts ">/tag/ページの自動生成"
+  print ">tag and category"
   all_tags.each { |tag|
-    print "  -tag page #{tag}(#{items_with_tag(tag).size()})"
     item = Nanoc::Item.new("= render('_meta_page', :tag_meta => '#{tag}')",
       {
         :title => "Posts in #{get_tag_name(tag)}",
-        :tag_meta => "#{tag}"
+        :tag_meta => "#{tag}",
+        :changefreq => 'weekly',
+        :priority => "0.0"
       },
       "/tag/#{get_tag_link(tag.downcase)}",
       :binary => false
     )
     @items << item
-    print " :#{item.attributes}\n"
+    print "."
   }
-
+  print "\n"
   #categoryページとそれ以下のtagページの自動生成
   all_categories = items.map { |item| item.attributes[:category] }.flatten.compact.uniq
-  puts ">/category/**/tag/ページの自動生成"
   all_categories.each { |category|
-    puts "  *#{category}"
     item = Nanoc::Item.new("= render('_meta_page', :category_meta => '#{category}')",
       {
         :title => "Posts in #{category}",
-        :category_meta => "#{category}"
+        :category_meta => "#{category}",
+        :changefreq => 'weekly',
+        :priority => "0.0"
       },
       "/category/#{category.downcase}",
       :binary => false
@@ -73,20 +74,24 @@ preprocess do
     puts "  -category page #{category}(#{items_with_category(category).size()}) :#{item.attributes}"
 
     tags = items_with_category(category).map { |p| p.attributes[:tags] }.flatten.compact.uniq
-      tags.each { |tag|
-        item = Nanoc::Item.new("= render('_meta_page', :tag_meta => '#{tag}', :category_meta => '#{category}')",
-          {
-            :title => "Posts in #{get_tag_name(tag)} of #{category}",
-            :category_meta => "#{category}",
-            :tag_meta => "#{tag}"
-          },
-          "/category/#{category.downcase}/tag/#{get_tag_link(tag.downcase)}",
-          :binary => false
-        )
-        @items << item
-        puts "    -tag page #{tag}(#{items_with_tag(tag).size()}) :#{item.attributes}"
-      }
+    tags.each { |tag|
+      item = Nanoc::Item.new("= render('_meta_page', :tag_meta => '#{tag}', :category_meta => '#{category}')",
+        {
+          :title => "Posts in #{get_tag_name(tag)} of #{category}",
+          :category_meta => "#{category}",
+          :tag_meta => "#{tag}",
+          :changefreq => 'weekly',
+          :priority => "0.0"
+        },
+        "/category/#{category.downcase}/tag/#{get_tag_link(tag.downcase)}",
+        :binary => false
+      )
+      @items << item
+      print "."
     }
+    print "\n"
+  }
+  print "done"
   puts "preprocess end"
 end
 #compile -----------------------------------------------------------------------

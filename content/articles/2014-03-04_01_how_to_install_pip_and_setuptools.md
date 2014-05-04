@@ -4,7 +4,8 @@ title: "Cygwin上でpipとsetuptoolsをインストールする方法"
 author: iray_tno
 category: Science
 tags: ["Computer","Python","pip","setuptools","Cygwin"]
-
+changefreq: yearly
+priority: 1.0
 ---
 
 
