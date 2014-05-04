@@ -43,7 +43,7 @@ matplotlib(http://matplotlib.org/downloads.html)
 matplotlib error while installing pyspeckit
 (http://stackoverflow.com/questions/18560249/matplotlib-error-while-installing-pyspeckit)
 
-修正方法は`_C`という名前の変数を出現箇所すべて`_Co`（なんでもいい）に変更するだけですが、練習としてpatchを作成しました。
+修正方法は`_C`という名前の変数を出現箇所すべて`_Co`(なんでもいい)に変更するだけですが、練習としてpatchを作成しました。
 
 ```diff
 --- ./lib/matplotlib/tri/_tri.cpp	2013-10-10 21:42:48.000000000 +0900
@@ -78,7 +78,7 @@ matplotlib error while installing pyspeckit
 
 上記パッチをコピペするか、下記urlからダウンロードして解凍し、matplotlib-1.3.1フォルダ直下に置きます。
 
-gist（https://gist.github.com/iray-tno/3e3121cc26eb38e06530）
+gist(https://gist.github.com/iray-tno/3e3121cc26eb38e06530)
 
 cygwinでmatplotlib-1.3.1フォルダ直下に移動し、以下のコマンドを実行します。
 
@@ -105,7 +105,7 @@ http://matplotlib.org/examples/mplot3d/lines3d_demo.html
 
 Cygwin標準の端末（mintty）でXを使う方法は以下のurlを参考にしてください。
 
-CygwinでX Windowを使う（http://keisanbutsuriya.blog.fc2.com/blog-entry-40.html）
+CygwinでX Windowを使う(http://keisanbutsuriya.blog.fc2.com/blog-entry-40.html)
 
 簡単にまとめると
 
