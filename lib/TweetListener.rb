@@ -102,7 +102,7 @@ class TweetListener
       page_title = "#{@@buf_tweets.size} #{tweet_str} in 20#{d_match[1]}-#{d_match[2]}-#{d_match[3]}"
       page_content = "\n"
       page_identifier = "/articles/20#{d_match[1]}-#{d_match[2]}-#{d_match[3]}_00_tweets"
-      @@buf_tweets.each {|tweet|
+      @@buf_tweets.reverse.each {|tweet|
         t_match = /(\d\d)(\d\d)(\d\d)/.match(tweet['time'])
         page_content << "* (<a href=\"https://twitter.com/iray_tno/status/#{tweet['id']}\" title=\"Tweet\">#{t_match[1]}:#{t_match[2]}:#{t_match[3]}<\/a>) #{tweet['text']}\n"
       }

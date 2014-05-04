@@ -99,7 +99,7 @@ http://matplotlib.org/examples/mplot3d/lines3d_demo.html
 
 そのターミナルの中で、`python ./line3d_demo.py`とすると、新たにウィンドウが開き、プロットが表示されます。
 
-![2014-03-20_01_lines3d_demo](/img/articles/2014-03-20_01_lines3d_demo.jpg "2014-03-20_01_lines3d_demo"){
+![2014-03-20_01_lines3d_demo](/img/articles/2014-03-20_01_lines3d_demo.jpg "2014-03-20_01_lines3d_demo")
 
 #### Cygwin標準の端末（mintty）でXを使う
 

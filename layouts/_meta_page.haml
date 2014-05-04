@@ -1,6 +1,6 @@
 - if @tag_meta == nil
   - if @category_meta == nil
-    - articles = sorted_articles[0, 6]
+    - articles = sorted_articles[0, 10]
   - else
     - articles = items_with_category(@category_meta).sort_by{|i| i[:created_at]}.reverse[0, 6]
 - elsif @category_meta == nil
