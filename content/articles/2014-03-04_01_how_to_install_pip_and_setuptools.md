@@ -5,11 +5,14 @@ author: iray_tno
 category: Science
 tags: ["Computer","Python","pip","setuptools","Cygwin"]
 changefreq: yearly
-priority: 1.0
+priority: 1.0  
+
 ---
 
 
 #### はじめに
+
+__!!!この記事の内容は古いです。 [Cygwin上でpipとsetuptoolsをインストールする方法](./2014-05-27_01_how_to_install_pip_and_setuptools) を参照してください。!!!__
 
 最近Pythonを使うようになりました。
 
@@ -40,7 +43,7 @@ setuptoolsが使えるようになったので、さっそく`easy_install pip`�
 
 >pip command exits immediately on Cygwin(https://github.com/pypa/pip/issues/1448)
 
-最新版をインストールしてしまった場合は、以下のようにしてアンインストールしてください。（参考:http://d.hatena.ne.jp/ikeas/20110611/1307801621）
+最新版をインストールしてしまった場合は、以下のようにしてアンインストールしてください。(参考:http://d.hatena.ne.jp/ikeas/20110611/1307801621)
 
 ```plain
 $ easy_install -mxN pip
