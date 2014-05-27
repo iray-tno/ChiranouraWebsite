@@ -92,6 +92,7 @@ preprocess do
     print "\n"
   }
   print "done"
+  items.delete_if { |item| item[:publish] == false }
   puts "preprocess end"
 end
 #compile -----------------------------------------------------------------------
