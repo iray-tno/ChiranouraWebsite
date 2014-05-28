@@ -12,7 +12,7 @@ priority: 1.0
 
 #### はじめに
 
-__!!!この記事の内容は古いです。 [Cygwin上でpipとsetuptoolsをインストールする方法](./2014-05-27_01_how_to_install_pip_and_setuptools) を参照してください。!!!__
+__!!!この記事の内容は古いです。 [Cygwin上でpipとsetuptoolsをインストールする方法](/articles/2014-05-27_01_how_to_install_pip_and_setuptools) を参照してください。!!!__
 
 最近Pythonを使うようになりました。
 

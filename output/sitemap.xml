@@ -1816,7 +1816,7 @@
   </url>
   <url>
     <loc>http://chiranoura.nobody.jp/articles/2014-03-04_01_how_to_install_pip_and_setuptools/</loc>
-    <lastmod>2014-05-04</lastmod>
+    <lastmod>2014-05-28</lastmod>
     <changefreq>yearly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -1935,6 +1935,27 @@
     <loc>http://chiranoura.nobody.jp/articles/2014-05-04_00_tweets/</loc>
     <changefreq>never</changefreq>
     <priority>0.1</priority>
+  </url>
+  <url>
+    <loc>http://chiranoura.nobody.jp/articles/2014-05-05_00_tweets/</loc>
+    <changefreq>never</changefreq>
+    <priority>0.1</priority>
+  </url>
+  <url>
+    <loc>http://chiranoura.nobody.jp/articles/2014-05-14_00_tweets/</loc>
+    <changefreq>never</changefreq>
+    <priority>0.1</priority>
+  </url>
+  <url>
+    <loc>http://chiranoura.nobody.jp/articles/2014-05-26_00_tweets/</loc>
+    <changefreq>never</changefreq>
+    <priority>0.1</priority>
+  </url>
+  <url>
+    <loc>http://chiranoura.nobody.jp/articles/2014-05-27_01_how_to_install_pip_and_setuptools/</loc>
+    <lastmod>2014-05-28</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>1.0</priority>
   </url>
   <url>
     <loc>http://chiranoura.nobody.jp/category/art/</loc>
@@ -2227,6 +2248,11 @@
     <priority>0.0</priority>
   </url>
   <url>
+    <loc>http://chiranoura.nobody.jp/category/socialactivities/tag/diary/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.0</priority>
+  </url>
+  <url>
     <loc>http://chiranoura.nobody.jp/category/socialactivities/tag/tweet/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.0</priority>
@@ -2437,6 +2463,11 @@
   </url>
   <url>
     <loc>http://chiranoura.nobody.jp/tag/description/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.0</priority>
+  </url>
+  <url>
+    <loc>http://chiranoura.nobody.jp/tag/diary/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.0</priority>
   </url>

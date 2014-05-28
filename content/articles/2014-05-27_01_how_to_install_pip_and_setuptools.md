@@ -12,7 +12,7 @@ priority: 1.0
 
 #### はじめに
 
-[Cygwin上でpipとsetuptoolsをインストールする方法](./2014-03-04_01_how_to_install_pip_and_setuptools)で書いた、Cygwin64で最新版のpipが動かない問題の解決策がわかったので書き直しました。
+[Cygwin上でpipとsetuptoolsをインストールする方法](/articles/2014-03-04_01_how_to_install_pip_and_setuptools)で書いた、Cygwin64で最新版のpipが動かない問題の解決策がわかったので書き直しました。
 
 Cygwinのsetup-x86_64.exeから、`binutils`と`libuuid-devel`の２つのパッケージを追加でインストールすれば動くようになります。64bitのwindows8とwindows7で確認しました。
 
@@ -81,15 +81,18 @@ Commands:
 
 General Options:
   -h, --help                  Show help.
-  -v, --verbose               Give more output. Option is additive, and can be used up to 3 times.
+  -v, --verbose               Give more output. Option is additive, and can be 
+  used up to 3 times.
   -V, --version               Show version and exit.
   -q, --quiet                 Give less output.
-  --log-file <path>           Path to a verbose non-appending log, that only logs failures. This log
-                              is active by default at /home/Yuta/.pip/pip.log.
-  --log <path>                Path to a verbose appending log. This log is inactive by default.
-  --proxy <proxy>             Specify a proxy in the form [user:passwd@]proxy.server:port.
+  --log-file <path>           Path to a verbose non-appending log, that only lo
+  gs failures. This log is active by default at /home/Yuta/.pip/pip.log.
+  --log <path>                Path to a verbose appending log. This log is inac
+  tive by default.
+  --proxy <proxy>             Specify a proxy in the form [user:passwd@]proxy.s
+  erver:port.
   --timeout <sec>             Set the socket timeout (default 15 seconds).
-  --exists-action <action>    Default action when a path already exists: (s)witch, (i)gnore, (w)ipe,
-                              (b)ackup.
+  --exists-action <action>    Default action when a path already exists: (s)wit
+  ch, (i)gnore, (w)ipe, (b)ackup.
   --cert <path>               Path to alternate CA bundle.
 ```
