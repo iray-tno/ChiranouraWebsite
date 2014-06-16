@@ -103,6 +103,7 @@ a
         border-left: solid 5px #ddd
         background: #eee
         padding: 5px
+        margin: 5px 5px 10px
         z-index: 1
         position: relative
 
@@ -124,11 +125,14 @@ a
           bottom: -0.66em
           color: #ddd
       p
-        margin-left: 1em
+        margin-top: 0.3em
+        margin-bottom: 0.3em
+        margin-left: 0.9em
+        text-indent: 0.5em
         line-height: 1.4
       
       ul, ol
-        margin-left: 2.3em
+        margin-left: 1.3em
         line-height: 1.4
       ul
         list-style-type: square
@@ -157,9 +161,16 @@ a
           color: #ddd
           content: "+"
         
+      code
+        border: solid 1px #ddd
+        background: #eee
+        font-size: 0.9em
+        font-family: Consolas, 'Courier New', Courier, Monaco, monospace
 
       .CodeRay
         width: 100%
+        margin-top: 0.3em
+        margin-bottom: 0.5em
         font-family: Consolas, 'Courier New', Courier, Monaco, monospace
         font-size: 0.83em
         @include outer-table-borders(1px, #fff)
@@ -171,7 +182,15 @@ a
           background-color: #c3e2e2  
 
         td.code
-          background-color: #f1f1f1  
+          background-color: #f1f1f1
+
+        pre
+          white-space: -moz-pre-wrap
+          white-space: -pre-wrap
+          white-space: -o-pre-wrap
+          white-space: pre-wrap
+          word-wrap: break-word
+
 
 #side
   @include span-columns(4 omega, 12)

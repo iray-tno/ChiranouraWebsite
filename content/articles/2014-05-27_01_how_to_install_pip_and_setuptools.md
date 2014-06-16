@@ -25,9 +25,7 @@ Cygwinのsetup-x86_64.exeから、`binutils`と`libuuid-devel`の２つのパッ
 pipは以下のパッケージに依存しているのでCygwinのsetup.exeからインストールします。
 
 - python-setuptools（又はpython3-setuptools）
-
 - binutils
-
 - libuuid-devel
 
 >hellerbarde commented on May 6  
