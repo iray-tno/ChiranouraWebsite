@@ -18,11 +18,11 @@ $total-columns: 12
 /*
   a 12-column grid */
 
-$column-width: 4em
+$column-width: 4.7em
 /*
   each column is 4em wide */
 
-$gutter-width: 1em
+$gutter-width: 0.5em
 /*
   1em gutters between columns */
 
@@ -71,6 +71,7 @@ a
   position: relative
   h1
     color: #000
+    text-indent: 3px
     font-size: 2.2em
     position: absolute
     bottom: 0
@@ -86,6 +87,7 @@ a
 
     h2
       font-size: 1.5em
+      text-indent: 3px
       line-height: 1.1
       background-color: #bbb
 
@@ -99,6 +101,7 @@ a
       a
         +link-colors(#333, #bbb, #bbb, #333, #bbb)
         text-decoration: underline
+
       blockquote
         border-left: solid 5px #ddd
         background: #eee
@@ -124,6 +127,7 @@ a
           right: 0
           bottom: -0.66em
           color: #ddd
+
       p
         margin-top: 0.3em
         margin-bottom: 0.3em
@@ -131,9 +135,15 @@ a
         text-indent: 0.5em
         line-height: 1.4
       
+      strong
+        @include background(linear-gradient(transparent 60%, #fdd 60%))
+
       ul, ol
-        margin-left: 1.3em
+        margin-left: 1.4em
+        margin-bottom: 0.3em
+        padding-left: 0.5em
         line-height: 1.4
+
       ul
         list-style-type: square
 
@@ -149,10 +159,12 @@ a
         font-size: 1.5em
         border-left: solid 7px #ddd
         border-bottom: dashed 1px #ddd
+
       h5
         margin-left: 0.3em
         font-size: 1.2em
         border-bottom: double 3px #ddd
+
       h6
         margin-left: 0.6em
         font-size: 1em
@@ -162,6 +174,7 @@ a
           content: "+"
         
       code
+        white-space: nowrap
         border: solid 1px #ddd
         background: #eee
         font-size: 0.9em
@@ -218,6 +231,7 @@ a
     h2
       color: #000
       font-size: 1.5em
+      text-indent: 3px
       line-height: 1.1
       background-color: #bbb
       a
@@ -226,14 +240,20 @@ a
     
     h3
       font-size: 1.2em
-
+    
+    ul, ol
+      list-style-position: inside
+      margin-left: 0.3em
+      
     ul
-      margin-left: 1.1em
       list-style-type: square
 
     ol
-      margin-left: 1.1em
       list-style-type: upper-alpha
+
+    a
+      +link-colors(#333, #bbb, #bbb, #333, #bbb)
+
     #tags
       @include span-columns(2 alpha, 4)
 
@@ -250,6 +270,7 @@ a
       font-size: 1.5em
     h2
       border-top: 1px solid #fff
+      text-indent: 3px
       color: #000
       font-size: 1.5em
       line-height: 1.1
@@ -295,6 +316,3 @@ a
 @include category("Game",$Game-color)
 @include category("Language",$Language-color)
 @include category("SocialActivities",$SocialActivities-color)
-
-
-

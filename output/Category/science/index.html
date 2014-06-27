@@ -34,6 +34,27 @@ MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
 </div>
 <div id='main'>
 <div class='article Science'>
+<h2><a href="/articles/2014-06-27_01_script_for_nanoc_view/">nanoc viewを使う便利なスクリプト</a></h2>
+<h3>Created in: 2014-06-27  Author: iray_tno Category: <a href="/category/science" rel="tag">Science</a> Tags: <a href="/category/science/tag/computer" rel="tag">Computer</a><a href="/tag/computer" rel="tag">_a</a>, <a href="/category/science/tag/nanoc" rel="tag">Nanoc</a><a href="/tag/nanoc" rel="tag">_a</a>, <a href="/category/science/tag/cygwin" rel="tag">Cygwin</a><a href="/tag/cygwin" rel="tag">_a</a></h3>
+<div class='inner'>
+<h4>はじめに</h4>
+
+<p>nanocでレイアウトをいじりながらデザインを試行錯誤する時には、 <code>nanoc view</code> でローカルホストのサーバーを起動し、ブラウザでlocalhost:3000を開くという一連の動作を何度も繰り返すことになります。</p>
+
+<p>今回はCygwin上で作業を行ってるとします。Cygwinでは <code>cygstart http://localhost:3000/</code> とすると規定のブラウザでプレビューを開くことができます。</p>
+
+<p>この一連の動作を一つのコマンドでできるようにスクリプトを書きたいところですが、<code>nanoc view; cygstart http://localhost:3000/</code> としても、nanoc viewをCtrl+Cなどで終了するまで開いてくれません。</p>
+
+<p>さて、どうしたらいいでしょうか？</p>
+
+
+<p class='readmore'>
+<a href="/articles/2014-06-27_01_script_for_nanoc_view/">More &raquo;</a>
+</p>
+</div>
+</div>
+
+<div class='article Science'>
 <h2><a href="/articles/2014-05-27_01_how_to_install_pip_and_setuptools/">Cygwin上でpipとsetuptoolsをインストールする方法</a></h2>
 <h3>Created in: 2014-05-27  Author: iray_tno Category: <a href="/category/science" rel="tag">Science</a> Tags: <a href="/category/science/tag/computer" rel="tag">Computer</a><a href="/tag/computer" rel="tag">_a</a>, <a href="/category/science/tag/python" rel="tag">Python</a><a href="/tag/python" rel="tag">_a</a>, <a href="/category/science/tag/pip" rel="tag">pip</a><a href="/tag/pip" rel="tag">_a</a>, <a href="/category/science/tag/setuptools" rel="tag">setuptools</a><a href="/tag/setuptools" rel="tag">_a</a>, <a href="/category/science/tag/cygwin" rel="tag">Cygwin</a><a href="/tag/cygwin" rel="tag">_a</a></h3>
 <div class='inner'>
@@ -41,7 +62,7 @@ MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
 
 <p><a href="/articles/2014-03-04_01_how_to_install_pip_and_setuptools">Cygwin上でpipとsetuptoolsをインストールする方法</a>で書いた、Cygwin64で最新版のpipが動かない問題の解決策がわかったので書き直しました。</p>
 
-<p>Cygwinのsetup-x86_64.exeから、<code>binutils</code>と<code>libuuid-devel</code>の２つのパッケージを追加でインストールすれば動くようになります。64bitのwindows8とwindows7で確認しました。</p>
+<p>Cygwinのsetup-x86_64.exeから、<code>binutils</code> と <code>libuuid-devel</code> の２つのパッケージを追加でインストールすれば動くようになります。64bitのwindows8とwindows7で確認しました。</p>
 
 <p>一応以下に一連の手順を書いておきます。</p>
 
@@ -145,20 +166,6 @@ MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
 </div>
 </div>
 
-<div class='article Science'>
-<h2><a href="/articles/2014-01-09_03_desc_of_sci/">Description of Science</a></h2>
-<h3>Created in: 2014-01-09  Author: iray_tno Category: <a href="/category/science" rel="tag">Science</a> Tags: <a href="/category/science/tag/description" rel="tag">Description</a><a href="/tag/description" rel="tag">_a</a></h3>
-<div class='inner'>
-<p>このカテゴリーには科学についての記事を書きます。</p>
-
-<p>薬学とコンピュータの話題が中心になります。</p>
-
-<p class='comment'>
-<a href="/articles/2014-01-09_03_desc_of_sci/">Comment &raquo;</a>
-</p>
-</div>
-</div>
-
 </div>
 <div id='side'>
 <div id='side_upper_ads'>
@@ -172,12 +179,12 @@ MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
 <h3>Tags</h3>
 <ul class='tags'>
 <li><a href="/category/science/tag/coderay" rel="tag">CodeRay</a> x 1</li>
-<li><a href="/category/science/tag/computer" rel="tag">Computer</a> x 6</li>
-<li><a href="/category/science/tag/cygwin" rel="tag">Cygwin</a> x 3</li>
+<li><a href="/category/science/tag/computer" rel="tag">Computer</a> x 7</li>
+<li><a href="/category/science/tag/cygwin" rel="tag">Cygwin</a> x 4</li>
 <li><a href="/category/science/tag/description" rel="tag">Description</a> x 1</li>
 <li><a href="/category/science/tag/mathjax" rel="tag">MathJax</a> x 1</li>
 <li><a href="/category/science/tag/matplotlib" rel="tag">Matplotlib</a> x 1</li>
-<li><a href="/category/science/tag/nanoc" rel="tag">Nanoc</a> x 3</li>
+<li><a href="/category/science/tag/nanoc" rel="tag">Nanoc</a> x 4</li>
 <li><a href="/category/science/tag/python" rel="tag">Python</a> x 3</li>
 <li><a href="/category/science/tag/redcarpet" rel="tag">Redcarpet</a> x 3</li>
 <li><a href="/category/science/tag/ruby" rel="tag">Ruby</a> x 3</li>
@@ -188,11 +195,11 @@ MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
 <div id='recent_posts'>
 <h3>Recent Posts</h3>
 <ul class='recent_posts'>
+<li><a href="/articles/2014-06-27_01_script_for_nanoc_view/">nanoc viewを使う便利なスクリプト</a></li>
 <li><a href="/articles/2014-05-27_01_how_to_install_pip_and_setuptools/">Cygwin上でpipとsetuptoolsをインストールする方法</a></li>
 <li><a href="/articles/2014-03-20_01_how_to_install_matplotlib_on_cygwin/">Cygwin上でMatplotlibをインストールする。</a></li>
 <li><a href="/articles/2014-03-04_01_how_to_install_pip_and_setuptools/">Cygwin上でpipとsetuptoolsをインストールする方法</a></li>
 <li><a href="/articles/2014-02-07_01_using_mathjax_with_redcarpet/">MathJaxで数式描画</a></li>
-<li><a href="/articles/2014-01-23_01_using_coderay_with_redcarpet/">RedcarpetのレンダラにCodeRayによるシンタックスハイライトを追加</a></li>
 </ul>
 </div>
 </div>
