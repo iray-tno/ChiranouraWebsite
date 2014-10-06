@@ -1,2 +1,2 @@
 cygstart http://localhost:3000/
-nanoc view
+bundle exec nanoc view

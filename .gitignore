@@ -2,6 +2,7 @@ tmp
 .sass-cache
 crash.log
 *.sublime-workspace
-output
 output/*
-Gemfile.lock
+!output/.gitkeep
+bundler/*
+!bundler/.gitkeep
