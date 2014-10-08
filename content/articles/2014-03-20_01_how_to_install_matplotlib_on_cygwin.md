@@ -3,10 +3,17 @@
 title: "Cygwin上でMatplotlibをインストールする。"
 author: iray_tno
 category: Science
-tags: ["Computer","Python","Cygwin","Matplotlib","Redcarpet"]
+tags: ["Computer","Python","Cygwin","Matplotlib"]
 changefreq: yearly
 priority: 1.0
+
 ---
+
+　
+
+__!!!この記事の内容は古いです。 [Cygwin上でMatplotlibをインストールする。](/articles/2014-10-08_01_how_to_install_matplotlib_on_cygwin/) を参照してください。!!!__
+
+　
 
 #### はじめに
 
