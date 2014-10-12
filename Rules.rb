@@ -22,12 +22,17 @@ preprocess do
   puts "preprocess..."
   
   puts ">tweetまとめページの自動生成"
-  source = File.read "tweets.xml" 
-  listener = TweetListener.new
-  REXML::Parsers::StreamParser.new(source, listener).parse
-  listener.items.each {|item|
-    @items << item
-  }
+  begin
+    source = File.read "tweets.xml" 
+    listener = TweetListener.new
+    REXML::Parsers::StreamParser.new(source, listener).parse
+    listener.items.each {|item|
+      @items << item
+    }
+  rescue
+    puts "tweets.xml doesn't exist"
+  end
+  
 
   #articles以下にある各ファイルを処理する
   articles = items.select {|item| item.identifier =~ %r|^/articles/.*/|}
