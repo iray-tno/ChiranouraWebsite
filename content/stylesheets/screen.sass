@@ -3,7 +3,7 @@
 @import "compass/typography/links/hover-link"
 @import "compass/css3/box-sizing"
 @import "compass/utilities/tables/borders"
-@import "susy"
+@import "susyone"
 
 /*
   Welcome to Compass.
@@ -77,6 +77,27 @@ a
     bottom: 0
   a
     +link-colors(#333, #bbb, #bbb, #333, #bbb)
+
+#header_guide
+  @include span-columns(12,12)
+  //border: 1px solid $border-color
+  
+  .category
+    @include span-columns(2, 12)
+    //border: 1px solid $border-color
+    //margin: 1px 0px 1px 0px
+    background-color: #bbb
+    h2
+      //border-top: 1px solid #fff
+      text-align: center
+      color: #000
+      font-size: 1.2em
+      line-height: 1.1
+      background-color: #bbb
+      a
+        display: block
+        +link-colors(#333, #fff, #fff, #333, #fff)  
+
 
 #main
   @include span-columns(8 alpha, 12)
@@ -285,6 +306,10 @@ a
   border: 1px solid $border-color
 
 =category($name,$color1)
+  #header_guide
+    .category
+      h2.#{$name}
+        background-color: $color1 
   #main
     .article.#{$name}
       h2
