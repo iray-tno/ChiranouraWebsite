@@ -12,6 +12,7 @@
 #   “content/about.html”). To select all children, grandchildren, … of an
 #   item, use the pattern “/about/*/”; “/about/*” will also select the parent,
 #   because “*” matches zero or more characters.
+require 'sass'
 require 'compass'
 
 Compass.add_configuration "#{File.dirname(__FILE__)}/.compass/config.rb"
@@ -122,7 +123,7 @@ compile '*' do
       when 'haml'
         filter :haml
         layout 'default'
-      when 'sass'
+      when 'scss'
         filter :sass, sass_options.merge(:syntax => item[:extension].to_sym)
       else
         filter :haml
@@ -146,7 +147,7 @@ route '*' do
     item.identifier.chop + '.' + item[:extension]
   else
     case item[:extension]
-      when 'sass'
+      when 'scss'
         item.identifier.chop + '.css'
       else
         item.identifier + 'index.html'

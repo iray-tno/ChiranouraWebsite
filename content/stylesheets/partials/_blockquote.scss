@@ -1,0 +1,26 @@
+blockquote {
+  border-left: solid 5px #ddd;
+  background: #eee;
+  padding: 5px;
+  margin: 5px 5px 10px;
+  z-index: 1;
+  position: relative;
+  &:before {
+    font-size: 6em;
+    content: "“";
+    z-index: -1;
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #ddd;
+  }
+  &:after {
+    font-size: 6em;
+    content: "”";
+    z-index: -1;
+    position: absolute;
+    right: 0;
+    bottom: -0.66em;
+    color: #ddd;
+  }
+}

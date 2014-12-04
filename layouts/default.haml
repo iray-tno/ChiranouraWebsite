@@ -27,7 +27,12 @@
         %h1
           %a(href="/")
             = "ちらのうら - chiranoura.nobody.jp"
-
+      #header_guide
+        %div.category
+          %h2 #{link_to('All', '/')}
+        - get_categories_except(nil).each do |category|
+          %div.category(class="#{category}")
+            %h2(class="#{category}") #{link_for_category(category)}
       #main
         - if @item[:kind] == 'article'
           - render('_article', :item => @item) do

@@ -105,6 +105,11 @@ module Nanoc::Helpers
       end
     end
 
+    def get_categories()
+      items = @items if items.nil?
+      items.map{|item| item[:category]}.compact.uniq.sort
+    end
+
     def get_cate_id(category)
       id_hash = {"General" => "2296926", "SocialActivities" => "2807708", "Science" => "2807705", "Game" => "2807709", "Language" => "2807706", "Art" => "2807707"}
       id_hash.default = "2296926"
