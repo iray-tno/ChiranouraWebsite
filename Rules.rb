@@ -102,7 +102,10 @@ preprocess do
   puts "preprocess end"
 end
 #compile -----------------------------------------------------------------------
-compile '/stylesheet/' do
+
+passthrough '/stylesheets/fonts/*/'
+
+compile '/stylesheets/' do
   # don’t filter or layout
 end
 
@@ -133,9 +136,16 @@ compile '*' do
 end
 
 #route -------------------------------------------------------------------------
-route '/stylesheet/' do
+route '/stylesheets/' do
   '/style.css'
 end
+
+=begin
+route '/stylesheets/fonts/*/' do
+  # /fonts/foo-eot/ -> /fonts/foo.eot
+  item.identifier.sub(/-#{item[:extension]}\/$/, '.') + item[:extension]
+end
+=end
 
 route '/sitemap/' do
   '/sitemap.xml'

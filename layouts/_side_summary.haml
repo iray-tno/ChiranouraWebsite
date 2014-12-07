@@ -32,9 +32,9 @@
 
 %div#categories
   %h1 Categories
-  %h2 #{link_to('All', '/')}
+  %h2 #{link_to('<i class="fa fa-cc-paypal"></i> All', '/')}
   - get_categories_except(nil).each do |category|
-    %h2(class="#{category}") #{link_for_category(category)}
+    %h2(class="#{category}") #{link_to('<i class="fa fa-cc-paypal"></i> '+category, '/'+category+'/')}
 
 %div#side_lower_ads
   %script(async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js")
