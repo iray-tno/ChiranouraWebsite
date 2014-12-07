@@ -4,7 +4,7 @@ GEM
     adsf (1.2.0)
       rack (>= 1.0.0)
     builder (3.2.2)
-    chunky_png (1.3.1)
+    chunky_png (1.3.3)
     coderay (1.1.0)
     colored (1.2)
     compass (1.0.1)
@@ -22,18 +22,20 @@ GEM
     cri (2.6.1)
       colored (~> 1.2)
     ffi (1.9.6)
-    haml (4.0.5)
+    font-awesome-sass (4.2.2)
+      sass (~> 3.2)
+    haml (4.0.6)
       tilt
     json (1.8.1)
     multi_json (1.10.1)
-    nanoc (3.7.3)
+    nanoc (3.7.4)
       cri (~> 2.3)
     rack (1.5.2)
     rb-fsevent (0.9.4)
     rb-inotify (0.9.5)
       ffi (>= 0.5.0)
-    redcarpet (3.2.0)
-    sass (3.4.5)
+    redcarpet (3.2.1)
+    sass (3.4.9)
     susy (2.1.3)
       sass (>= 3.3.0, < 3.5)
     tilt (2.0.1)
@@ -46,6 +48,7 @@ DEPENDENCIES
   builder
   coderay
   compass
+  font-awesome-sass
   haml
   json
   nanoc
