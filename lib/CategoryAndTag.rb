@@ -5,17 +5,35 @@ module Nanoc::Helpers
     require 'nanoc/helpers/html_escape'
     include Nanoc::Helpers::HTMLEscape
 
+    #deprecated
     def items_with_tag(tag)
       @items.select { |i| (i[:tags] || []).include?(tag) }
     end
 
+    #deprecated
     def items_with_category(category)
       @items.select { |i| (i[:category] == category) }
     end
 
+    #deprecated
     def items_with_category_and_tag(category, tag)
       @items.select { |i| ((i[:category] == category) && ((i[:tags] || []).include?(tag))) }
     end
+
+    def items_with(category: nil, tag: nil)
+      if(tag==nil&&category!=nil)
+        @items.select{ |i| (i[:category] == category) }
+      elsif(tag!=nil&&category==nil)
+        @items.select{ |i| (i[:tags] || []).include?(tag) }
+      elsif(tag!=nil&&category!=nil)
+        @items.select{ |i| 
+          ((i[:category] == category) &&
+              ((i[:tags] || []).include?(tag)))
+        }
+      else
+        @items
+      end
+    end 
 
     def link_for_tag(tag, params={})
       category     = params[:category]  || ''
@@ -94,6 +112,7 @@ module Nanoc::Helpers
       count_by_tag
     end
 
+    #deprecated
     def get_categories_except(except = nil)
       items = @items if items.nil?
       if except == nil
@@ -111,9 +130,54 @@ module Nanoc::Helpers
     end
 
     def get_cate_id(category)
-      id_hash = {"General" => "2296926", "SocialActivities" => "2807708", "Science" => "2807705", "Game" => "2807709", "Language" => "2807706", "Art" => "2807707"}
+      id_hash = {
+        "General" => "2296926",
+        "SocialActivities" => "2807708",
+        "Science" => "2807705",
+        "Game" => "2807709",
+        "Language" => "2807706",
+        "Art" => "2807707"
+      }
       id_hash.default = "2296926"
       id_hash[category]
+    end
+
+    def get_icon(category)
+      tag_hash = {
+        "General" => '<i class="fa fa-certificate fa-fw"></i> ',
+        "SocialActivities" => '<i class="fa fa-user fa-fw"></i> ',
+        "Science" => '<i class="fa fa-flask fa-fw"></i> ',
+        "Game" => '<i class="fa fa-gamepad fa-fw"></i> ',
+        "Language" => '<i class="fa fa-pencil-square-o fa-fw"></i> ',
+        "Art" => '<i class="fa fa-music fa-fw"></i> '
+      }
+      tag_hash.default = '<i class="fa fa-certificate fa-fw"></i> '
+      tag_hash[category]
+    end
+
+    def get_icon_h(category)
+      tag_hash = {
+        "General" => '<i class="fa fa-certificate"></i>',
+        "SocialActivities" => '<i class="fa fa-user"></i>',
+        "Science" => '<i class="fa fa-flask"></i>',
+        "Game" => '<i class="fa fa-gamepad"></i>',
+        "Language" => '<i class="fa fa-pencil-square-o"></i>',
+        "Art" => '<i class="fa fa-music"></i>'
+      }
+      tag_hash.default = '<i class="fa fa-certificate"></i>'
+      tag_hash[category]
+    end
+
+    def url_meta_page(category: nil, tag: nil)
+      if(tag==nil&&category!=nil)
+        '/category/'+category.downcase
+      elsif(tag!=nil&&category==nil)
+        '/tag/'+get_tag_link(tag)
+      elsif(tag!=nil&&category!=nil)
+        '/category/'+category.downcase+'/tag/'+get_tag_link(tag)
+      else
+        '/'
+      end
     end
   end
 end

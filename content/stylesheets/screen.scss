@@ -9,6 +9,8 @@
 @import "font-awesome";
 /* @import "susyone" */
 
+@import "breakpoint";
+
 @import "partials/_blockquote";
 @import "partials/_coderay";
 
@@ -35,6 +37,8 @@ $susy: (
   //container: 4.7em * 12 + 0.5em * 14,
   global-box-sizing: border-box,
 );
+
+$high-tide: 4.7em * 12 + 0.5em * 14;
 
 /* @include border-box-sizing
  * $total-columns: 12
@@ -70,29 +74,71 @@ a {
 }
 
 body {
-  @include show-grid(overlay);
+  //@include show-grid(overlay);
+}
+
+#header_background {
+  width:100%;
+  background-color: #eee;
+}
+
+#header_container {
+  width: 100%;
+  @include breakpoint($high-tide) {
+    @include container(content-box);
+  }
+  padding: 0em 0.5em;
+  //background-color: #fff;
+  //border: 1px solid $border-color;
 }
 
 #container {
-  @include container(content-box);
+  width: 100%;
+  @include breakpoint($high-tide) {
+    @include container(content-box);
+  }
   padding: 0em 0.5em;
   background-color: #fff;
-  border: 1px solid $border-color;
+  //border: 1px solid $border-color;
 }
 
 #header {
+  width: 100%;
+  @include breakpoint($high-tide) {
+    @include span(12);
+  }
   /* @include span-columns(12,12) */
-  @include span(12);
   margin: 1px 0px 1px 0px;
-  border: 1px solid $border-color;
+  //border: 1px solid $border-color;
   height: 5em;
   //background-image: url("/img/header.png");
   //background-repeat: no-repeat;
   //background-size: contain;
   position: relative;
-  .inner {
+
+  .inner_icons {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 1.9em;
+    padding-top: 10px;
+    a.twitter {
+       @include link-colors(#333, #55ACEE, #55ACEE, #333, #333);
+    }
+    a.steam {
+       @include link-colors(#333, #ccc, #ccc, #333, #333);
+    }
+    a.android {
+       @include link-colors(#333, #6BC320, #6BC320, #333, #333);
+    }
+    a.gift {
+       @include link-colors(#333, #9D2932, #9D2932, #333, #333);
+    }
+  }
+  .inner_title {
     position: absolute;
     bottom: 0;
+    padding-bottom: 3px;
     h1 {
       color: #000;
       text-indent: 3px;
@@ -108,13 +154,23 @@ body {
   @include span(12);
   .category {
     @include span(2 of 12);
-    border: 1px solid #ddd;
+    margin-top: 2px;
+    margin-bottom: 1px;
+    text-align: center;
     &:last-child {
       @include last;
     }
     h2 {
-      font-size: 1.3em;
+      border: 1px solid #ddd;
+      font-size: 1.5em;
       //background-color: #ddd;
+      a {
+        display: block;
+      }
+      &:hover {
+        border: 1px solid #bbb;
+        background-color: #bbb;
+      }
     }
   }
 }
@@ -301,9 +357,11 @@ body {
 @mixin category($name, $color1) {
   #header_guide {
     .category.#{$name} {
-      border: 1px solid $color1;
       h2.#{$name} {
-        //background-color: $color1;
+        &:hover {
+        border: 1px solid $color1;
+        background-color: $color1;
+        }
       }
     }
   }
