@@ -8,39 +8,39 @@
   - url_cate = '/category/'+category.downcase+'/'
   - tags = count_by_tag_with_category(@category).sort_by{|e| e[0]}
   - recent_articles = items_with_category(@category).sort_by{|i| i[:created_at]}.reverse[0, 5]
+%div#side_first
+  %div#side_upper_ads
+    %script(async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js")
+    %ins(class="adsbygoogle" style="display:inline-block;width:234px;height:60px" data-ad-client="ca-pub-8247743603913410" data-ad-slot="6061651880")
+    %script= "(adsbygoogle = window.adsbygoogle || []).push({});"
+    
+  %div#top_category
+    %h2(class="#{cate_name}") #{link_to(get_icon(cate_name)+cate_name, url_cate)}
+    - if @category!=nil
+      = items_with_category_and_tag(@category, "Description").sort_by{|i| i[:created_at]}.last.raw_content.match(/^.*?(?=<!-- headline -->)/m)
+      //= items_with(category: @category,tag: "Description").sort_by{|i| i[:created_at]}.last.compiled_content.to_s
+    //%h2(class="#{cate_name}") #{link_for_cate}
+    %div#tags
+      - if tags
+        %h3 Tags
+        %ul.tags
+          - tags.sort_by{|e| e[0]}.each do |tag, num|
+            %li #{link_for_tag_with_category(tag, cate_name)} x #{num}
+      - else
+        %p (none)
+    %div#recent_posts
+      %h3 Recent Posts
+      %ul.recent_posts
+        - recent_articles.each do |article|
+          %li #{link_to(article[:title], article.path)}
+%div#side_second
+  %div#categories
+    %h1 Categories
+    %h2 #{link_to(get_icon("General")+"All", '/')}
+    - get_categories.each do |category|
+      %h2(class="#{category}") #{link_to(get_icon(category)+category, '/category/'+category.downcase+'/')}
 
-%div#side_upper_ads
-  %script(async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js")
-  %ins(class="adsbygoogle" style="display:inline-block;width:234px;height:60px" data-ad-client="ca-pub-8247743603913410" data-ad-slot="6061651880")
-  %script= "(adsbygoogle = window.adsbygoogle || []).push({});"
-  
-%div#top_category
-  %h2(class="#{cate_name}") #{link_to(get_icon(cate_name)+cate_name, url_cate)}
-  - if @category!=nil
-    = items_with_category_and_tag(@category, "Description").sort_by{|i| i[:created_at]}.last.raw_content.match(/^.*?(?=<!-- headline -->)/m)
-    //= items_with(category: @category,tag: "Description").sort_by{|i| i[:created_at]}.last.compiled_content.to_s
-  //%h2(class="#{cate_name}") #{link_for_cate}
-  %div#tags
-    - if tags
-      %h3 Tags
-      %ul.tags
-        - tags.sort_by{|e| e[0]}.each do |tag, num|
-          %li #{link_for_tag_with_category(tag, cate_name)} x #{num}
-    - else
-      %p (none)
-  %div#recent_posts
-    %h3 Recent Posts
-    %ul.recent_posts
-      - recent_articles.each do |article|
-        %li #{link_to(article[:title], article.path)}
-
-%div#categories
-  %h1 Categories
-  %h2 #{link_to(get_icon("General")+"All", '/')}
-  - get_categories.each do |category|
-    %h2(class="#{category}") #{link_to(get_icon(category)+category, '/category/'+category.downcase+'/')}
-
-%div#side_lower_ads
-  %script(async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js")
-  %ins(class="adsbygoogle" style="display:inline-block;width:160px;height:600px" data-ad-client="ca-pub-8247743603913410" data-ad-slot="2280803480")
-  %script= "(adsbygoogle = window.adsbygoogle || []).push({});"
+  %div#side_lower_ads
+    %script(async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js")
+    %ins(class="adsbygoogle" style="display:inline-block;width:160px;height:600px" data-ad-client="ca-pub-8247743603913410" data-ad-slot="2280803480")
+    %script= "(adsbygoogle = window.adsbygoogle || []).push({});"

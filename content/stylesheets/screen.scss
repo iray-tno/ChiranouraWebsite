@@ -27,19 +27,22 @@ font-weight: normal;
 font-style: normal;
 }
 
+ // math: static,
 $susy: (
   columns: 12,
   column-width: 4.7em,
   gutters: 0.5em / 4.7em,
-  math: static,
+  math: fluid,
   guttar-position: split,
   output: float,
   //container: 4.7em * 12 + 0.5em * 14,
   global-box-sizing: border-box,
 );
 
-$high-tide: 4.7em * 12 + 0.5em * 14;
+$large-width: 4.7em * 12 + 0.5em * 14;
 
+$desktop-wide: min-width $large-width;
+$desktop-narrow: max-width $large-width;
 /* @include border-box-sizing
  * $total-columns: 12
  * $column-width: 4.7em
@@ -84,7 +87,7 @@ body {
 
 #header_container {
   width: 100%;
-  @include breakpoint($high-tide) {
+  @include breakpoint($desktop-wide) {
     @include container(content-box);
   }
   padding: 0em 0.5em;
@@ -94,7 +97,7 @@ body {
 
 #container {
   width: 100%;
-  @include breakpoint($high-tide) {
+  @include breakpoint($desktop-wide) {
     @include container(content-box);
   }
   padding: 0em 0.5em;
@@ -104,13 +107,14 @@ body {
 
 #header {
   width: 100%;
-  @include breakpoint($high-tide) {
+  height : 5em;
+  @include breakpoint($desktop-wide) {
     @include span(12);
+    height: 5em;
   }
   /* @include span-columns(12,12) */
   margin: 1px 0px 1px 0px;
   //border: 1px solid $border-color;
-  height: 5em;
   //background-image: url("/img/header.png");
   //background-repeat: no-repeat;
   //background-size: contain;
@@ -130,6 +134,9 @@ body {
     }
     a.android {
        @include link-colors(#333, #6BC320, #6BC320, #333, #333);
+    }
+    a.github {
+       @include link-colors(#333, #4183C4, #4183C4, #333, #333);
     }
     a.gift {
        @include link-colors(#333, #9D2932, #9D2932, #333, #333);
@@ -153,31 +160,49 @@ body {
 #header_guide {
   @include span(12);
   .category {
-    @include span(2 of 12);
+    //@include span(6 of 12);
     margin-top: 2px;
     margin-bottom: 1px;
     text-align: center;
-    &:last-child {
-      @include last;
+
+    @include breakpoint($desktop-narrow) {
+      @include span(4 of 12);
+      &:nth-child(3n) {
+        @include last;
+      }
     }
+    @include breakpoint($desktop-wide) {
+      @include span(2 of 12);
+      &:last-child {
+        @include last;
+      }
+    }
+
     h2 {
-      border: 1px solid #ddd;
       font-size: 1.5em;
       //background-color: #ddd;
       a {
+        border: 1px solid #ddd;
         display: block;
+        &:hover {
+          border: 1px solid #bbb;
+          background-color: #bbb;
+        }
       }
-      &:hover {
-        border: 1px solid #bbb;
-        background-color: #bbb;
-      }
+
     }
   }
 }
 
 #main {
   /* @include span-columns(8 alpha, 12) */
-  @include span(8);
+  @include breakpoint($desktop-narrow) {
+    @include span(12 of 12);
+  }
+  @include breakpoint($desktop-wide) {
+    @include span(8 of 12);
+  }
+
   .article {
     border: 1px solid $border-color;
     margin: 1px 0px 1px 0px;
@@ -256,92 +281,148 @@ body {
 }
 
 #side {
-  /* @include span-columns(4 omega, 12) */
-  @include span(4 last);
-  #side_upper_ads {
-    @include span(4);
-    /* @include span-columns(4, 4) */
-    border: 1px solid $border-color;
-    margin: 1px 0px 1px 0px;
-    background-color: #fff;
-    text-align: center;
+  @include breakpoint($desktop-narrow) {
+    @include span(12 of 12);
   }
-  #side_lower_ads {
-    @include span(4);
-    /* @include span-columns(4, 4) */
-    border: 1px solid $border-color;
-    margin: 1px 0px 1px 0px;
-    background-color: #fff;
-    text-align: center;
+  @include breakpoint($desktop-wide) {
+    @include span(4 of 12 last);
   }
-  #top_category {
-    @include span(4);
-    /* @include span-columns(4, 4) */
-    border: 1px solid $border-color;
-    margin-top: 1px;
-    margin-bottom: 1px;
-    //padding: 0px -1px;
-    background-color: #fff;
-    h2 {
-      color: #000;
-      font-size: 1.5em;
-      text-indent: 3px;
-      line-height: 1.1;
-      background-color: #bbb;
+  #side_first {
+    @include breakpoint($desktop-narrow) {
+      @include span(6 of 12);
+    }
+    @include breakpoint($desktop-wide) {
+      @include span(4 of 4);
+    }
+
+    #side_upper_ads {
+      @include breakpoint($desktop-narrow) {
+        @include span(6 of 6);
+      }
+      @include breakpoint($desktop-wide) {
+        @include span(4 of 4);
+      }
+      /* @include span-columns(4, 4) */
+      border: 1px solid $border-color;
+      margin: 1px 0px 1px 0px;
+      background-color: #fff;
+      text-align: center;
+    }
+
+    #top_category {
+      @include breakpoint($desktop-narrow) {
+        @include span(6 of 6);
+      }
+      @include breakpoint($desktop-wide) {
+        @include span(4 of 4);
+      }
+      /* @include span-columns(4, 4) */
+      border: 1px solid $border-color;
+      margin-top: 1px;
+      margin-bottom: 1px;
+      //padding: 0px -1px;
+      background-color: #fff;
+      h2 {
+        color: #000;
+        font-size: 1.5em;
+        text-indent: 3px;
+        line-height: 1.1;
+        background-color: #bbb;
+        a {
+          display: block;
+          @include link-colors(#333, #fff, #fff, #333, #fff);
+        }
+      }
+      h3 {
+        font-size: 1.2em;
+      }
+      ul, ol {
+        list-style-position: inside;
+        margin-left: 0.3em;
+      }
+      ul {
+        list-style-type: square;
+      }
+      ol {
+        list-style-type: upper-alpha;
+      }
       a {
-        display: block;
-        @include link-colors(#333, #fff, #fff, #333, #fff);
+        @include link-colors(#333, #bbb, #bbb, #333, #bbb);
+      }
+      #tags {
+        @include breakpoint($desktop-narrow) {
+          @include span(3 of 6 border-box);
+        }
+        @include breakpoint($desktop-wide) {
+          @include span(2 of 4 border-box);
+        }
+        border: 1px solid $border-color;
+        margin: 0px -1px;
+        /* @include span-columns(2 alpha, 4) */
+      }
+      #recent_posts {
+        @include breakpoint($desktop-narrow) {
+          @include span(3 of 6 last border-box);
+        }
+        @include breakpoint($desktop-wide) {
+          @include span(2 of 4 last border-box);
+        }
+        border: 1px solid $border-color;
+        margin: 0px -1px;
+        /* @include span-columns(2 omega, 4) */
       }
     }
-    h3 {
-      font-size: 1.2em;
-    }
-    ul, ol {
-      list-style-position: inside;
-      margin-left: 0.3em;
-    }
-    ul {
-      list-style-type: square;
-    }
-    ol {
-      list-style-type: upper-alpha;
-    }
-    a {
-      @include link-colors(#333, #bbb, #bbb, #333, #bbb);
-    }
-    #tags {
-      @include span(2 border-box);
-      border: 1px solid $border-color;
-      margin: 0px -1px;
-      /* @include span-columns(2 alpha, 4) */
-    }
-    #recent_posts {
-      @include span(2 last border-box);
-      border: 1px solid $border-color;
-      margin: 0px -1px;
-      /* @include span-columns(2 omega, 4) */
-    }
   }
-  #categories {
-    @include span(4);
-    /* @include span-columns(4, 4) */
-    border: 1px solid $border-color;
-    margin: 1px 0px 1px 0px;
-    background-color: #fff;
-    h1 {
-      color: #000;
-      font-size: 1.5em;
+
+  #side_second {
+    @include breakpoint($desktop-narrow) {
+      @include span(6 of 12 last);
     }
-    h2 {
-      border-top: 1px solid #fff;
-      text-indent: 3px;
-      color: #000;
-      font-size: 1.5em;
-      line-height: 1.1;
-      background-color: #bbb;
-      a {
-        display: block;
-        @include link-colors(#333, #fff, #fff, #333, #fff);
+    @include breakpoint($desktop-wide) {
+      @include span(4 of 4);
+    }
+
+    #side_lower_ads {
+      @include breakpoint($desktop-narrow) {
+        @include span(6 of 6);
+      }
+      @include breakpoint($desktop-wide) {
+        @include span(4 of 4);
+      }
+      /* @include span-columns(4, 4) */
+      border: 1px solid $border-color;
+      margin: 1px 0px 1px 0px;
+      background-color: #fff;
+      text-align: center;
+    }
+
+    #categories {
+      @include breakpoint($desktop-narrow) {
+        @include span(6 of 6);
+      }
+      @include breakpoint($desktop-wide) {
+        @include span(4 of 4);
+      }
+      @include span(4 of 4);
+      /* @include span-columns(4, 4) */
+      border: 1px solid $border-color;
+      margin: 1px 0px 1px 0px;
+      background-color: #fff;
+      h1 {
+        color: #000;
+        font-size: 1.5em;
+      }
+      h2 {
+        border-top: 1px solid #fff;
+        text-indent: 3px;
+        color: #000;
+        font-size: 1.5em;
+        line-height: 1.1;
+        background-color: #bbb;
+        a {
+          display: block;
+          @include link-colors(#333, #fff, #fff, #333, #fff);
+        }
       }
     }
   }
@@ -358,9 +439,11 @@ body {
   #header_guide {
     .category.#{$name} {
       h2.#{$name} {
-        &:hover {
-        border: 1px solid $color1;
-        background-color: $color1;
+        a{
+          &:hover {
+            border: 1px solid $color1;
+            background-color: $color1;
+          }
         }
       }
     }
@@ -391,14 +474,19 @@ body {
     }
   }
   #side {
-    #top_category {
-      h2.#{$name} {
-        background-color: $color1;
+    #side_first {
+      #top_category {
+        h2.#{$name} {
+          background-color: $color1;
+        }
       }
     }
-    #categories {
-      h2.#{$name} {
-        background-color: $color1;
+
+    #side_second {
+      #categories {
+        h2.#{$name} {
+          background-color: $color1;
+        }
       }
     }
   }
