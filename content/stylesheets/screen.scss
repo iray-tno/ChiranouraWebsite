@@ -49,7 +49,7 @@ $desktop-narrow: max-width $large-width;
  * $gutter-width: 0.5em
  * $grid-padding: $gutter-width */
 
-$border-color: #000;
+$border-color: #ddd;
 
 $categories: Development Tweets;
 
@@ -110,7 +110,6 @@ body {
   height : 5em;
   @include breakpoint($desktop-wide) {
     @include span(12);
-    height: 5em;
   }
   /* @include span-columns(12,12) */
   margin: 1px 0px 1px 0px;
@@ -349,6 +348,19 @@ body {
       a {
         @include link-colors(#333, #bbb, #bbb, #333, #bbb);
       }
+      #about {
+        @include breakpoint($desktop-narrow) {
+          @include span(6 of 6 border-box);
+        }
+        @include breakpoint($desktop-wide) {
+          @include span(4 of 4 border-box);
+        }
+        //border: 1px solid $border-color;
+        //margin: 0px -1px;
+        padding: 5px 1px;
+        padding-bottom: 15px;
+        /* @include span-columns(2 alpha, 4) */
+      }
       #tags {
         @include breakpoint($desktop-narrow) {
           @include span(3 of 6 border-box);
@@ -356,8 +368,9 @@ body {
         @include breakpoint($desktop-wide) {
           @include span(2 of 4 border-box);
         }
-        border: 1px solid $border-color;
-        margin: 0px -1px;
+        //border: 1px solid $border-color;
+        //margin: 0px -1px;
+        padding: 5px 1px;
         /* @include span-columns(2 alpha, 4) */
       }
       #recent_posts {
@@ -367,8 +380,9 @@ body {
         @include breakpoint($desktop-wide) {
           @include span(2 of 4 last border-box);
         }
-        border: 1px solid $border-color;
-        margin: 0px -1px;
+        //border: 1px solid $border-color;
+        //margin: 0px -1px;
+        padding: 5px 1px;
         /* @include span-columns(2 omega, 4) */
       }
     }

@@ -16,26 +16,36 @@
     
   %div#top_category
     %h2(class="#{cate_name}") #{link_to(get_icon(cate_name)+cate_name, url_cate)}
-    - if @category!=nil
-      = items_with_category_and_tag(@category, "Description").sort_by{|i| i[:created_at]}.last.raw_content.match(/^.*?(?=<!-- headline -->)/m)
+    %div#about
+      %h3 <i class="fa fa-bars"></i> About
+      - if @category!=nil
+        - if about_desc = items_with_category_and_tag(@category, "Description").sort_by{|i| i[:created_at]}.last.raw_content.match(/^.*?(?=<!-- headline -->)/m)
+          = about_desc.to_s
+        - else
+          = items_with_category_and_tag(@category, "Description").sort_by{|i| i[:created_at]}.last.raw_content
+      - else
+        - if about_desc = items_with_category_and_tag("SocialActivities", "About").sort_by{|i| i[:created_at]}.last.raw_content.match(/^.*?(?=<!-- headline -->)/m)
+          = about_desc.to_s
+        - else
+          = items_with_category_and_tag("SocialActivities", "About").sort_by{|i| i[:created_at]}.last.raw_content        
       //= items_with(category: @category,tag: "Description").sort_by{|i| i[:created_at]}.last.compiled_content.to_s
     //%h2(class="#{cate_name}") #{link_for_cate}
     %div#tags
+      %h3 <i class="fa fa-tags"></i> Tags
       - if tags
-        %h3 Tags
         %ul.tags
           - tags.sort_by{|e| e[0]}.each do |tag, num|
             %li #{link_for_tag_with_category(tag, cate_name)} x #{num}
       - else
         %p (none)
     %div#recent_posts
-      %h3 Recent Posts
+      %h3 <i class="fa fa-calendar"></i> Recent Posts
       %ul.recent_posts
         - recent_articles.each do |article|
           %li #{link_to(article[:title], article.path)}
 %div#side_second
   %div#categories
-    %h1 Categories
+    %h1 <i class="fa fa-folder-open"></i> Categories
     %h2 #{link_to(get_icon("General")+"All", '/')}
     - get_categories.each do |category|
       %h2(class="#{category}") #{link_to(get_icon(category)+category, '/category/'+category.downcase+'/')}
