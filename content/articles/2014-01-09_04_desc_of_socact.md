@@ -6,6 +6,7 @@ category: SocialActivities
 tags: ["Description"]
 changefreq: yearly
 priority: 1.0
+
 ---
 
 このカテゴリーには活動記録を書きます。

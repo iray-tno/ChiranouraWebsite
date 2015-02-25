@@ -1,0 +1,517 @@
+@import "compass";
+@import "compass/reset";
+@import "compass/typography/links/link-colors";
+@import "compass/typography/links/hover-link";
+@import "compass/css3/box-sizing";
+@import "compass/utilities/tables/borders";
+@import "susy";
+@import "font-awesome-compass";
+@import "font-awesome";
+/* @import "susyone" */
+
+@import "breakpoint";
+
+@import "partials/_blockquote";
+@import "partials/_coderay";
+
+@include border-box-sizing;
+
+@font-face {
+font-family: "FontAwesome";
+src: url("fonts/fontawesome-webfont.eot");
+src: url("fonts/fontawesome-webfont.eot") format("embedded-opentype"),
+url("fonts/fontawesome-webfont.woff") format("woff"),
+url("fonts/fontawesome-webfont.ttf") format("truetype"),
+url("fonts/fontawesome-webfont.svg") format("svg");
+font-weight: normal;
+font-style: normal;
+}
+
+ // math: static,
+$susy: (
+  columns: 12,
+  column-width: 4.7em,
+  gutters: 0.5em / 4.7em,
+  math: fluid,
+  guttar-position: split,
+  output: float,
+  //container: 4.7em * 12 + 0.5em * 14,
+  global-box-sizing: border-box,
+);
+
+$large-width: 4.7em * 12 + 0.5em * 14;
+
+$desktop-wide: min-width $large-width;
+$desktop-narrow: max-width $large-width;
+/* @include border-box-sizing
+ * $total-columns: 12
+ * $column-width: 4.7em
+ * $gutter-width: 0.5em
+ * $grid-padding: $gutter-width */
+
+$border-color: #ddd;
+
+$categories: Development Tweets;
+
+$Science-color: #9ff;
+$Art-color: #f99;
+$Game-color: #9f9;
+$Language-color: #ff9;
+$SocialActivities-color: #99f;
+
+* {
+  margin: 0;
+}
+
+html {
+  overflow-y: scroll;
+}
+
+body {
+  background: #fff;
+}
+
+a {
+  @include link-colors(#333, #fff, #fff, #333, #fff);
+  text-decoration: none;
+}
+
+body {
+  //@include show-grid(overlay);
+}
+
+#header_background {
+  width:100%;
+  background-color: #eee;
+}
+
+#header_container {
+  width: 100%;
+  @include breakpoint($desktop-wide) {
+    @include container(content-box);
+  }
+  padding: 0em 0.5em;
+  //background-color: #fff;
+  //border: 1px solid $border-color;
+}
+
+#container {
+  width: 100%;
+  @include breakpoint($desktop-wide) {
+    @include container(content-box);
+  }
+  padding: 0em 0.5em;
+  background-color: #fff;
+  //border: 1px solid $border-color;
+}
+
+#header {
+  width: 100%;
+  height : 5em;
+  @include breakpoint($desktop-wide) {
+    @include span(12);
+  }
+  /* @include span-columns(12,12) */
+  margin: 1px 0px 1px 0px;
+  //border: 1px solid $border-color;
+  //background-image: url("/img/header.png");
+  //background-repeat: no-repeat;
+  //background-size: contain;
+  position: relative;
+
+  .inner_icons {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 1.9em;
+    padding-top: 10px;
+    a.twitter {
+       @include link-colors(#333, #55ACEE, #55ACEE, #333, #333);
+    }
+    a.steam {
+       @include link-colors(#333, #ccc, #ccc, #333, #333);
+    }
+    a.android {
+       @include link-colors(#333, #6BC320, #6BC320, #333, #333);
+    }
+    a.github {
+       @include link-colors(#333, #4183C4, #4183C4, #333, #333);
+    }
+    a.gift {
+       @include link-colors(#333, #9D2932, #9D2932, #333, #333);
+    }
+  }
+  .inner_title {
+    position: absolute;
+    bottom: 0;
+    padding-bottom: 3px;
+    h1 {
+      color: #000;
+      text-indent: 3px;
+      font-size: 2.2em;
+    }
+    a {
+      @include link-colors(#333, #bbb, #bbb, #333, #bbb);
+    }
+  }
+}
+
+#header_guide {
+  @include span(12);
+  .category {
+    //@include span(6 of 12);
+    margin-top: 2px;
+    margin-bottom: 1px;
+    text-align: center;
+
+    @include breakpoint($desktop-narrow) {
+      @include span(4 of 12);
+      &:nth-child(3n) {
+        @include last;
+      }
+    }
+    @include breakpoint($desktop-wide) {
+      @include span(2 of 12);
+      &:last-child {
+        @include last;
+      }
+    }
+
+    h2 {
+      font-size: 1.5em;
+      //background-color: #ddd;
+      a {
+        border: 1px solid #ddd;
+        display: block;
+        &:hover {
+          border: 1px solid #bbb;
+          background-color: #bbb;
+        }
+      }
+
+    }
+  }
+}
+
+#main {
+  /* @include span-columns(8 alpha, 12) */
+  @include breakpoint($desktop-narrow) {
+    @include span(12 of 12);
+  }
+  @include breakpoint($desktop-wide) {
+    @include span(8 of 12);
+  }
+
+  .article {
+    border: 1px solid $border-color;
+    margin: 1px 0px 1px 0px;
+    h2 {
+      font-size: 1.5em;
+      text-indent: 3px;
+      line-height: 1.1;
+      background-color: #bbb;
+    }
+    h3 {
+      font-size: 0.7em;
+      line-height: 1.1;
+      background-color: #eeeeee;
+    }
+    .inner {
+      margin: 5px 5px 5px 5px;
+      a {
+        @include link-colors(#333, #bbb, #bbb, #333, #bbb);
+        text-decoration: underline;
+      }
+      p {
+        margin-top: 0.3em;
+        margin-bottom: 0.3em;
+        margin-left: 0.9em;
+        text-indent: 0.5em;
+        line-height: 1.4;
+      }
+      strong {
+        @include background(linear-gradient(transparent 60%, #fdd 60%));
+      }
+      ul, ol {
+        margin-left: 1.4em;
+        margin-bottom: 0.3em;
+        padding-left: 0.5em;
+        line-height: 1.4;
+      }
+      ul {
+        list-style-type: square;
+      }
+      ol {
+        list-style-type: lower-alpha;
+      }
+      h4, h5, h6 {
+        line-height: 1.1;
+        margin-top: 0.4em;
+        margin-bottom: 0.2em;
+      }
+      h4 {
+        font-size: 1.5em;
+        border-left: solid 7px #ddd;
+        border-bottom: dashed 1px #ddd;
+      }
+      h5 {
+        margin-left: 0.3em;
+        font-size: 1.2em;
+        border-bottom: double 3px #ddd;
+      }
+      h6 {
+        margin-left: 0.6em;
+        font-size: 1em;
+        border-bottom: dashed 1px #ddd;
+        &:before {
+          color: #ddd;
+          content: "+";
+        }
+      }
+      code {
+        white-space: nowrap;
+        border: solid 1px #ddd;
+        background: #eee;
+        font-size: 0.9em;
+        font-family: Consolas, "Courier New", Courier, Monaco, monospace;
+      }
+    }
+  }
+}
+
+#side {
+  @include breakpoint($desktop-narrow) {
+    @include span(12 of 12);
+  }
+  @include breakpoint($desktop-wide) {
+    @include span(4 of 12 last);
+  }
+  #side_first {
+    @include breakpoint($desktop-narrow) {
+      @include span(6 of 12);
+    }
+    @include breakpoint($desktop-wide) {
+      @include span(4 of 4);
+    }
+
+    #side_upper_ads {
+      @include breakpoint($desktop-narrow) {
+        @include span(6 of 6);
+      }
+      @include breakpoint($desktop-wide) {
+        @include span(4 of 4);
+      }
+      /* @include span-columns(4, 4) */
+      border: 1px solid $border-color;
+      margin: 1px 0px 1px 0px;
+      background-color: #fff;
+      text-align: center;
+    }
+
+    #top_category {
+      @include breakpoint($desktop-narrow) {
+        @include span(6 of 6);
+      }
+      @include breakpoint($desktop-wide) {
+        @include span(4 of 4);
+      }
+      /* @include span-columns(4, 4) */
+      border: 1px solid $border-color;
+      margin-top: 1px;
+      margin-bottom: 1px;
+      //padding: 0px -1px;
+      background-color: #fff;
+      h2 {
+        color: #000;
+        font-size: 1.5em;
+        text-indent: 3px;
+        line-height: 1.1;
+        background-color: #bbb;
+        a {
+          display: block;
+          @include link-colors(#333, #fff, #fff, #333, #fff);
+        }
+      }
+      h3 {
+        font-size: 1.2em;
+      }
+      ul, ol {
+        list-style-position: inside;
+        margin-left: 0.3em;
+      }
+      ul {
+        list-style-type: square;
+      }
+      ol {
+        list-style-type: upper-alpha;
+      }
+      a {
+        @include link-colors(#333, #bbb, #bbb, #333, #bbb);
+      }
+      #about {
+        @include breakpoint($desktop-narrow) {
+          @include span(6 of 6 border-box);
+        }
+        @include breakpoint($desktop-wide) {
+          @include span(4 of 4 border-box);
+        }
+        //border: 1px solid $border-color;
+        //margin: 0px -1px;
+        padding: 5px 1px;
+        padding-bottom: 15px;
+        /* @include span-columns(2 alpha, 4) */
+      }
+      #tags {
+        @include breakpoint($desktop-narrow) {
+          @include span(3 of 6 border-box);
+        }
+        @include breakpoint($desktop-wide) {
+          @include span(2 of 4 border-box);
+        }
+        //border: 1px solid $border-color;
+        //margin: 0px -1px;
+        padding: 5px 1px;
+        /* @include span-columns(2 alpha, 4) */
+      }
+      #recent_posts {
+        @include breakpoint($desktop-narrow) {
+          @include span(3 of 6 last border-box);
+        }
+        @include breakpoint($desktop-wide) {
+          @include span(2 of 4 last border-box);
+        }
+        //border: 1px solid $border-color;
+        //margin: 0px -1px;
+        padding: 5px 1px;
+        /* @include span-columns(2 omega, 4) */
+      }
+    }
+  }
+
+  #side_second {
+    @include breakpoint($desktop-narrow) {
+      @include span(6 of 12 last);
+    }
+    @include breakpoint($desktop-wide) {
+      @include span(4 of 4);
+    }
+
+    #side_lower_ads {
+      @include breakpoint($desktop-narrow) {
+        @include span(6 of 6);
+      }
+      @include breakpoint($desktop-wide) {
+        @include span(4 of 4);
+      }
+      /* @include span-columns(4, 4) */
+      border: 1px solid $border-color;
+      margin: 1px 0px 1px 0px;
+      background-color: #fff;
+      text-align: center;
+    }
+
+    #categories {
+      @include breakpoint($desktop-narrow) {
+        @include span(6 of 6);
+      }
+      @include breakpoint($desktop-wide) {
+        @include span(4 of 4);
+      }
+      @include span(4 of 4);
+      /* @include span-columns(4, 4) */
+      border: 1px solid $border-color;
+      margin: 1px 0px 1px 0px;
+      background-color: #fff;
+      h1 {
+        color: #000;
+        font-size: 1.5em;
+      }
+      h2 {
+        border-top: 1px solid #fff;
+        text-indent: 3px;
+        color: #000;
+        font-size: 1.5em;
+        line-height: 1.1;
+        background-color: #bbb;
+        a {
+          display: block;
+          @include link-colors(#333, #fff, #fff, #333, #fff);
+        }
+      }
+    }
+  }
+}
+
+#footer {
+  @include span(12);
+  /* @include span-columns(12, 12) */
+  margin: 1px 0px 1px 0px;
+  border: 1px solid $border-color;
+}
+
+@mixin category($name, $color1) {
+  #header_guide {
+    .category.#{$name} {
+      h2.#{$name} {
+        a{
+          &:hover {
+            border: 1px solid $color1;
+            background-color: $color1;
+          }
+        }
+      }
+    }
+  }
+  #main {
+    .article.#{$name} {
+      h2 {
+        background-color: $color1;
+      }
+      h3 {
+        background-color: #eeeeee;
+      }
+      .inner {
+        h4 {
+          border-left: solid 7px $color1;
+          border-bottom: dashed 1px $color1;
+        }
+        h5 {
+          border-bottom: double 3px $color1;
+        }
+        h6 {
+          border-bottom: dashed 1px $color1;
+          &:before {
+            color: $color1;
+          }
+        }
+      }
+    }
+  }
+  #side {
+    #side_first {
+      #top_category {
+        h2.#{$name} {
+          background-color: $color1;
+        }
+      }
+    }
+
+    #side_second {
+      #categories {
+        h2.#{$name} {
+          background-color: $color1;
+        }
+      }
+    }
+  }
+}
+
+@include category("Science", $Science-color);
+
+@include category("Art", $Art-color);
+
+@include category("Game", $Game-color);
+
+@include category("Language", $Language-color);
+
+@include category("SocialActivities", $SocialActivities-color);

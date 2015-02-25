@@ -1,0 +1,26 @@
+@import "compass/utilities/tables/borders";
+
+.CodeRay {
+  width: 100%;
+  margin-top: 0.3em;
+  margin-bottom: 0.5em;
+  font-family: Consolas, "Courier New", Courier, Monaco, monospace;
+  font-size: 0.83em;
+  @include outer-table-borders(1px, #fff);
+  @include inner-table-borders(1px, #fff);
+  td.line-numbers {
+    width: 1.7em;
+    text-align: right;
+    background-color: #9ff;
+  }
+  td.code {
+    background-color: #f1f1f1;
+  }
+  pre {
+    white-space: -moz-pre-wrap;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+}

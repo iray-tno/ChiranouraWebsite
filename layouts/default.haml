@@ -22,12 +22,27 @@
       ga('require', 'displayfeatures');
       ga('send', 'pageview');
   %body
-    #container
-      #header
-        %h1
-          %a(href="/")
-            = "ちらのうら - chiranoura.nobody.jp"
+    #header_background
+      #header_container
+        #header
+          %div.inner_title
+            %h1
+              %a(href="/")
+                = "ちらのうら - chiranoura.nobody.jp"
+          %div.inner_icons
+            = '<a href="https://twitter.com/iray_tno" class="twitter" target="_blank"><i class="fa fa-twitter fa-fw"></i></a>'
+            = '<a href="http://steamcommunity.com/profiles/76561198052655270/" class="steam" target="_blank"><i class="fa fa-steam fa-fw"></i></a>'
+            = '<a href="https://play.google.com/store/apps/developer?id=iray_tno" class="android" target="_blank"><i class="fa fa-android fa-fw"></i></a>'
+            = '<a href="https://github.com/iray-tno" class="github" target="_blank"><i class="fa fa-github fa-fw"></i></a>'
+            = '<a href="http://www.amazon.co.jp/gp/registry/wishlist/3PHEQBY2N2SYQ/" class="gift" target="_blank"><i class="fa fa-gift fa-fw"></i></a>'
 
+    #container
+      #header_guide
+        %div.category(class="all")
+          %h2 #{link_to(get_icon_h("General"), '/')}
+        - get_categories_except(nil).each do |category|
+          %div.category(class="#{category}")
+            %h2(class="#{category}") #{link_to(get_icon_h(category), url_meta_page(category: category))}
       #main
         - if @item[:kind] == 'article'
           - render('_article', :item => @item) do

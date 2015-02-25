@@ -12,6 +12,7 @@
 #   “content/about.html”). To select all children, grandchildren, … of an
 #   item, use the pattern “/about/*/”; “/about/*” will also select the parent,
 #   because “*” matches zero or more characters.
+require 'sass'
 require 'compass'
 
 Compass.add_configuration "#{File.dirname(__FILE__)}/.compass/config.rb"
@@ -22,12 +23,17 @@ preprocess do
   puts "preprocess..."
   
   puts ">tweetまとめページの自動生成"
-  source = File.read "tweets.xml" 
-  listener = TweetListener.new
-  REXML::Parsers::StreamParser.new(source, listener).parse
-  listener.items.each {|item|
-    @items << item
-  }
+  begin
+    source = File.read "tweets.xml" 
+    listener = TweetListener.new
+    REXML::Parsers::StreamParser.new(source, listener).parse
+    listener.items.each {|item|
+      @items << item
+    }
+  rescue
+    puts "tweets.xml doesn't exist"
+  end
+  
 
   #articles以下にある各ファイルを処理する
   articles = items.select {|item| item.identifier =~ %r|^/articles/.*/|}
@@ -96,7 +102,10 @@ preprocess do
   puts "preprocess end"
 end
 #compile -----------------------------------------------------------------------
-compile '/stylesheet/' do
+
+passthrough '/stylesheets/fonts/*/'
+
+compile '/stylesheets/' do
   # don’t filter or layout
 end
 
@@ -117,7 +126,7 @@ compile '*' do
       when 'haml'
         filter :haml
         layout 'default'
-      when 'sass'
+      when 'scss'
         filter :sass, sass_options.merge(:syntax => item[:extension].to_sym)
       else
         filter :haml
@@ -127,9 +136,16 @@ compile '*' do
 end
 
 #route -------------------------------------------------------------------------
-route '/stylesheet/' do
+route '/stylesheets/' do
   '/style.css'
 end
+
+=begin
+route '/stylesheets/fonts/*/' do
+  # /fonts/foo-eot/ -> /fonts/foo.eot
+  item.identifier.sub(/-#{item[:extension]}\/$/, '.') + item[:extension]
+end
+=end
 
 route '/sitemap/' do
   '/sitemap.xml'
@@ -141,7 +157,7 @@ route '*' do
     item.identifier.chop + '.' + item[:extension]
   else
     case item[:extension]
-      when 'sass'
+      when 'scss'
         item.identifier.chop + '.css'
       else
         item.identifier + 'index.html'
