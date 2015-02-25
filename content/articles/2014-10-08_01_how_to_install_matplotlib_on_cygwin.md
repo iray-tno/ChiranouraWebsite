@@ -91,8 +91,4 @@ minttyを起動したら、`startxwin`コマンドを実行すると、裏でX S
 ```plain
 $ startxwin
 $ python ./line3d_demo.py
-<<<<<<< HEAD
 ```
-=======
-```
->>>>>>> develop
