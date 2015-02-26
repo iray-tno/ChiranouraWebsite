@@ -77,18 +77,36 @@ http://matplotlib.org/examples/mplot3d/lines3d_demo.html
 
 #### Cygwin標準の端末（mintty）でXを使う
 
-Cygwin標準の端末（mintty）からでもXを使うことができます多追加で設定が必要になります。以下のurlを参考にしてください。
+Cygwin標準の端末（mintty）からでもXを使うことができますが追加で設定が必要になります。以下のurlを参考にしてください。
 
-CygwinでX Windowを使う(http://keisanbutsuriya.blog.fc2.com/blog-entry-40.html)
+~~CygwinでX Windowを使う(http://keisanbutsuriya.blog.fc2.com/blog-entry-40.html)　~~
 
-簡単にまとめると
+~~簡単にまとめると~~
 
-- .bashrcの最後に`export DISPLAY=:0.0`を追加
-- .bashrcと同じ場所に空のファイル`.startxwinrc`を作成
+- ~~.bashrcの最後に`export DISPLAY=:0.0`を追加~~
+- ~~.bashrcと同じ場所に空のファイル`.startxwinrc`を作成~~
 
-minttyを起動したら、`startxwin`コマンドを実行すると、裏でX Serverが起動し、minttyからXが使えるようになります。
+~~minttyを起動したら、`startxwin`コマンドを実行すると、裏でX Serverが起動し、minttyからXが使えるようになります。~~
+
+
+__!!!2015/02/27追記!!!__
+
+Xの挙動が変わったようです。詳しくは(http://keisanbutsuriya.hateblo.jp/entry/2015/01/25/221642)を参照してください。
+
+以下に簡単なまとめ
+
+- 上の手順で作った`.startxwinrc`は削除
+
+- '.bashrc'に以下の2行を追加
 
 ```plain
-$ startxwin
+export DISPLAY=:0.0
+alias runx='run xwin -multiwindow -noclipboard'
+```
+
+使う前に`runx`するとmatplotlibが使えるようになる。
+
+```plain
+$ runx
 $ python ./line3d_demo.py
 ```

@@ -69,15 +69,12 @@ html {
 
 body {
   background: #fff;
+  -webkit-text-size-adjust: 100%;
 }
 
 a {
   @include link-colors(#333, #fff, #fff, #333, #fff);
   text-decoration: none;
-}
-
-body {
-  //@include show-grid(overlay);
 }
 
 #header_background {
