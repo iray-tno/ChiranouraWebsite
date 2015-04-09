@@ -35,7 +35,7 @@
       - if tags
         %ul.tags
           - tags.sort_by{|e| e[0]}.each do |tag, num|
-            %li #{link_for_tag_with_category(tag, cate_name)} x #{num}
+            %li #{link_to(get_tag_name(tag)+" x "+num.to_s, url_meta_page(tag: tag, category: cate_name))}
       - else
         %p (none)
     %div#recent_posts
@@ -48,7 +48,7 @@
     %h1 <i class="fa fa-folder-open"></i> Categories
     %h2 #{link_to(get_icon("General")+"All", '/')}
     - get_categories.each do |category|
-      %h2(class="#{category}") #{link_to(get_icon(category)+category, '/category/'+category.downcase+'/')}
+      %h2(class="#{category}") #{link_to(get_icon(category)+category, url_meta_page(category: category))}
 
   %div#side_lower_ads
     %script(async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js")
