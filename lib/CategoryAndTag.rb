@@ -169,6 +169,9 @@ module Nanoc::Helpers
     end
 
     def url_meta_page(category: nil, tag: nil)
+      if(category=='All')
+        category = nil
+      end
       if(tag==nil&&category!=nil)
         '/category/'+category.downcase
       elsif(tag!=nil&&category==nil)
