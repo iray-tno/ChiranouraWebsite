@@ -5,18 +5,21 @@ module Nanoc::Helpers
     require 'nanoc/helpers/html_escape'
     include Nanoc::Helpers::HTMLEscape
 
-    #deprecated
+    # <b>DEPRECATED:</b> Please use <tt>items_with</tt> instead.
     def items_with_tag(tag)
+      warn "[DEPRECATION] `items_with_tag` is deprecated.  Please use `items_with` instead."
       @items.select { |i| (i[:tags] || []).include?(tag) }
     end
 
-    #deprecated
+    # <b>DEPRECATED:</b> Please use <tt>items_with</tt> instead.
     def items_with_category(category)
+      warn "[DEPRECATION] `items_with_category` is deprecated.  Please use `items_with` instead."
       @items.select { |i| (i[:category] == category) }
     end
 
-    #deprecated
+    # <b>DEPRECATED:</b> Please use <tt>items_with</tt> instead.
     def items_with_category_and_tag(category, tag)
+      warn "[DEPRECATION] `items_with_category_and_tag` is deprecated.  Please use `items_with` instead."
       @items.select { |i| ((i[:category] == category) && ((i[:tags] || []).include?(tag))) }
     end
 
@@ -112,8 +115,10 @@ module Nanoc::Helpers
       count_by_tag
     end
 
-    #deprecated
+
+    # <b>DEPRECATED:</b> Please use <tt>items_with</tt> instead.
     def get_categories_except(except = nil)
+      warn "[DEPRECATION] `get_categories_except` is deprecated.  Please use `get_categories` instead."
       items = @items if items.nil?
       if except == nil
         items.map{|item| item[:category]}.compact.uniq.sort

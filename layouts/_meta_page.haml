@@ -7,8 +7,6 @@
   - articles = items_with_tag(@tag_meta).sort_by{|i| i[:created_at]}.reverse
 - else
   - articles = items_with_category_and_tag(@category_meta, @tag_meta).sort_by{|i| i[:created_at]}.reverse
-  //- articles = items_with_category_and_tag(@category_meta, @tag_meta).sort_by{|i| i[:created_at]}.reverse
-
 
 - articles.each do |article|
   = render('_article', :item => article, :meta_page => true)
