@@ -7,19 +7,19 @@ module Nanoc::Helpers
 
     # <b>DEPRECATED:</b> Please use <tt>items_with</tt> instead.
     def items_with_tag(tag)
-      warn "[DEPRECATION] `items_with_tag` is deprecated.  Please use `items_with` instead."
+      warn "[DEPRECATION] "+caller[0]+"`items_with_tag` is deprecated.  Please use `items_with` instead."
       @items.select { |i| (i[:tags] || []).include?(tag) }
     end
 
     # <b>DEPRECATED:</b> Please use <tt>items_with</tt> instead.
     def items_with_category(category)
-      warn "[DEPRECATION] `items_with_category` is deprecated.  Please use `items_with` instead."
+      warn "[DEPRECATION] "+caller[0]+"`items_with_category` is deprecated.  Please use `items_with` instead."
       @items.select { |i| (i[:category] == category) }
     end
 
     # <b>DEPRECATED:</b> Please use <tt>items_with</tt> instead.
     def items_with_category_and_tag(category, tag)
-      warn "[DEPRECATION] `items_with_category_and_tag` is deprecated.  Please use `items_with` instead."
+      warn "[DEPRECATION] "+caller[0]+"`items_with_category_and_tag` is deprecated.  Please use `items_with` instead."
       @items.select { |i| ((i[:category] == category) && ((i[:tags] || []).include?(tag))) }
     end
 
@@ -118,7 +118,7 @@ module Nanoc::Helpers
 
     # <b>DEPRECATED:</b> Please use <tt>items_with</tt> instead.
     def get_categories_except(except = nil)
-      warn "[DEPRECATION] `get_categories_except` is deprecated.  Please use `get_categories` instead."
+      warn "[DEPRECATION] "+caller[0]+"`get_categories_except` is deprecated.  Please use `get_categories` instead."
       items = @items if items.nil?
       if except == nil
         items.map{|item| item[:category]}.compact.uniq.sort
