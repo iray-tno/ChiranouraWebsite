@@ -3,7 +3,7 @@
 title: "Cygwin上でMatplotlibをインストールする。"
 author: iray_tno
 category: Science
-tags: ["Computer","Python","Cygwin","Matplotlib","pip"]
+tags: ["Computer","Python","Cygwin","Matplotlib","Pip"]
 changefreq: yearly
 priority: 1.0
 
