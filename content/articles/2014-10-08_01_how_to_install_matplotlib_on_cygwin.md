@@ -25,27 +25,32 @@ Matplotlibの1.4.0がリリースされたようです。
 
 #### 依存の解決
 
-cygwinのsetup-x86_64.exeから以下のパッケージをインストールします。
+cygwinのsetup-x86_64.exeから以下のパッケージをインストールします。（上３つはpipが依存するパッケージ）
 
 - python-setuptools（又はpython3-setuptools）
 - binutils
 - libuuid-devel
-- python-numpy
+- python-numpy（又はpython3-numpy）
 - X11カテゴリーすべて
 - libfreetype-devel
-- python-gtk2.0
-- python-tkinter
+- python-gtk2.0（python3-gtk2.0はまだ無い）
+- python-tkinter（又はpython3-tkinter）
 - libpng-devel
 - libX11-devel
+- pkg-config
 
-（上から３つはpipが依存するパッケージ）
+参考：http://superuser.com/questions/770174/cannot-install-matplotlib-in-cygwin-freetype-issue
+
+注意点としては、setup.exeから上記のパッケージ（特に`python-*`）をインストールする前に、pipからの自動で依存を解決するインストールを試みたり（`pip install matplotlib`）すると、ソースからビルドされたnumpyが入ってしまったりしてうまくインストールできなくなったりする。
+
+そういうときは、`pip uninstall numpy`とかやったあとに、setup.exeから上記のパッケージをインストールしなおそう。
 
 #### pipのインストール
 
 Matplotlibのインストールにpipを使うので上でインストールしたsetuptoolsを使ってpipをインストールします。（[Cygwin上でpipとsetuptoolsをインストールする方法](/articles/2014-03-04_01_how_to_install_pip_and_setuptools/)）
 
 ```plain
-$ easy_install pip
+$ easy_install-2.7 pip
 ```
 
 #### Matplotlibのインストール
