@@ -2,11 +2,11 @@
   - if @category_meta == nil
     - articles = sorted_articles[0, 10]
   - else
-    - articles = items_with_category(@category_meta).sort_by{|i| i[:created_at]}.reverse[0, 6]
+    - articles = items_with(category: @category_meta).sort_by{|i| i[:created_at]}.reverse[0, 6]
 - elsif @category_meta == nil
-  - articles = items_with_tag(@tag_meta).sort_by{|i| i[:created_at]}.reverse
+  - articles = items_with(tag: @tag_meta).sort_by{|i| i[:created_at]}.reverse
 - else
-  - articles = items_with_category_and_tag(@category_meta, @tag_meta).sort_by{|i| i[:created_at]}.reverse
+  - articles = items_with(category: @category_meta, tag: @tag_meta).sort_by{|i| i[:created_at]}.reverse
 
 - articles.each do |article|
   = render('_article', :item => article, :meta_page => true)

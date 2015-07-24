@@ -41,7 +41,7 @@
       #header_guide
         %div.category(class="all")
           %h2 #{link_to(get_icon_h("General"), '/')}
-        - get_categories_except(nil).each do |category|
+        - get_categories.each do |category|
           %div.category(class="#{category}")
             %h2(class="#{category}") #{link_to(get_icon_h(category), url_meta_page(category: category))}
       #main

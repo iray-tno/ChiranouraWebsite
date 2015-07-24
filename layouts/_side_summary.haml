@@ -7,7 +7,7 @@
   - cate_name = @category
   - url_cate = '/category/'+category.downcase+'/'
   - tags = count_by_tag_with_category(@category).sort_by{|e| e[0]}
-  - recent_articles = items_with_category(@category).sort_by{|i| i[:created_at]}.reverse[0, 5]
+  - recent_articles = items_with(category: @category).sort_by{|i| i[:created_at]}.reverse[0, 5]
 %div#side_first
   %div#side_upper_ads
     %script(async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js")
@@ -19,15 +19,15 @@
     %div#about
       %h3 <i class="fa fa-bars"></i> About
       - if @category!=nil
-        - if about_desc = items_with_category_and_tag(@category, "Description").sort_by{|i| i[:created_at]}.last.raw_content.match(/^.*?(?=<!-- headline -->)/m)
+        - if about_desc = items_with(category: @category, tag: "Description").sort_by{|i| i[:created_at]}.last.raw_content.match(/^.*?(?=<!-- headline -->)/m)
           = about_desc.to_s
         - else
-          = items_with_category_and_tag(@category, "Description").sort_by{|i| i[:created_at]}.last.raw_content
+          = items_with(category: @category, tag: "Description").sort_by{|i| i[:created_at]}.last.raw_content
       - else
-        - if about_desc = items_with_category_and_tag("SocialActivities", "About").sort_by{|i| i[:created_at]}.last.raw_content.match(/^.*?(?=<!-- headline -->)/m)
+        - if about_desc = items_with(category: "SocialActivities", tag: "About").sort_by{|i| i[:created_at]}.last.raw_content.match(/^.*?(?=<!-- headline -->)/m)
           = about_desc.to_s
         - else
-          = items_with_category_and_tag("SocialActivities", "About").sort_by{|i| i[:created_at]}.last.raw_content        
+          = items_with(category: "SocialActivities", tag: "About").sort_by{|i| i[:created_at]}.last.raw_content        
       //= items_with(category: @category,tag: "Description").sort_by{|i| i[:created_at]}.last.compiled_content.to_s
     //%h2(class="#{cate_name}") #{link_for_cate}
     %div#tags

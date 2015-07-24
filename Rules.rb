@@ -77,9 +77,9 @@ preprocess do
       :binary => false
     )
     @items << item
-    puts "  -category page #{category}(#{items_with_category(category).size()}) :#{item.attributes}"
+    puts "  -category page #{category}(#{items_with(category: category).size()}) :#{item.attributes}"
 
-    tags = items_with_category(category).map { |p| p.attributes[:tags] }.flatten.compact.uniq
+    tags = items_with(category: category).map { |p| p.attributes[:tags] }.flatten.compact.uniq
     tags.each { |tag|
       item = Nanoc::Item.new("= render('_meta_page', :tag_meta => '#{tag}', :category_meta => '#{category}')",
         {

@@ -103,7 +103,7 @@ module Nanoc::Helpers
     end
 
     def count_by_tag_with_category(category)
-      items = items_with_category(category)
+      items = items_with(category: category)
       count_by_tag = Hash.new(0)
       items.each do |item|
         if item[:tags]
