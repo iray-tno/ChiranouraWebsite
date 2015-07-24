@@ -36,12 +36,32 @@ setup.exeは以下のurlからダウンロードします。32bitならsetup-x86
 
 http://cygwin.com/install.html
 
-setuptoolsは、`easy_install`というコマンドから使えます。
+~~setuptoolsは、`easy_install`というコマンドから使えます。~~
 
 ```plain
 $ easy_install --version
 setuptools 2.1
 ```
+__!!!2015/07/24追記!!!__
+
+いつのまにかsetup.exeでpython-setuptoolsをインストールするとdistributedが入るようになっている。（マージされたからか？）
+
+しかもpython-setuptools3をインストールするとsetuptoolsが入る。（2015/07/24）
+
+さらに、よくわからないけど`easy_install`というコマンドでは使えなくなって、python2.7用では`easy_install-2.7`、Python3.4用では`easy_install-3.4`という名前のコマンドになった。
+
+（Pythonのバージョンが増えても`easy_install`まで入力してタブ１～２回押せばでてくる。）
+
+```plain
+$ easy_install-2.7 --version
+distribute 0.6.49
+$ easy_install-3.4 --version
+setuptools 15.2
+```
+
+う～ん、謎は深まる・・・
+
+__!!!2015/07/24追記おわり!!!__
 
 #### 古いpipのアンインストール
 
@@ -56,8 +76,27 @@ $ rm -r /lib/python2.7/site-packages/pip-1.4.1-py2.7.egg
 
 あとはsetuptoolsを使ってpipをインストールするだけです。
 
+__!!!2015/07/24追記!!!__
+
+python2と3を共存させるなら、pip3をインストールしたあとにpip（2）をインストールしましょう。（参考：http://blog.yubais.net/21.html）
+
 ```plain
-$ easy_install pip
+$ easy_install-3.4 pip
+$ pip --version
+pip 7.1.0 from /usr/lib/python3.4/site-packages/pip-7.1.0-py3.4.egg (python 3.4)
+$ pip3 --version
+pip 7.1.0 from /usr/lib/python3.4/site-packages/pip-7.1.0-py3.4.egg (python 3.4)
+$ easy_install-2.7 pip
+$ pip --version
+pip 1.5.6 from /usr/lib/python2.7/site-packages/pip-1.5.6-py2.7.egg (python 2.7)
+```
+
+__!!!2015/07/24追記おわり!!!__
+
+共存させないなら、片方インストールするだけ。
+
+```plain
+$ easy_install-2.7 pip
 $ pip help
 
 Usage:
