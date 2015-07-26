@@ -1,6 +1,7 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    addressable (2.3.8)
     adsf (1.2.0)
       rack (>= 1.0.0)
     breakpoint (2.5.0)
@@ -22,27 +23,36 @@ GEM
       sass (>= 3.3.0, < 3.5)
     compass-import-once (1.0.5)
       sass (>= 3.2, < 3.5)
-    cri (2.6.1)
+    cri (2.7.0)
       colored (~> 1.2)
-    ffi (1.9.6)
-    font-awesome-sass (4.3.1)
+    fastimage (1.7.0)
+      addressable (~> 2.3, >= 2.3.5)
+    ffi (1.9.10)
+    font-awesome-sass (4.3.2.1)
       sass (~> 3.2)
     haml (4.0.6)
       tilt
     json (1.8.3)
-    multi_json (1.10.1)
-    nanoc (3.7.5)
+    method_source (0.8.2)
+    multi_json (1.11.2)
+    nanoc (3.8.0)
       cri (~> 2.3)
-    rack (1.6.0)
-    rb-fsevent (0.9.4)
+    natto (1.0.1)
+      ffi (>= 1.9.0)
+    pry (0.10.1)
+      coderay (~> 1.1.0)
+      method_source (~> 0.8.1)
+      slop (~> 3.4)
+    rack (1.6.4)
+    rb-fsevent (0.9.5)
     rb-inotify (0.9.5)
       ffi (>= 0.5.0)
     redcarpet (3.3.2)
-    rmagick (2.15.3)
-    sass (3.4.12)
+    sass (3.4.16)
     sassy-maps (0.4.0)
       sass (~> 3.3)
-    susy (2.2.2)
+    slop (3.6.0)
+    susy (2.2.5)
       sass (>= 3.3.0, < 3.5)
     tilt (2.0.1)
 
@@ -55,11 +65,13 @@ DEPENDENCIES
   builder
   coderay
   compass
+  fastimage
   font-awesome-sass
   haml
   json
   nanoc
+  natto
+  pry
   redcarpet
-  rmagick
   sass
   susy
