@@ -13,4 +13,4 @@ gem 'json'
 gem 'font-awesome-sass'
 gem 'breakpoint'
 gem 'fastimage'
-
+gem 'pry'
