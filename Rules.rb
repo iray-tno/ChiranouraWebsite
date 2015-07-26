@@ -34,7 +34,21 @@ preprocess do
     puts "tweets.xml doesn't exist"
   end
   
-
+  puts ">Read related_posts.txt"
+  related_posts = Hash.new()
+  begin
+    open("./related_posts.txt", "r") { |file|
+      file.each_line do |line|
+        id,rp=line.split("\t")
+        if(id!=nil&&rp!=nil) then
+          related_posts[id]=rp
+        end
+      end
+    }
+  rescue
+    puts "failed to read related_posts.txt (doesn't exist?)"
+  end
+  
   #articles以下にある各ファイルを処理する
   articles = items.select {|item| item.identifier =~ %r|^/articles/.*/|}
   articles.each do |item|
@@ -43,6 +57,9 @@ preprocess do
     item.attributes[:created_at] ||= Time.local(date[1],date[2],date[3],date[4]).to_s
     item.attributes[:category] ||= "Others"
     item.attributes[:tags] ||= [""]
+    if(related_posts[item.identifier]!=nil) then
+      item.attributes[:related_posts] ||= eval(related_posts[item.identifier])
+    end
   end
 
   #tagページの自動生成

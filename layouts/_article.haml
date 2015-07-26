@@ -16,6 +16,30 @@
           = link_to("Comment &raquo;", @item.path)
     - else
       = yield
+
+      %div(class="ninja_onebutton")
+        %script(type="text/javascript")
+          //<![CDATA[
+          (function(d){
+          if(typeof(window.NINJA_CO_JP_ONETAG_BUTTON_805935c347e5c932c75b75dcaee21528)=='undefined'){
+          document.write("<sc"+"ript type='text\/javascript' src='http:\/\/omt.shinobi.jp\/b\/805935c347e5c932c75b75dcaee21528'><\/sc"+"ript>");
+          }else{
+          window.NINJA_CO_JP_ONETAG_BUTTON_805935c347e5c932c75b75dcaee21528.ONETAGButton_Load();}
+          })(document);
+          //]]>
+        %span(class="ninja_onebutton_hidden" style="display:none;")
+          @base_url+@item.identifier
+        %span(style="display:none;" class="ninja_onebutton_hidden")
+          @item[:title]
+
+      - if(item[:related_posts]!=nil)
+        %div#related_posts
+          %h4 Related Posts
+          %ul.related_posts
+            - item[:related_posts].each do |rp|
+              %li
+                #{link_to(@items[rp[0]][:title]+"("+rp[1].to_s+")",rp[0])}
+
       #disqus_thread
       :javascript
         var disqus_shortname = 'chiranoura';
