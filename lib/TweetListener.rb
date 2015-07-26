@@ -133,7 +133,7 @@ class TweetListener
 
   # encoding, standaloneは、指定がなければnil 
   def xmldecl(version, encoding, standalone) 
-    puts "#{version}, #{encoding}, #{standalone}"
+    #puts "#{version}, #{encoding}, #{standalone}"
   end
 
   def items

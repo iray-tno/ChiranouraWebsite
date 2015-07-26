@@ -94,7 +94,7 @@ preprocess do
       :binary => false
     )
     @items << item
-    puts "  -category page #{category}(#{items_with(category: category).size()}) :#{item.attributes}"
+    #puts "  -category page #{category}(#{items_with(category: category).size()}) :#{item.attributes}"
 
     tags = items_with(category: category).map { |p| p.attributes[:tags] }.flatten.compact.uniq
     tags.each { |tag|
@@ -115,6 +115,7 @@ preprocess do
     print "\n"
   }
   print "done"
+  
   items.delete_if { |item| item[:publish] == false }
   puts "preprocess end"
 end
