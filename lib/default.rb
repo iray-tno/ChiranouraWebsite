@@ -13,7 +13,7 @@ Encoding.default_external = 'UTF-8'
 require "redcarpet"
 require "cgi"
 require "coderay"
-require 'rmagick'
+require 'fastimage'
 
 class ArticleRenderer < Redcarpet::Render::XHTML
   #def link(link, title, alt_text)
@@ -45,10 +45,11 @@ class ArticleRenderer < Redcarpet::Render::XHTML
   end
 
   def image(link, title, alt_text)
-    img = Magick::Image.read(File.expand_path(File.join(File.dirname(__FILE__), '..')) + '/content' + link).first
+    width,height = FastImage.size(File.expand_path(File.join(File.dirname(__FILE__), '..')) + '/content' + link)
+    #img = Magick::Image.read(File.expand_path(File.join(File.dirname(__FILE__), '..')) + '/content' + link).first
     max_width = 300.0
-    width = img.columns
-    height = img.rows
+    #width = img.columns
+    #height = img.rows
 
     if width > max_width then
       height = (height * (max_width / width)).round

@@ -12,4 +12,5 @@ gem 'adsf'
 gem 'json'
 gem 'font-awesome-sass'
 gem 'breakpoint'
-gem 'rmagick'
+gem 'fastimage'
+
