@@ -40,9 +40,12 @@ $susy: (
 );
 
 $large-width: 4.7em * 12 + 0.5em * 14;
+$small-width: 4.7em * 7 + 0.5em * 9;
 
 $desktop-wide: min-width $large-width;
 $desktop-narrow: max-width $large-width;
+$desktop-narrow-b: $small-width $large-width;
+$mobile-narrow: max-width $small-width;
 /* @include border-box-sizing
  * $total-columns: 12
  * $column-width: 4.7em
@@ -105,6 +108,9 @@ a {
 #header {
   width: 100%;
   height : 5em;
+  @include breakpoint($mobile-narrow) {
+    height : 7em;
+  }
   @include breakpoint($desktop-wide) {
     @include span(12);
   }
@@ -161,7 +167,13 @@ a {
     margin-bottom: 1px;
     text-align: center;
 
-    @include breakpoint($desktop-narrow) {
+    @include breakpoint($mobile-narrow) {
+      @include span(6 of 12);
+      &:nth-child(2n) {
+        @include last;
+      }
+    }
+    @include breakpoint($desktop-narrow-b) {
       @include span(4 of 12);
       &:nth-child(3n) {
         @include last;
@@ -284,7 +296,10 @@ a {
     @include span(4 of 12 last);
   }
   #side_first {
-    @include breakpoint($desktop-narrow) {
+    @include breakpoint($mobile-narrow) {
+      @include span(12 of 12);
+    }
+    @include breakpoint($desktop-narrow-b) {
       @include span(6 of 12);
     }
     @include breakpoint($desktop-wide) {
@@ -292,7 +307,10 @@ a {
     }
 
     #side_upper_ads {
-      @include breakpoint($desktop-narrow) {
+      @include breakpoint($mobile-narrow) {
+        @include span(12 of 12);
+      }
+      @include breakpoint($desktop-narrow-b) {
         @include span(6 of 6);
       }
       @include breakpoint($desktop-wide) {
@@ -306,7 +324,10 @@ a {
     }
 
     #top_category {
-      @include breakpoint($desktop-narrow) {
+      @include breakpoint($mobile-narrow) {
+        @include span(12 of 12);
+      }
+      @include breakpoint($desktop-narrow-b) {
         @include span(6 of 6);
       }
       @include breakpoint($desktop-wide) {
@@ -346,7 +367,10 @@ a {
         @include link-colors(#333, #bbb, #bbb, #333, #bbb);
       }
       #about {
-        @include breakpoint($desktop-narrow) {
+        @include breakpoint($mobile-narrow) {
+          @include span(12 of 12 border-box);
+        }
+        @include breakpoint($desktop-narrow-b) {
           @include span(6 of 6 border-box);
         }
         @include breakpoint($desktop-wide) {
@@ -359,7 +383,10 @@ a {
         /* @include span-columns(2 alpha, 4) */
       }
       #tags {
-        @include breakpoint($desktop-narrow) {
+        @include breakpoint($mobile-narrow) {
+          @include span(6 of 12 border-box);
+        }
+        @include breakpoint($desktop-narrow-b) {
           @include span(3 of 6 border-box);
         }
         @include breakpoint($desktop-wide) {
@@ -371,7 +398,10 @@ a {
         /* @include span-columns(2 alpha, 4) */
       }
       #recent_posts {
-        @include breakpoint($desktop-narrow) {
+        @include breakpoint($mobile-narrow) {
+          @include span(6 of 12 last border-box);
+        }
+        @include breakpoint($desktop-narrow-b) {
           @include span(3 of 6 last border-box);
         }
         @include breakpoint($desktop-wide) {
@@ -386,7 +416,10 @@ a {
   }
 
   #side_second {
-    @include breakpoint($desktop-narrow) {
+    @include breakpoint($mobile-narrow) {
+      @include span(12 of 12);
+    }
+    @include breakpoint($desktop-narrow-b) {
       @include span(6 of 12 last);
     }
     @include breakpoint($desktop-wide) {
@@ -394,7 +427,10 @@ a {
     }
 
     #side_lower_ads {
-      @include breakpoint($desktop-narrow) {
+      @include breakpoint($mobile-narrow) {
+        @include span(12 of 12);
+      }
+      @include breakpoint($desktop-narrow-b) {
         @include span(6 of 6);
       }
       @include breakpoint($desktop-wide) {
@@ -408,7 +444,10 @@ a {
     }
 
     #categories {
-      @include breakpoint($desktop-narrow) {
+      @include breakpoint($mobile-narrow) {
+        @include span(12 of 12);
+      }
+      @include breakpoint($desktop-narrow-b) {
         @include span(6 of 6);
       }
       @include breakpoint($desktop-wide) {
