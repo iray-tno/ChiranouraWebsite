@@ -6,5 +6,5 @@ output/*
 !output/.gitkeep
 bundler/*
 !bundler/.gitkeep
-vender/*
-!vender/.gitkeep
+vendor/*
+!vendor/.gitkeep
