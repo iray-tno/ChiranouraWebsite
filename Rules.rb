@@ -131,6 +131,10 @@ compile '/sitemap/' do
   filter :erb
 end
 
+compile '/atom/' do
+  filter :haml
+end
+
 compile '*' do
   if item.binary?
     # don't filter binary items
@@ -171,6 +175,10 @@ end
 
 route '/sitemap/' do
   '/sitemap.xml'
+end
+
+route '/atom/' do
+  '/atom.xml'
 end
 
 route '*' do

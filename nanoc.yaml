@@ -81,3 +81,6 @@ watcher:
   notify_on_compilation_failure: true
 
 base_url: http://chiranoura.nobody.jp
+title: chiranoura
+author_name: iray_tno
+author_uri: http://chiranoura.nobody.jp
