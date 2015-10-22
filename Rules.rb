@@ -128,7 +128,7 @@ compile '/stylesheets/' do
 end
 
 compile '/sitemap/' do
-  filter :erb
+  filter :haml
 end
 
 compile '/atom/' do

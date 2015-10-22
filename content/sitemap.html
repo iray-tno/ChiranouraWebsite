@@ -1,9 +1,0 @@
----
-title: sitemap
----
-<%= xml_sitemap :items => @items.reject{ |i|
-  i[:is_hidden] ||
-  i.binary? ||
-  i.identifier == '/stylesheets/' ||
-  i.identifier == '/sitemap/' 
-} %>
