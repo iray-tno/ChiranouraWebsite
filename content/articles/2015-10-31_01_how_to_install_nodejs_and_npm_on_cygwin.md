@@ -6,19 +6,21 @@ category: Science
 tags: ["Computer","Cygwin","Eigen","redsvd","特異値分解(SVD)"]
 changefreq: yearly
 priority: 1.0
-publish: false
+publish: true
 
 ---
 
 #### はじめに
 
-Electron(http://electron.atom.io/)使ってみてえという気持ちが高まったのでCygwinにNode.jsをインストールしようとしたお話し。
+Electron( http://electron.atom.io/ )使ってみてえという気持ちが高まったのでCygwinにNode.jsをインストールしようとしたお話し。
 
 結論：Cygwinはサポート外でいろいろ試しても超古いバージョンしか動かなかった。普通に公式からWindows用のバイナリをインスコしようぜ。
 
 今回はWindows10にNode.js 5.0.0をインストールした。
 
-Node.js公式(https://nodejs.org/en/)
+Node.js公式( https://nodejs.org/en/ )
+
+<!-- headline -->
 
 #### Cygwinへのインストールに失敗したお話し
 
@@ -30,7 +32,7 @@ http://d.hatena.ne.jp/bellbind/20110530/1306764093
 > Cygwin is no longer supported, despite being POSIX compliant. The latest version that compiles is 0.4.12.  
 > 引用元:https://github.com/nodejs/node-v0.x-archive/wiki/Installation#building-on-cygwin
 
-最新バージョンは上で書いた5.0.0であるのに対してCygwinで動くのは0.4.12。もうちょっと調べるとパッチを当てて動かそうとしているものもあったけど(例えばhttps://www.robario.com/2015/10/08)それでも4.1.2とかだったのであきらめた。
+最新バージョンは上で書いた5.0.0であるのに対してCygwinで動くのは0.4.12。もうちょっと調べるとパッチを当てて動かそうとしているものもあったけど(例えば https://www.robario.com/2015/10/08 )それでも4.1.2とかだったのであきらめた。
 
 #### Windowsに普通にインストールしたらCygwinでも普通に動いた
 

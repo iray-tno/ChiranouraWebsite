@@ -12,8 +12,7 @@ publish: false
 
 #### はじめに
 
-Node.jsを使ってJavaScriptでマルチプラットフォームアプリを作れるElectronaa
-a
+Node.jsを使ってJavaScriptでマルチプラットフォームアプリを作れるElectron
 
 ```tweet
 https://twitter.com/naoya_ito/status/656765448386580484
