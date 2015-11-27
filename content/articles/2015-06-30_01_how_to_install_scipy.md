@@ -42,10 +42,12 @@ pipとmatplotlibを先にインストールしておきましょう。
 
 #### インストール
 
-ビルドめっちゃ時間かかる。
+現最新varはcygwinで動かないので0.15.1をインストールする。ビルドめっちゃ時間かかる。
+
+参考：http://stackoverflow.com/questions/32519166/scipy-installation-cygwin64-windows10-fails-at-late-stage
 
 ```plain
-$ pip install scipy
+$ pip install scipy==0.15.1
 Downloading/unpacking scipy
   Downloading scipy-0.15.1.tar.gz (11.4MB): 11.4MB downloaded
 略
