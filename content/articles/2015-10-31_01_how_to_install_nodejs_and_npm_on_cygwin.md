@@ -3,7 +3,7 @@
 title: "Cygwinにnodejsとnpmをインストールする方法"
 author: iray_tno
 category: Science
-tags: ["Computer","Cygwin","Eigen","redsvd","特異値分解(SVD)"]
+tags: ["Computer","Cygwin","Nodejs"]
 changefreq: yearly
 priority: 1.0
 publish: true
