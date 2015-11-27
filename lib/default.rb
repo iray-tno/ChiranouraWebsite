@@ -14,6 +14,7 @@ require "redcarpet"
 require "cgi"
 require "coderay"
 require 'fastimage'
+require 'natto'
 
 class ArticleRenderer < Redcarpet::Render::XHTML
   #def link(link, title, alt_text)
