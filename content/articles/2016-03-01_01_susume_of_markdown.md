@@ -1,3 +1,15 @@
+---
+
+title: "Markdownのすゝめ"
+author: iray_tno
+category: Science
+tags: ["Computer","競プロ(CompProg)","平衡二分探索木(SBSTree)"]
+changefreq: yearly
+priority: 1.0
+publish: false
+
+---
+
 # Markdownのすゝめ
 
 ## 1.はじめに
