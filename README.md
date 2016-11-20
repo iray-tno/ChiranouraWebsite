@@ -1,5 +1,7 @@
 Chiranoura
 ======================
+
+[![Join the chat at https://gitter.im/chiranourawebsite/Lobby](https://badges.gitter.im/chiranourawebsite/Lobby.svg)](https://gitter.im/chiranourawebsite/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 This is my Homepage.  
 The following tools were used for creating this.
 
